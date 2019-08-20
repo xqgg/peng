@@ -9,47 +9,25 @@
     <h1>注册</h1>
     <hr />
     <a href="">为什么需要邀请</a>
-    <div>
-        <div>
-            邀请人：（*必填，<a href="">没有邀请人</a>）
-        </div>
-        <input placeholder=" 他的用户名" />
-    </div>
-    <div>
-        <div>
-            邀请码：（*必填，）
-        </div>
-        <input placeholder=" 四位数字" />
-    </div>
-    <div>
-        <div>
-            用户名：（*必填，）
-        </div>
-        <input placeholder=" 登录用户名，可修改，不可重复" />
-    </div>
-    <div>
-        <div>
-            密码：（*必填，）
-        </div>
-        <input placeholder=" 不少于4个字符" type="password" />
-    </div>
-    <div>
-        <div>
-            验证密码：（*必填，）
-        </div>
-        <input placeholder=" 与密码相同" type="password" />
-    </div>
-    <div>
-        <div>
-            验证码：（*必填，）
-        </div>
-        <input />
-        <img src="~/images/1565936228559.jpeg"  width="50 "/>
+    <form method="post">
+        邀请人：（*必填，<a href="">没有邀请人</a>）<br />
+        <input type="text" placeholder="他的用户名" name="inviter username" /><br />
+        邀请码：（*必填，）<br />
+        <input type="text" placeholder=" 四位数字" name="Invitation code" /><br />
+        用户名：（*必填，）<br />
+        <input type="text" placeholder=" 登录用户名，可修改，不可重复" name="username" />  <br />
+        密码：（*必填，）<br />
+        <input type="password" placeholder=" 不少于4个字符" name="password" /><br />
+        验证密码：（*必填，）<br />
+        <input type="password" placeholder=" 与密码相同" name="password" /><br />
+        验证码：（*必填，）<br />
+        <input type="text" name="security code" />
+        <img src="~/images/1565936228559.jpeg" width="50 " />
         <a href="">看不清楚</a>
-    </div>
-    <div>
+        <br />
         <input type="submit" />
         <input type="reset" />
-    </div>
+    </form>
+
 </body>
 </html>
