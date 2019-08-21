@@ -6,180 +6,248 @@
     <link href="~/images/logo.ico" type="image/ico" rel="icon" media="screen" />
 </head>
 <body>
-    <a href="https://localhost:44331/" title="返回首页">
-        <img src="/images/logo-big.ico" />
-    </a>
-    <form method="post">
+    <header>
+        <nav>
+            <a href="/Index" title="返回首页">
+                <img src="/images/logo-big.ico" alt="一起帮logo" />
+            </a>
+            <div>
+                <ul>
+                    <li>
+                        <a href="/Problem">求助</a>
+                        <ul>
+                            <li>督导班</li>
+                            <li>疑问发布</li>
+                            <li>疑问列表</li>
+                            <li>---------</li>
+                            @*分割线*@
+                            <li>列表</li>
+                            <li>发布</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">督促</a>
+                        <ul>
+                            <li>求督促</li>
+                            <li>督促别人</li>
+                            <li>---------</li>
+                            @*分割线*@
+                            <li>我的目标</li>
+                            <li>我的督促</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">文章</a>
+                        <ul>
+                            <li>列表</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">APP下载</a>
+                        <ul>
+                            <li>Android</li>
+                            <li>iOS</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">登录状态</a>
+                        <ul>
+                            <li>登录</li>
+                            <li><a href="register">注册</a></li>
+                            <li>忘记密码</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <div>
-            <p>不显示：</p>
-            <label>
-                <input type="checkbox" name="已酬谢" />已酬谢
-            </label>
-            <label>
-                <input type="checkbox" name="已撤销" />已撤销
-            </label>
-            <label>
-                <input type="checkbox" name="协助中" />协助中
-            </label>
+            页眉---------------------------------------------------
+        </div>
+    </header>
+    <main>
+        <!--筛选-->
+        <div>
+            <form method="post">
+                <div>
+                    <p>不显示：</p>
+                    <label>
+                        <input type="checkbox" name="已酬谢" />已酬谢
+                    </label>
+                    <label>
+                        <input type="checkbox" name="已撤销" />已撤销
+                    </label>
+                    <label>
+                        <input type="checkbox" name="协助中" />协助中
+                    </label>
+                </div>
+                <div>
+                    <p>只显示：</p>
+                    <label>
+                        <input type="checkbox" name="我的关注" />我的关注
+                    </label>
+                    <label>
+                        <input type="checkbox" name="有总结" />有总结
+                    </label>
+                </div>
+            </form>
+        </div>
+        <!--帖子-->
+        <div>
+            <div>
+                <time>2019年08月05日 10点07分</time>
+                <span>28zhu</span>
+                <span>
+                    <a href="#" title="初级教师">④</a>
+                </span>
+            </div>
+            <span>已撤销</span>
+            <a href="">
+                有一个自定义UI控件，此控件使用在不同的系统中会有不同的呈现，
+                之前的做法是各种switch case，阅读代码时让人很难受，另外新创建一
+                个用到此控件的系统，要修改代码的地方也多，只要有swich case 的地
+                方都要再加一个case。请教一个好一些的方式来处理这个问题，目的是
+                让代码更加清楚
+            </a>
+            <div>
+                <span>
+                    RT，也不知道描述的清楚不清楚。求一个思路
+                </span>
+                <span>
+                    <a href="" title="全文">......</a>
+                </span>
+            </div>
+            <div>
+                <span>
+                    <a href="" title="已使用1次">不限</a>
+                </span>
+                <span>
+                    <a href="" title="已使用1次">顾问咨询</a>
+                </span>
+                <span>
+                    <a href="" title="已使用1次">编程开发语言</a>
+                </span>
+            </div>
+            <div>
+                <span>
+                    悬赏：
+                </span>
+                <span title="定额">
+                    15
+                </span>
+                <span>
+                    <a href="">应答：</a>
+                </span>
+                <span>
+                    1
+                </span>
+                <span>
+                    <a href="">总结：</a>
+                </span>
+                <span>
+                    0
+                </span>
+            </div>
         </div>
         <div>
-            <p>只显示：</p>
-            <label>
-                <input type="checkbox" name="我的关注" />我的关注
-            </label>
-            <label>
-                <input type="checkbox" name="有总结" />有总结
-            </label>
+            <div>
+                <time>2019年06月15日 23点27分</time>
+                <span> WhiteWater</span>
+                <span>
+                    <a href="#" title="初级教师">④</a>
+                </span>
+            </div>
+            <span>已撤销</span>
+            <a href="">
+                手动导入jar包，运行报错的问题
+            </a>
+            <div>
+                <span>
+                    运行就报这个错误，这个jar包我导入项目了的，不然编译都无法通过。
+                </span>
+                <span>
+                    <a href="" title="全文">......</a>
+                </span>
+            </div>
+            <div>
+                <span>
+                    <a href="" title="已使用1次">Windows</a>
+                </span>
+                <span>
+                    <a href="" title="已使用1次">Linux</a>
+                </span>
+                <span>
+                    <a href="" title="已使用1次">IDEA</a>
+                </span>
+                <span>
+                    <a href="" title="已使用1次">JAVA</a>
+                </span>
+                <span>
+                    <a href="" title="已使用1次">C++</a>
+                </span>
+                <span>
+                    <a href="" title="已使用1次">工具软件</a>
+                </span>
+                <span>
+                    <a href="" title="已使用1次">操作系统</a>
+                </span>
+                <span>
+                    <a href="" title="已使用1次">编程开发语言</a>
+                </span>
+            </div>
+            <div>
+                <span>
+                    悬赏：
+                </span>
+                <span title="定额">
+                    15
+                </span>
+                <span>
+                    <a href="">应答：</a>
+                </span>
+                <span>
+                    1
+                </span>
+                <span>
+                    <a href="">总结：</a>
+                </span>
+                <span>
+                    0
+                </span>
+            </div>
         </div>
-    </form>
-
-    <br /><br />
-    <div>
-        <div>2019年08月05日 10点07分</div>
-        <span>28zhu</span><br />
-        <span>已撤销</span>
-        <a href="">
-            有一个自定义UI控件，此控件使用在不同的系统中会有不同的呈现，
-            之前的做法是各种switch case，阅读代码时让人很难受，另外新创建一
-            个用到此控件的系统，要修改代码的地方也多，只要有swich case 的地
-            方都要再加一个case。请教一个好一些的方式来处理这个问题，目的是
-            让代码更加清楚
-        </a>
-        <br /><br />
-        <span>
-            RT，也不知道描述的清楚不清楚。求一个思路
-        </span>
-        <span>
-            <a href="" title="全文">......</a>
-        </span>
-        <br /><br />
-        <div>
-            <span>
-                <a href="" title="已使用1次">不限</a>
-            </span>
-            <span>
-                <a href="" title="已使用1次">顾问咨询</a>
-            </span>
-            <span>
-                <a href="" title="已使用1次">编程开发语言</a>
-            </span>
-        </div><br />
-        <div>
-            <span>
-                悬赏：
-            </span>
-            <span title="定额">
-                15
-            </span>
-            &nbsp;&nbsp;
-            <span>
-                <a href="">应答：</a>
-            </span>
-            <span>
-                1
-            </span>
-            &nbsp;&nbsp;
-            <span>
-                <a href="">总结：</a>
-            </span>
-            <span>
-                0
-            </span>
-        </div>
-    </div>
-    <br /><br />
-    <div>
-        <div>2019年06月15日 23点27分</div>
-        <span> WhiteWater </span><br />
-        <span>已撤销</span>
-        <a href="">
-            手动导入jar包，运行报错的问题
-        </a>
-        <br /><br />
-        <span>
-            运行就报这个错误，这个jar包我导入项目了的，不然编译都无法通过。
-        </span>
-        <span>
-            <a href="" title="全文">......</a>
-        </span>
-        <br /> <br />
-        <div>
-            <span>
-                <a href="" title="已使用1次">windows</a>
-            </span>
-            <span>
-                <a href="" title="已使用1次">linux</a>
-            </span>
-            <span>
-                <a href="" title="已使用1次">IDEA</a>
-            </span>
-            <span>
-                <a href="" title="已使用1次">JAVA</a>
-            </span>
-            <span>
-                <a href="" title="已使用1次">C++</a>
-            </span>
-            <span>
-                <a href="" title="已使用1次">工具软件</a>
-            </span>
-            <span>
-                <a href="" title="已使用1次">操作系统</a>
-            </span>
-            <span>
-                <a href="" title="已使用1次">编程语言</a>
-            </span>
-        </div><br />
-        <div>
-            <span>
-                悬赏：
-            </span>
-            <span title="定额">
-                15
-            </span>
-            &nbsp;&nbsp;
-            <span>
-                <a href="">应答：</a>
-            </span>
-            <span>
-                1
-            </span>
-            &nbsp;&nbsp;
-            <span>
-                <a href="">总结：</a>
-            </span>
-            <span>
-                0
-            </span>
-        </div>
-    </div>
+    </main>
     <aside>
-        <h1>
-            关键字
-        </h1>
-        <hr />
+        <!--关键字-->
         <div>
-            <a href="#" title="已使用*次"><span>编程开发语言</span></a>
-            <a href="#" title="已使用*次"><span>c#</span></a>
-            <a href="#" title="已使用*次"><span>JAVA</span></a>
-            <a href="#" title="已使用*次"><span>工具软件</span></a>
-            <a href="#" title="已使用*次"><span>JavaScript</span></a>
-            <a href="#" title="已使用*次"><span>顾问咨询</span></a>
-            <a href="#" title="已使用*次"><span>HTML</span></a>
-            <a href="#" title="已使用*次"><span>visualstudio</span></a>
-            <a href="#" title="已使用*次"><span>操作系统</span></a>
-            <a href="#" title="已使用*次"><span>SQL</span></a>
-            <a href="#" title="已使用*次"><span>职场</span></a>
-            <a href="#" title="已使用*次"><span>法律</span></a>
-            <a href="#" title="已使用*次"><span>Python</span></a>
-            <a href="#" title="已使用*次"><span>.net</span></a>
-            <a href="#" title="已使用*次"><span>css</span></a>
-            <a href="#" title="已使用*次"><span>lunux</span></a>
+            <h1>
+                关键字
+            </h1>
+            <hr />
+            <div>
+                <a href="#" title="已使用*次"><span>编程开发语言</span></a>
+                <a href="#" title="已使用*次"><span>c#</span></a>
+                <a href="#" title="已使用*次"><span>JAVA</span></a>
+                <a href="#" title="已使用*次"><span>工具软件</span></a>
+                <a href="#" title="已使用*次"><span>JavaScript</span></a>
+                <a href="#" title="已使用*次"><span>顾问咨询</span></a>
+                <a href="#" title="已使用*次"><span>HTML</span></a>
+                <a href="#" title="已使用*次"><span>visualstudio</span></a>
+                <a href="#" title="已使用*次"><span>操作系统</span></a>
+                <a href="#" title="已使用*次"><span>SQL</span></a>
+                <a href="#" title="已使用*次"><span>职场</span></a>
+                <a href="#" title="已使用*次"><span>法律</span></a>
+                <a href="#" title="已使用*次"><span>Python</span></a>
+                <a href="#" title="已使用*次"><span>.net</span></a>
+                <a href="#" title="已使用*次"><span>css</span></a>
+                <a href="#" title="已使用*次"><span>lunux</span></a>
+            </div>
+            <hr />
+            <form method="post">
+                <input type="text" name="搜索框" placeholder="直接输入关键字查找" />
+                <input type="submit" name="搜索" title="查找" />
+            </form>
         </div>
-        <hr />
-        <form method="post">
-            <input type="text" name="搜索框" placeholder="直接输入关键字查找" />
-            <input type="submit" name="搜索" title="查找" />
-        </form>
+        <!--表菜单-->
         <ul>
             <li>
                 每日督促
@@ -218,31 +286,31 @@
                         <tr>
                             <td>1</td>
                             <td>第一名</td>
-                            <td><a href="#">用户名</a>&nbsp;<a href="" title="初级学徒">①</a></td>
+                            <td><a href="#">用户名</a><a href="" title="初级学徒">①</a></td>
                             <td>*分</td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>第二名</td>
-                            <td><a href="#">用户名</a>&nbsp;<a href="" title="初级学徒">①</a></td>
+                            <td><a href="#">用户名</a><a href="" title="初级学徒">①</a></td>
                             <td>*分</td>
                         </tr>
                         <tr>
                             <td>3</td>
                             <td>第三名</td>
-                            <td><a href="#">用户名</a>&nbsp;<a href="" title="初级学徒">①</a></td>
+                            <td><a href="#">用户名</a><a href="" title="初级学徒">①</a></td>
                             <td>*分</td>
                         </tr>
                         <tr>
                             <td>4</td>
                             <td>第四名</td>
-                            <td><a href="#">用户名</a>&nbsp;<a href="" title="初级学徒">①</a></td>
+                            <td><a href="#">用户名</a><a href="" title="初级学徒">①</a></td>
                             <td>*分</td>
                         </tr>
                         <tr>
                             <td>5</td>
                             <td>第五名</td>
-                            <td><a href="#">用户名</a>&nbsp;<a href="" title="初级学徒">①</a></td>
+                            <td><a href="#">用户名</a><a href="" title="初级学徒">①</a></td>
                             <td>*分</td>
                         </tr>
                     </tbody>
@@ -251,62 +319,77 @@
             <li>
                 新注册
                 <div>
-                    <time> 2019年08月20日 19点53分</time><br />
-                    <a href="#">用户名</a>&nbsp;<a href="" title="初级学徒">①</a>
-                    <br /><br />
-                    <time> 2019年08月18日 14点41分</time><br />
-                    <a href="#">用户名</a>&nbsp;<a href="" title="初级学徒">①</a>
+                    <time> 2019年08月20日 19点53分</time>
+                    <a href="#">用户名</a><a href="" title="初级学徒">①</a>
+                    <time> 2019年08月18日 14点41分</time>
+                    <a href="#">用户名</a><a href="" title="初级学徒">①</a>
                 </div>
             </li>
         </ul>
-        <h1>
-            精品文章
-        </h1>
-        <hr />
-        <a href="http://17bang.ren/Article/576">
-            决定你IT路能走多远的那些因素：学历、英语和能力，还有运气……
-        </a><br /><br />
-        <a href="http://17bang.ren/Article/575">
-            学好编程要有“三勤”
-        </a><br /><br />
-        <a href="http://17bang.ren/Article/574">
-            源栈培训：其他ASP.NET项目
-        </a><br /><br />
+        <!--精品文章-->
         <div>
-            <span>1</span>
-            <a href="http://17bang.ren/Article/261">
-                学编程，来 “源栈”！飞哥精品小班等着你……
-            </a>
-            <br />
-            <span>2</span>
-            <a href="">
-                广告位
-            </a>
-            <br />
-            <span>3</span>
-            <a href="">
-                广告位
-            </a>
-            <br />
-            <span>4</span>
-            <a href="">
-                广告位
-            </a>
-            <br />
-            <span>5</span>
-            <a href="">
-                广告位
-            </a>
-            <br />
-            <span>6</span>
-            本站由
-            <a href="http://www.west.cn/index.asp?ReferenceID=563969">
-                西部数码
-            </a>
-            提供
+            <h1>
+                精品文章
+            </h1>
+            <hr />
+            <div>
+                <a href="http://17bang.ren/Article/576">
+                    决定你IT路能走多远的那些因素：学历、英语和能力，还有运气……
+                </a>
+            </div>
+            <div>
+                <a href="http://17bang.ren/Article/575">
+                    学好编程要有“三勤”
+                </a>
+            </div>
+            <div>
+                <a href="http://17bang.ren/Article/574">
+                    源栈培训：其他ASP.NET项目
+                </a>
+            </div>
+        </div>
+        <!--广告-->
+        <div>
+            <div>
+                <span>1</span>
+                <a href="http://17bang.ren/Article/261">
+                    学编程，来 “源栈”！飞哥精品小班等着你……
+                </a>
+            </div>
+            <div>
+                <span>2</span>
+                <a href="">
+                    广告位
+                </a>
+            </div>
+            <div>
+                <span>3</span>
+                <a href="">
+                    广告位
+                </a>
+            </div>
+            <div>
+                <span>4</span>
+                <a href="">
+                    广告位
+                </a>
+            </div>
+            <div>
+                <span>5</span>
+                <a href="">
+                    广告位
+                </a>
+            </div>
+            <div>
+                <span>6</span>
+                本站由
+                <a href="http://www.west.cn/index.asp?ReferenceID=563969">
+                    西部数码
+                </a>
+                提供
+            </div>
         </div>
     </aside>
-    <br /><br /><br />
     <hr />
     <footer>
         <div>
@@ -322,7 +405,6 @@
             <a href="">渝ICP备18007191号（备案）</a>
             © 2019 - 首顾科技
         </div>
-        <br />
     </footer>
 </body>
 </html>
