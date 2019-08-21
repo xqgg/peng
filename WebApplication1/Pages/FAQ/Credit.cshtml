@@ -1,0 +1,244 @@
+﻿@page
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>帮帮点·常见问题·peng</title>
+    <link href="~/images/logo.ico" type="image/ico" rel="icon"media="screen"/>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/Index" title="返回首页">
+                <img src="/images/logo-big.ico" alt="一起帮logo" />
+            </a>
+            <div>
+                <ul>
+                    <li>
+                        <a href="/Problem">求助</a>
+                        <ul>
+                            <li>督导班</li>
+                            <li>疑问发布</li>
+                            <li>疑问列表</li>
+                            <li>---------</li>
+                            @*分割线*@
+                            <li>列表</li>
+                            <li>发布</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">督促</a>
+                        <ul>
+                            <li>求督促</li>
+                            <li>督促别人</li>
+                            <li>---------</li>
+                            @*分割线*@
+                            <li>我的目标</li>
+                            <li>我的督促</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">文章</a>
+                        <ul>
+                            <li>列表</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">APP下载</a>
+                        <ul>
+                            <li>Android</li>
+                            <li>iOS</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">登录状态</a>
+                        <ul>
+                            <li>登录</li>
+                            <li><a href="register">注册</a></li>
+                            <li>忘记密码</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div>
+            页眉---------------------------------------------------
+        </div>
+    </header>
+    <main>
+        <h3>如何才能获得帮帮点</h3>
+        <p>一句话：尽可能的多的参加下社区活动。</p>
+        <p>目前的奖励政策如下表所示：</p>
+        <table border="1">
+            <thead>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>社区活动</td>
+                    <td>点数</td>
+                    <td>备注</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="subtitle">*账号相关 </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">注册/邀请注册</td>
+                    <td rowspan="2">10</td>
+                    <td>使用了别人的邀请码</td>
+                </tr>
+                <tr>
+                    <td>别人使用了你的邀请码完成注册</td>
+                </tr>
+                <tr>
+                    <td>激活Email</td>
+                    <td>20</td>
+                    <td>不是填写了Email就有点数，Email必须被验证激活</td>
+                </tr>
+                <tr>
+                    <td colspan="3">*求助相关</td>
+                </tr>
+                <tr>
+                    <td>新人测试</td>
+                    <td>0-30</td>
+                    <td>按测试成绩给点数奖励，每题3点</td>
+                </tr>
+                <tr>
+                    <td>首次求助</td>
+                    <td>20</td>
+                    <td>只能是第一次发布求助，并且审核通过，才能获得点数奖励</td>
+                </tr>
+                <tr>
+                    <td>酬谢</td>
+                    <td></td>
+                    <td>“求助人”酬谢多少$帮帮币 ，就能获得10倍点数奖励</td>
+                </tr>
+                <tr>
+                    <td>获得</td>
+                    <td></td>
+                    <td>
+                        全额酬谢时，酬谢$帮帮币 枚数 * (2 * 获得评价星级)，且5星好评翻番，
+                        问题没有解决不能获得点数奖励。
+                    </td>
+                </tr>
+                <tr>
+                    <td>查看总结</td>
+                    <td>2</td>
+                    <td>只有注册用户才能查看</td>
+                </tr>
+                <tr>
+                    <td>总结被查看</td>
+                    <td>3</td>
+                    <td>只有注册用户才能查看</td>
+                </tr>
+                <tr>
+                    <td>评论总结</td>
+                    <td>5</td>
+                    <td>自己不能评论自己，同一用户同一总结只奖励一次</td>
+                </tr>
+                <tr>
+                    <td colspan="3">*求助相关</td>
+                </tr>
+                <tr>
+                    <td>
+                        赞/踩<br />
+                        总结<br />
+                        文章<br />
+                        意见建议及给<br />
+                        他们的评论
+                    </td>
+                    <td>1</td>
+                    <td>无论是点赞，还是拍砖，评价一次就得1点（可多次点击）</td>
+                </tr>
+                <tr>
+                    <td>
+                        总结<br />
+                        文章<br />
+                        意见建议及给<br />
+                        他们的评论<br />
+                        被点赞
+                    </td>
+                    <td>2</td>
+                    <td>被点赞一次得2点</td>
+                </tr>
+                <tr>
+                    <td>
+                        文章评论被精选
+                    </td>
+                    <td>10</td>
+                    <td>由文章作者精选</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        *督促
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        发布目标
+                    </td>
+                    <td></td>
+                    <td>同目标未交作业惩罚数</td>
+                </tr>
+                <tr>
+                    <td>加入目标</td>
+                    <td>5</td>
+                    <td>只要加入就可以获得</td>
+                </tr>
+                <tr>
+                    <td>交作业</td>
+                    <td>2</td>
+                    <td>只要交一次作业求助人就可获得</td>
+                </tr>
+                <tr>
+                    <td>验收</td>
+                    <td>2</td>
+                    <td>
+                        好心人验收通过，给予好心人的帮帮点奖励。拒绝或质疑不能获得
+                        （拒绝有帮帮币补偿）
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">*其他</td>
+                </tr>
+                <tr>
+                    <td>意见建议</td>
+                    <td></td>
+                    <td>由管理员确定奖励点数</td>
+                </tr>
+            </tbody>
+        </table>
+        <p> 政策可能有实时调整，稍许滞后，还敬请谅解。</p>
+    </main>
+    <aside>
+        <h4>人工客服</h4>
+        <div>
+            <img src="~/images/QQ.png" alt="QQ:" />
+            <a>自由飞（2282636022）</a>
+        </div>
+        <div>
+            <img src="~/images/QQ.png" alt="QQ:" />
+            <a>cjty8281（314060063）</a>
+        </div>
+    </aside>
+    <footer>
+        <div>
+            <a>关于我们</a> |
+            <a href="faq">常见问题</a> |
+            <a>意见建议</a> |
+            <a>历史通知</a> |
+            <a>友情捐赠</a> |
+            <a>融资2019</a>
+        </div>
+        <div>友情链接：</div>
+        <div>
+            <a href="">渝ICP备18007191号（备案）</a>
+            © 2019 - 首顾科技
+        </div>
+    </footer>
+</body>
+</html>
