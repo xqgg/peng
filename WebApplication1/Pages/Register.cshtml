@@ -6,87 +6,130 @@
     <link href="~/images/logo.ico" type="image/ico" rel="icon" media="screen" />
 </head>
 <body>
-    <nav>
-        <a href="https://localhost:44331/" title="返回首页">
-            <img src="/images/logo-big.ico" alt="一起帮logo" />
-        </a>
-        <div>
-            <ul>
-                <li>
-                    <a href="#">求助</a>
-                    <ul>
-                        <li>督导班</li>
-                        <li>疑问发布</li>
-                        <li>疑问列表</li>
-                        <li>---------</li>
-                        @*分割线*@
-                        <li>列表</li>
-                        <li>发布</li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">督促</a>
-                    <ul>
-                        <li>求督促</li>
-                        <li>督促别人</li>
-                        <li>---------</li>
-                        @*分割线*@
-                        <li>我的目标</li>
-                        <li>我的督促</li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">文章</a>
-                    <ul>
-                        <li>列表</li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">APP下载</a>
-                    <ul>
-                        <li>Android</li>
-                        <li>iOS</li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">登录状态</a>
-                    <ul>
-                        <li>登录</li>
-                        <li><a href="register">注册</a></li>
-                        <li>忘记密码</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
     <header>
+        <nav>
+            <a href="/Index" title="返回首页">
+                <img src="/images/logo-big.ico" alt="一起帮logo" />
+            </a>
+            <div>
+                <ul>
+                    <li>
+                        <a href="/Problem">求助</a>
+                        <ul>
+                            <li>督导班</li>
+                            <li>疑问发布</li>
+                            <li>疑问列表</li>
+                            <li>---------</li>
+                            @*分割线*@
+                            <li>列表</li>
+                            <li>发布</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">督促</a>
+                        <ul>
+                            <li>求督促</li>
+                            <li>督促别人</li>
+                            <li>---------</li>
+                            @*分割线*@
+                            <li>我的目标</li>
+                            <li>我的督促</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">文章</a>
+                        <ul>
+                            <li>列表</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">APP下载</a>
+                        <ul>
+                            <li>Android</li>
+                            <li>iOS</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">登录状态</a>
+                        <ul>
+                            <li>登录</li>
+                            <li><a href="register">注册</a></li>
+                            <li>忘记密码</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <div>
             页眉---------------------------------------------------
         </div>
     </header>
-    <h1>注册</h1>
-    <hr />
-    <a href="">为什么需要邀请</a>
-    <form method="post">
-        邀请人：（*必填，<a href="">没有邀请人</a>）<br />
-        <input type="text" placeholder="他的用户名" name="inviter username" size="50" /><br />
-        邀请码：（*必填，）<br />
-        <input type="text" placeholder=" 四位数字" name="Invitation code" size="50" /><br />
-        用户名：（*必填，）<br />
-        <input type="text" placeholder=" 登录用户名，可修改，不可重复" name="username" size="50" />  <br />
-        密码：（*必填，）<br />
-        <input type="password" placeholder="不少于4个字符" name="password" size="50" /><br />
-        验证密码：（*必填，）<br />
-        <input type="password" placeholder="与密码相同" name="password" size="50" /><br />
-        验证码：（*必填，）<br />
-        <input type="text" name="security code" />
-        <img src="~/images/1565936228559.jpeg" width="50 " />
-        <a href="">看不清楚</a>
-        <br />
-        <input type="submit" />
-        <input type="reset" />
-    </form>
-    <br /><br /><br />
+    <main>
+        <h1>注册</h1>
+        <hr />
+        <a href="#">为什么需要邀请</a>
+        <form method="post">
+            <div>邀请人：（*必填，<a href="">没有邀请人</a>）</div>
+            <div> <input type="text" placeholder="他的用户名" name="inviterusername" size="50" /></div>
+            <div>邀请码：（*必填，）</div>
+            <div><input type="text" placeholder=" 四位数字" name="InvitationCode" size="50" /></div>
+            <div>用户名：（*必填，）</div>
+            <div><input type="text" placeholder=" 登录用户名，可修改，不可重复" name="username" size="50" /></div>
+            <div>密码：（*必填，）</div>
+            <div><input type="password" placeholder="不少于4个字符" name="password" size="50" /></div>
+            <div>验证密码：（*必填，）</div>
+            <div><input type="password" placeholder="与密码相同" name="password" size="50" /> </div>
+            <div>验证码：（*必填，）</div>
+            <div>
+                <input type="text" name="securityCode" />
+                <img src="~/images/1565936228559.jpeg" alt="验证码" width="50" />
+                <a href="#">看不清楚</a>
+            </div>
+            <div>
+                <input type="submit" />
+                <input type="reset" />
+            </div>
+        </form>
+    </main>
+    <aside>
+        <div>
+            <h3>说明</h3>
+            <ol>
+                <li>
+                    <span>
+                        我们希望通过一起帮，能直接解决大家在电脑操作/软件使用/编程学习等方面的具体问题。
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        现在互联网远程技术（比如QQ桌面共享）已经非常成熟，当我们
+                        再遇到上述问题，如果别人能直接远程给予帮助，岂不是好？
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        当然，你也可以在你熟悉的领域去帮助别人。由此而形成我们这
+                        个“你帮他他帮我我帮你，大家一起帮”的网上互助社区平台。
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        公平起见，我们还引入了 帮帮点/币/豆 三级概念，以记录和衡量社区成员的收获和贡献。
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        赶快加入我们，赚取帮帮币吧！
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <a>了解更多</a>
+                    </span>
+                </li>
+            </ol>
+        </div>
+    </aside>
     <hr />
     <footer>
         <div>
@@ -102,7 +145,6 @@
             <a href="">渝ICP备18007191号（备案）</a>
             © 2019 - 首顾科技
         </div>
-        <br />
     </footer>
 </body>
 </html>
