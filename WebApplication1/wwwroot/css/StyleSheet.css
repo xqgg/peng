@@ -1,0 +1,138 @@
+﻿body {
+    margin: 0;
+    padding-top: 58px;
+    padding-bottom: 50px;
+    font-size: 14px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #333;
+}
+
+table, td, tr, th {
+    border: 1px solid #cccccc;
+    border-collapse: collapse;
+}
+
+th {
+    white-space: nowrap;
+    padding: 8px
+}
+
+td {
+    padding: 8px;
+    vertical-align: top;
+}
+
+.subtitle {
+    background-color: antiquewhite;
+    text-indent: 2em;
+}
+
+thead {
+    text-align: left;
+}
+
+nav > ul > li {
+    float: left;
+}
+
+.page-header {
+    clear: both;
+}
+
+nav > ul > li > a {
+    color: #777;
+}
+
+nav {
+    float: right;
+    margin-right: 12em;
+}
+
+li {
+    list-style: none;
+}
+
+main {
+    width: 75em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#main-div {
+    padding-left:15px;
+    padding-right:15px;
+    width: 66%;
+    float: left;
+}
+
+#bang-logo {
+    float: left;
+    margin-left: 10em;
+}
+
+#bang-title {
+    float: left;
+    margin: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #777;
+}
+
+#bang-title-1 {
+    font-size: initial !important;
+    font-weight: initial !important;
+}
+
+footer {
+    clear: both;
+    width: 75em;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*.staff-service {
+    float: right;
+    border: dashed 1px #c5c4c4;
+    padding: 15px;
+}*/
+
+h4 {
+    margin-top: 5px;
+    margin-bottom: 20px
+}
+
+h1 {
+    margin: 0;
+}
+
+.page-header {
+    margin-left: 12em;
+}
+
+.pull-right {
+    /*margin-right: 10em !important;*/
+    float: right;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+a:link {
+    text-decoration: none
+}
+
+.widget {
+    border: dashed 1px;
+    padding: 10px;
+}
+
+aside {
+    /*width: 33%;*/
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+}
