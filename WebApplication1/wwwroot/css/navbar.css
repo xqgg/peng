@@ -1,0 +1,12 @@
+﻿body {
+    padding-top: 54px;
+    padding-bottom: 50px;
+    margin: 0;
+}
+.main-content {
+    margin-top: 55px;
+}
+.navbar {
+    min-height: 50px;
+    margin-bottom: 20px;
+}

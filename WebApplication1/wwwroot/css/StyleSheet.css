@@ -12,13 +12,6 @@
     border-bottom-right-radius: 2px 3px;
 }
 
-
-table {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 20px;
-}
-
 td.subtitle {
     padding: 4px 36px !important;
     background-color: antiquewhite;
@@ -30,25 +23,8 @@ td.subtitle {
     margin-bottom: 30px;
 }
 
-.main-content {
-    margin-top: 55px;
-}
-
 .h2-inline {
     font-size: 30px;
-}
-
-.navbar {
-    min-height: 50px;
-    margin-bottom: 20px;
-}
-
-#navbar-content {
-    padding: 0 !important;
-}
-
-#alonghelp-logo {
-    float: left;
 }
 
 .flag {
@@ -62,4 +38,8 @@ td.subtitle {
 
 #flag-Service {
     top: 60px;
+}
+
+thead > tr > th {
+    white-space: nowrap;
 }
