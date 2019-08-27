@@ -4,12 +4,19 @@
     margin: 0;
 }
 
-.top-user-message {
+/*.top-user-message {
     background-color: #eee;
     margin-top: 2px;
     padding: 5px 20px;
     border-bottom-left-radius: 2px 3px;
     border-bottom-right-radius: 2px 3px;
+}*/
+
+
+table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
 }
 
 td.subtitle {
@@ -23,9 +30,26 @@ td.subtitle {
     margin-bottom: 30px;
 }
 
+/*.main-content {
+    margin-top: 55px;
+}*/
+
 .h2-inline {
     font-size: 30px;
 }
+
+/*.navbar {
+    min-height: 50px;
+    margin-bottom: 20px;
+}*/
+
+#navbar-content {
+    padding: 0 !important;
+}
+
+/*#alonghelp-logo {
+    float: left;
+}*/
 
 .flag {
     z-index: 100;
@@ -39,7 +63,6 @@ td.subtitle {
 #flag-Service {
     top: 60px;
 }
-
 thead > tr > th {
     white-space: nowrap;
 }

@@ -5,8 +5,18 @@
 }
 .main-content {
     margin-top: 55px;
+    margin-bottom:50px;
 }
 .navbar {
     min-height: 50px;
     margin-bottom: 20px;
 }
+
+.top-user-message {
+    background-color: #eee;
+    margin-top: 2px;
+    padding: 5px 20px;
+    border-bottom-left-radius: 2px 3px;
+    border-bottom-right-radius: 2px 3px;
+}
+
