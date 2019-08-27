@@ -1,0 +1,15 @@
+﻿body {
+}
+
+#input-securityCode {
+    width: 80px;
+    display: inline;
+}
+
+#yellow-highlight {
+    padding: 0 10px 0 10px;
+    margin-bottom: 10px;
+    background-color: #ffffe0;
+    border: 2px dashed #eee;
+    border-radius: 4px 5px;
+}
