@@ -1,138 +1,65 @@
 ﻿body {
-    margin: 0;
-    padding-top: 58px;
+    padding-top: 54px;
     padding-bottom: 50px;
-    font-size: 14px;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: #333;
-}
-
-table, td, tr, th {
-    border: 1px solid #cccccc;
-    border-collapse: collapse;
-}
-
-th {
-    white-space: nowrap;
-    padding: 8px
-}
-
-td {
-    padding: 8px;
-    vertical-align: top;
-}
-
-.subtitle {
-    background-color: antiquewhite;
-    text-indent: 2em;
-}
-
-thead {
-    text-align: left;
-}
-
-nav > ul > li {
-    float: left;
-}
-
-.page-header {
-    clear: both;
-}
-
-nav > ul > li > a {
-    color: #777;
-}
-
-nav {
-    float: right;
-    margin-right: 12em;
-}
-
-li {
-    list-style: none;
-}
-
-main {
-    width: 75em;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#main-div {
-    padding-left:15px;
-    padding-right:15px;
-    width: 66%;
-    float: left;
-}
-
-#bang-logo {
-    float: left;
-    margin-left: 10em;
-}
-
-#bang-title {
-    float: left;
-    margin: 15px;
-    font-size: 18px;
-    font-weight: 700;
-    color: #777;
-}
-
-#bang-title-1 {
-    font-size: initial !important;
-    font-weight: initial !important;
-}
-
-footer {
-    clear: both;
-    width: 75em;
-    margin-left: auto;
-    margin-right: auto;
-}
-/*.staff-service {
-    float: right;
-    border: dashed 1px #c5c4c4;
-    padding: 15px;
-}*/
-
-h4 {
-    margin-top: 5px;
-    margin-bottom: 20px
-}
-
-h1 {
     margin: 0;
 }
 
-.page-header {
-    margin-left: 12em;
+.top-user-message {
+    background-color: #eee;
+    margin-top: 2px;
+    padding: 5px 20px;
+    border-bottom-left-radius: 2px 3px;
+    border-bottom-right-radius: 2px 3px;
 }
 
-.pull-right {
-    /*margin-right: 10em !important;*/
-    float: right;
-}
 
-hr {
-    margin-top: 20px;
+table {
+    width: 100%;
+    max-width: 100%;
     margin-bottom: 20px;
-    border: 0;
-    border-top: 1px solid #eee;
 }
 
-a:link {
-    text-decoration: none
+td.subtitle {
+    padding: 4px 36px !important;
+    background-color: antiquewhite;
 }
 
 .widget {
-    border: dashed 1px;
-    padding: 10px;
+    border: dashed 1px #eee;
+    padding: 15px;
+    margin-bottom: 30px;
 }
 
-aside {
-    /*width: 33%;*/
+.main-content {
+    margin-top: 55px;
+}
+
+.h2-inline {
+    font-size: 30px;
+}
+
+.navbar {
+    min-height: 50px;
+    margin-bottom: 20px;
+}
+
+#navbar-content {
+    padding: 0 !important;
+}
+
+#一起帮logo {
     float: left;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
+}
+
+.flag {
+    z-index: 100;
+    position: fixed;
+    background-color: rgba(128,255,212,.7);
+    padding: 5px 7px;
+    border-bottom-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+#人工客服{
+    top:60px;
 }

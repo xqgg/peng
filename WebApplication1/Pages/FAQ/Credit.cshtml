@@ -7,77 +7,142 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
     <title>帮帮点·常见问题·peng</title>
     <link href="~/images/logo.ico" type="image/ico" rel="icon" media="screen" />
-    <link href="/css/StyleSheet.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
     <header>
-        <a href="/Index" title="返回首页" id="bang-logo">
-            <img src="/images/logo-big.ico" alt="一起帮logo" />
-        </a>
-        <p id="bang-title">
-            <span>一起帮</span>
-            <span id="bang-title-1">· 网络互助平台</span>
-        </p>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/Problem">求助</a>
-                    <ul role="menu">
-                        <li>督导班</li>
-                        <li>疑问发布</li>
-                        <li>疑问列表</li>
-                        <li><hr /></li>
-                        @*分割线*@
-                        <li>列表</li>
-                        <li>发布</li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">督促</a>
-                    <ul>
-                        <li>求督促</li>
-                        <li>督促别人</li>
-                        <li><hr /></li>
-                        @*分割线*@
-                        <li>我的目标</li>
-                        <li>我的督促</li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">文章</a>
-                    <ul>
-                        <li>列表</li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">APP下载</a>
-                    <ul>
-                        <li>Android</li>
-                        <li>iOS</li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">登录状态</a>
-                    <ul>
-                        <li>登录</li>
-                        <li><a href="/register">注册</a></li>
-                        <li>忘记密码</li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <div class="page-header">
-            页眉---------------------------------------------------
+        <!--导航-->
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid container">
+                <!--标题-->
+                <div class="pull-left">
+                    <a href="/Index" title="返回首页" id="一起帮logo">
+                        <img src="/images/logo-big.ico" alt="一起帮logo" />
+                    </a>
+                    <p class="navbar-text pull-left" id="">
+                        <span>一起帮</span>
+                        <span class="visible-lg-inline visible-md-inline">·网络互助平台</span>
+                    </p>
+                </div>
+                <!--移动端-->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed"
+                            data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                            aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!--pc-->
+                <div class="collapse navbar-collapse " id="navbar-content">
+                    <nav class="pull-right">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle"
+                                   data-toggle="dropdown" role="button"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    <span class=" glyphicon glyphicon-question-sign"></span>
+                                    求助
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">督导班</a></li>
+                                    <li><a href="#">疑问发布</a></li>
+                                    <li><a href="#">疑问列表</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">列表</a></li>
+                                    <li><a href="#">发布</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown open">
+                                <a href="#" class="dropdown-toggle"
+                                   data-toggle="dropdown" role="button"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    <span class=" glyphicon glyphicon-eye-open"></span>
+                                    督促
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">求督促</a></li>
+                                    <li><a href="#">督促别人</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">我的目标</a></li>
+                                    <li><a href="#">我的督促</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle"
+                                   data-toggle="dropdown" role="button"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    <span class="glyphicon glyphicon-paperclip"></span>
+                                    文章
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">列表</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle"
+                                   data-toggle="dropdown" role="button"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    APP下载
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Android</a></li>
+                                    <li><a href="#">iOS</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle"
+                                   data-toggle="dropdown" role="button"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    登录状态
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">登录</a></li>
+                                    <li><a href="/register">注册</a></li>
+                                    <li><a href="#">忘记密码</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+        </div>
+        <!--页眉-->
+        <div class="container visible-lg top-user-message">
+            <a class="pull-right">全部消息</a>
+            <div>
+                <span> Saber捡走了 skyline ② 掉落的 帮帮币 1枚 </span>
+            </div>
         </div>
     </header>
-    <main>
-        <div id="main-div">
-            <h1><a href="#">帮帮点</a></h1>
-            <hr />
-            <div>
+    <main class="container">
+        <div class="row main-content">
+            <!--正文-->
+            <div class="col-lg-8">
+                @*<span style="top:60px;" class="visible-xs-inline visible-sm-inline flag">
+                    <a zyf-show-widget="">
+                        <span class="fa fa-user-circle-o"></span> 人工客服
+                    </a>
+                </span>*@
+                <span id="人工客服" class="flag visible-sm-inline visible-xs-iline">
+                    人工客服
+                </span>
+                <div class="h2-inline">
+                    <a href="/FAQ/Credit" title="点击了解">
+                        <span class="iconfont icon-drips"></span> 帮帮点
+                    </a>
+                </div>
+                <hr />
                 <a name="what"></a>
                 <h3>
                     Q：什么是帮帮点？有什么用处？
@@ -95,7 +160,7 @@
                     每达到一个等级（等级图标正在制作中……），都会掉
                     落相应的 帮帮币 。
                 </p>
-                <table>
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th></th>
@@ -167,13 +232,11 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
-            <div>
                 <a name="gain"></a>
                 <h3>Q：如何才能获得帮帮点？</h3>
                 <p>一句话：尽可能的多的参加下社区活动。</p>
                 <p>目前的奖励政策如下表所示：</p>
-                <table>
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>社区活动</th>
@@ -313,22 +376,23 @@
                 </table>
                 <p> 政策可能有实时调整，稍许滞后，还敬请谅解。</p>
             </div>
+            <!--侧边栏-->
+            <aside class="col-lg-4 widget">
+                <div>
+                    <h4>人工客服</h4>
+                    <div>
+                        <img src="~/images/QQ.png" alt="QQ:" />
+                        <a>自由飞（2282636022）</a>
+                    </div>
+                    <div>
+                        <img src="~/images/QQ.png" alt="QQ:" />
+                        <a>cjty8281（314060063）</a>
+                    </div>
+                </div>
+            </aside>
         </div>
-        <aside>
-            <div class="widget">
-                <h4>人工客服</h4>
-                <div>
-                    <img src="~/images/QQ.png" alt="QQ:" />
-                    <a>自由飞（2282636022）</a>
-                </div>
-                <div>
-                    <img src="~/images/QQ.png" alt="QQ:" />
-                    <a>cjty8281（314060063）</a>
-                </div>
-            </div>
-        </aside>
     </main>
-    <footer>
+    <footer class=" container">
         <hr />
         <div>
             <a>关于我们</a> |
