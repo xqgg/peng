@@ -1,0 +1,19 @@
+﻿body {
+}
+
+.problem-status {
+    font-size: 70%;
+    padding: 2px 8px;
+    vertical-align: middle;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.label-default {
+    background-color: #777777;
+}
+
+.article-main {
+    font-size: 24px;
+    word-break: break-all;
+}
