@@ -1,11 +1,11 @@
 ﻿@page
 <html>
 <head>
-    <title>求助·一起帮·peng</title>
+    <title>文章·一起帮·peng</title>
     <link href="/images/logo.ico" type="image/ico" rel="icon" media="screen" />
     <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="/lib/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
-    <link href="/css/Problem.css" rel="stylesheet" />
+    <link href="/css/Article.css" rel="stylesheet" />
     <link href="/css/navbar.css" rel="stylesheet" />
     <link href="/css/widget.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -122,189 +122,182 @@
         </div>
     </header>
     <main>
-        <div class="container main-content">
+        <div class="container main-content clearfix">
             <div class="row">
                 <div class="col-lg-8">
-                    <!--筛选-->
-                    <form class="form-group" method="post" id="sifter">
-                        <label class="checkbox-inline">
-                            <span class="glyphicon glyphicon-eye-close"></span>
-                            <span>不显示：</span>
-                        </label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="已酬谢" />已酬谢
-                        </label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="已撤销" />已撤销
-                        </label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="协助中" />协助中
-                        </label>
-                        <label class="checkbox-inline">
-                            <span class="glyphicon glyphicon-eye-open"></span>
-                            <span>只显示：</span>
-                        </label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="我的关注" />我的关注
-                        </label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="有总结" />有总结
-                        </label>
-                    </form>
                     <!--帖子-->
                     <div>
-                        <hr />
-                        <time>
-                            <span class="glyphicon glyphicon-calendar"></span>
-                            2019年08月05日 10点07分
-                        </time>
-                        <span class="pull-right">
-                            <span><span class="glyphicon glyphicon-user"></span><a>28zhu</a></span>
-                            <span>
-                                <a href="#" title="初级教师">④</a>
+                        <div class="articleContent">
+                            <time>
+                                <span class="glyphicon glyphicon-calendar"></span>
+                                2019年08月05日 10点07分
+                            </time>
+                            <span class="pull-right">
+                                <span><span>作者：</span><a>叶飞</a></span>
                             </span>
-                        </span>
-                        <div class="article-main">
-                            <span class="problem-status label-default">已撤销</span>
-                            <a href="" style="color:black">
-                                有一个自定义UI控件，此控件使用在不同的系统中会有不同的呈现，
-                                之前的做法是各种switch case，阅读代码时让人很难受，另外新创建一
-                                个用到此控件的系统，要修改代码的地方也多，只要有swich case 的地
-                                方都要再加一个case。请教一个好一些的方式来处理这个问题，目的是
-                                让代码更加清楚
-                            </a>
+                            <div>
+                                <p>
+                                    <a>
+                                        决定你IT路能走多远的那些因素：学历、英语和能力，还有运气……
+                                    </a>
+                                </p>
+                                <p class="">
+                                    学历问的人最多，其实是最不重要的一个。有，当然更好；没有，
+                                    也不是无法弥补各行各业都有学历歧视，但IT行业，相对来说是歧视
+                                    最少的——因为IT他很“硬”：再高的学历，做不出来东西都是扯淡再低
+                                    的学历，能干活就能领到工资当然，没有学历，必然要比有学历付出
+                                    更多艰辛，甚至屈辱。英语被太多太多同学忽视。之前：编程=数据结构+算法,
+                                    现在：编程=google+英语英语能力，决定你能否：更快的入门（编程语言都是
+                                    用英语书写）找到更多解决问题的渠道（英语+中文>中文）了解最前沿的技
+                                    术（什么都等着翻译是不现实的，.NET开源之
+                                    <a title="全文">……</a>
+                                </p>
+                                <p>
+                                    <span class="glyphicon glyphicon-tags"></span>
+                                    关键字：
+                                    <span class="badge">编程</span>
+                                    <span class="badge">学历</span>
+                                    <span class="badge">英语</span>
+                                    <span class="badge">运气</span>
+                                </p>
+                                <div class="status pull-right">
+                                    <a class="text-info">
+                                        <span class="glyphicon glyphicon-comment "></span>
+                                        <span>评论：</span>
+                                        <span>0</span>
+                                    </a>
+                                    <a class="text-success">
+                                        <span class="glyphicon glyphicon-thumbs-up "></span>
+                                        <span>赞：</span>
+                                        <span>168</span>
+                                    </a>
+                                    <a class="text-danger">
+                                        <span class="glyphicon glyphicon-thumbs-down "></span>
+                                        <span>踩：</span>
+                                        <span>25</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-
-                        <div>
-                            <span>
-                                RT，也不知道描述的清楚不清楚。求一个思路
+                        <div class="articleContent">
+                            <time>
+                                <span class="glyphicon glyphicon-calendar"></span>
+                                2019年08月15日 17点40分
+                            </time>
+                            <span class="pull-right">
+                                <span><span>作者：</span><a>叶飞</a></span>
                             </span>
-                            <span>
-                                <a href="" title="全文">......</a>
-                            </span>
+                            <div>
+                                <p>
+                                    <a>
+                                        学好编程要有“三勤”
+                                    </a>
+                                </p>
+                                <p class="">
+                                    脑勤勤于思考，多问几个为什么辩证和独立手勤大胆假设，
+                                    小心求证：我有一个idea，或者我有点拿不准那就试一试键盘敲烂，
+                                    月薪过万一定要上手熟练度非常重要编程是一个手艺活对自己的代码
+                                    狠一点口勤多问：不然你的线下学习就亏了哟，^_^多交流：同学之间，
+                                    聊天多聊聊技术多表达：珍惜每天第四节课的模拟面试机会
+                                    <a title="全文">……</a>
+                                </p>
+                                <p>
+                                    <span class="glyphicon glyphicon-tags"></span>
+                                    关键字：
+                                    <span class="badge">编程</span>
+                                    <span class="badge">学习</span>
+                                    <span class="badge">方法</span>
+                                    <span class="badge">技巧</span>
+                                </p>
+                                <div class="status pull-right">
+                                    <a class="text-info">
+                                        <span class="glyphicon glyphicon-comment "></span>
+                                        <span>评论：</span>
+                                        <span>0</span>
+                                    </a>
+                                    <a class="text-success">
+                                        <span class="glyphicon glyphicon-thumbs-up "></span>
+                                        <span>赞：</span>
+                                        <span>0</span>
+                                    </a>
+                                    <a class="text-danger">
+                                        <span class="glyphicon glyphicon-thumbs-down "></span>
+                                        <span>踩：</span>
+                                        <span>0</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <span>
-                                <a href="" title="已使用1次" class="badge">不限</a>
+                        <div class="articleContent">
+                            <time>
+                                <span class="glyphicon glyphicon-calendar"></span>
+                                2019年08月15日 17点40分
+                            </time>
+                            <span class="pull-right">
+                                <span><span>作者：</span><a>叶飞</a></span>
                             </span>
-                            <span>
-                                <a href="" title="已使用1次" class="badge">顾问咨询</a>
-                            </span>
-                            <span>
-                                <a href="" title="已使用1次" class="badge ">编程开发语言</a>
-                            </span>
+                            <div>
+                                <p>
+                                    <a>
+                                        源栈培训：其他ASP.NET项目
+                                    </a>
+                                </p>
+                                <p class="">
+                                    Web API 返回纯数据（JSON/XML/其他格式），
+                                    而不是HTML页面推出背景：RESTful设计理念：
+                                    无状态（http）和 资源（url）通过动词（verb）
+                                    确定动作：Get/Post/Put/Delete……（问题：
+                                    GET/POST就已经有些“无所谓”了，再添加PUT和DELETE，
+                                    概念进一步混淆）和MVC最大的不同：route配置在：
+                                    WebApiConfig.cs，注意：默认有action！根据Request的method，
+                                    在ApiController的子类controller中找Action
+                                    <a title="全文">……</a>
+                                </p>
+                                <p>
+                                    <span class="glyphicon glyphicon-tags"></span>
+                                    关键字：
+                                    <span class="badge">源栈培训</span>
+                                    <span class="badge">ASP.NET</span>
+                                </p>
+                                <div class="status pull-right">
+                                    <a class="text-info">
+                                        <span class="glyphicon glyphicon-comment "></span>
+                                        <span>评论：</span>
+                                        <span>0</span>
+                                    </a>
+                                    <a class="text-success">
+                                        <span class="glyphicon glyphicon-thumbs-up "></span>
+                                        <span>赞：</span>
+                                        <span>0</span>
+                                    </a>
+                                    <a class="text-danger">
+                                        <span class="glyphicon glyphicon-thumbs-down "></span>
+                                        <span>踩：</span>
+                                        <span>0</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="status">
-                            <span>
-                                <a class="glyphicon glyphicon-bitcoin"></a>
-                                <span>
-                                    悬赏：
-                                </span>
-                                <span title="定额">
-                                    15
-                                </span>
-                            </span>
-                            <span>
-                                <span class="glyphicon glyphicon-heart"></span>
-                                <span>
-                                    <a href="">应答：</a>
-                                </span>
-                                <span>
-                                    1
-                                </span>
-                            </span>
-                            <span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span>
-                                    <a href="">总结：</a>
-                                </span>
-                                <span>
-                                    0
-                                </span>
-                            </span>
-                        </div>
-                    </div>
-                    <div>
-                        <hr />
-                        <time>
-                            <span class="glyphicon glyphicon-calendar">
-                            </span>2019年08月05日 10点07分
-                        </time>
-                        <span class="pull-right">
-                            <span><span class="glyphicon glyphicon-user"></span><a>WhiteWater</a></span>
-                            <span>
-                                <a href="#" title="初级教师">④</a>
-                            </span>
-                        </span>
-                        <div class="article-main">
-                            <span class="problem-status label-default">已撤销</span>
-                            <a href="" style="color:black">
-                                手动导入jar包，运行报错的问题
-                            </a>
-                        </div>
-                        <div>
-                            <span>
-                                运行就报这个错误，这个jar包我导入项目了的，不然编译都无法通过。
-                            </span>
-                            <span>
-                                <a href="" title="全文">......</a>
-                            </span>
-                        </div>
-                        <div>
-                            <span>
-                                <a href="" title="已使用1次" class="badge">Windows</a>
-                            </span>
-                            <span>
-                                <a href="" title="已使用1次" class="badge">Linux</a>
-                            </span>
-                            <span>
-                                <a href="" title="已使用1次" class="badge">IDEA</a>
-                            </span>
-                            <span>
-                                <a href="" title="已使用1次" class="badge">JAVA</a>
-                            </span>
-                            <span>
-                                <a href="" title="已使用1次" class="badge">C++</a>
-                            </span>
-                            <span>
-                                <a href="" title="已使用1次" class=badge>工具软件</a>
-                            </span>
-                            <span>
-                                <a href="" title="已使用1次" class="badge">操作系统</a>
-                            </span>
-                            <span>
-                                <a href="" title="已使用1次" class="badge">编程开发语言</a>
-                            </span>
-                        </div>
-                        <div class="status">
-                            <span>
-                                <a class="glyphicon glyphicon-bitcoin"></a>
-                                <span>
-                                    悬赏：
-                                </span>
-                                <span title="定额">
-                                    15
-                                </span>
-                            </span>
-                            <span>
-                                <span class="glyphicon glyphicon-heart"></span>
-                                <span>
-                                    <a href="">应答：</a>
-                                </span>
-                                <span>
-                                    1
-                                </span>
-                            </span>
-                            <span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span>
-                                    <a href="">总结：</a>
-                                </span>
-                                <span>
-                                    0
-                                </span>
-                            </span>
-                        </div>
+                        <!--翻页按钮-->
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
                 <aside class="col-lg-4 visible-md visible-lg">
@@ -462,19 +455,19 @@
                             <span class="item-1 order-tag">1</span>
                             <a href="http://17bang.ren/Article/261">学编程，来 “源栈”！飞哥精品小班等着你……</a>
                         </div>
-                        <div class="ad-in-widget">
+                        <div  class="ad-in-widget">
                             <span class="item-2 order-tag">2</span>
                             <a href="">
                                 广告位
                             </a>
                         </div>
-                        <div class="ad-in-widget">
+                        <div  class="ad-in-widget">
                             <span class="item-3 order-tag">3</span>
                             <a href="">
                                 广告位
                             </a>
                         </div>
-                        <div class="ad-in-widget">
+                        <div  class="ad-in-widget">
                             <span class="item-4 order-tag">4</span>
                             <a href="">
                                 广告位
