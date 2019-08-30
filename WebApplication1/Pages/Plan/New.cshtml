@@ -1,12 +1,11 @@
 ﻿@page
 <html>
 <head>
-    <title>首页·一起帮·peng</title>
-    <link href="/images/logo.ico" type="image/ico" rel="icon" media="screen" />
-    <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    <link href="/lib/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
-    <link href="/css/Index.css" rel="stylesheet" />
-    <link href="/css/navbar.css" rel="stylesheet" />
+    <title>发布新目标·peng</title>
+    <link href="~/images/logo.ico" type="image/ico" rel="icon" media="screen" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/css/navbar.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
@@ -93,7 +92,7 @@
                                     <li><a href="#">iOS</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown open">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle"
                                    data-toggle="dropdown" role="button"
                                    aria-haspopup="true" aria-expanded="false">
@@ -101,9 +100,9 @@
                                     <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="/Log/On">登录</a></li>
-                                    <li><a href="/Register">注册</a></li>
-                                    <li><a href="/Password/forget">忘记密码</a></li>
+                                    <li><a href="#">登录</a></li>
+                                    <li><a href="/register">注册</a></li>
+                                    <li><a href="#">忘记密码</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -121,36 +120,85 @@
         </div>
     </header>
     <main>
-        <div class="container main-content">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-4 home-card">
-                    <div class="lead content">
-                        <img src="/images/求助.png" alt="图片：求助" class="img-responsive center-block" />
-                        <h1 class="text-center">一对一远程协助</h1>
-                        <p class="text-center">帮忙就要帮到底</p>
-                        <a href="/Problem" class="btn btn-primary btn-lg btn-block bottom">求助</a>
+                <div class=" col-lg-12">
+                    <h2><span class=" glyphicon glyphicon-edit "></span>发布新目标</h2>
+                    <hr />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <form action="/" method="post">
+                            <label for="inviterusername">标题（必填）：</label>
+                            <input type="text" class="form-control" placeholder="他的用户名" name="inviterusername" />
+                            <label for="invitationCode">详细说明：</label>
+                            <input type="text" class="form-control" placeholder=" 四位数字" name="invitationCode" />
+                        </form>
+                    </div>
+                    <div class="form-group">
+                        <form method="post">
+                            <label for="invitationCode">用户名：（*必填，）</label>
+                            <input type="text" class="form-control" placeholder=" 登录用户名，可修改，不可重复" name="username" />
+                            <label for="invitationCode">密码：（*必填，）</label>
+                            <input type="password" class="form-control" placeholder="不少于4个字符" name="password" />
+                            <label for="invitationCode">验证密码：（*必填，）</label>
+                            <input type="password" class="form-control" placeholder="与密码相同" name="password" />
+                            <label for="invitationCode">验证码：（*必填，）</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="input-securityCode" name="securityCode" />
+                                <img src="~/images/1565936228559.jpeg" alt="验证码" title="验证码" width="30" />
+                                <a href="#">看不清楚</a>
+                            </div>
+                            <div>
+                                <input class="btn btn-primary" type="submit" />
+                                <input class="btn btn-default" type="reset" />
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div class="col-lg-4 home-card">
-                    <div class="lead content">
-                        <img src="/images/督促.png" alt="图片：督促" class="img-responsive center-block" />
-                        <h1 class="text-center">就让我来督促你</h1>
-                        <p class="text-center">押上你的决心</p>
-                        <a href="#" class="btn btn-primary btn-lg btn-block bottom">督促</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 home-card">
-                    <div class="lead content">
-                        <img src="/images/文章.png" alt="图片：文章" class="img-responsive center-block" />
-                        <h1 class="text-center">发布之前先付费</h1>
-                        <p class="text-center">高质量内容的保证</p>
-                        <a href="#" class="btn btn-primary btn-lg btn-block bottom">文章</a>
-                    </div>
-                </div>
+                <div class="col-lg-2"></div>
+                <aside class="col-lg-5">
+                    <a><h3>说明</h3></a>
+                    <ol>
+                        <li>
+                            <span>
+                                我们希望通过一起帮，能直接解决大家在电脑操作/软件使用/编程学习等方面的具体问题。
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                现在互联网远程技术（比如QQ桌面共享）已经非常成熟，当我们
+                                再遇到上述问题，如果别人能直接远程给予帮助，岂不是好？
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                当然，你也可以在你熟悉的领域去帮助别人。由此而形成我们这
+                                个“你帮他他帮我我帮你，大家一起帮”的网上互助社区平台。
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                公平起见，我们还引入了 帮帮点/币/豆 三级概念，以记录和衡量社区成员的收获和贡献。
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                赶快加入我们，赚取帮帮币吧！
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                <a>了解更多</a>
+                            </span>
+                        </li>
+                    </ol>
+                </aside>
             </div>
         </div>
     </main>
-    <aside></aside>
     <footer class=" container">
         <hr />
         <div>
@@ -169,6 +217,3 @@
     </footer>
 </body>
 </html>
-
-
-
