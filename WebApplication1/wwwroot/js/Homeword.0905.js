@@ -55,3 +55,18 @@
 //var a = "‘源栈’：飞哥小班教学，线下免费收看";
 //a = a.replace(/飞哥/, "大神");
 //a = a.replace(/线下/, "线上");
+
+//将数组['why', 'gIT', 'vs2019', 'community', 'VERSION']规范化，所有字符串：
+//首字母大写开头，其他字母小写
+//截去超过6个字符的部分，如'community'将变成'Commun
+//var arraySample = ['why', 'gIT', 'vs2019', 'community', 'VERSION'];
+//for (var i = 0; i < arraySample.length; i++) {
+//    if (arraySample[i].length > 6) {
+//        arraySample[i] = arraySample[i].substring(0, 6);
+//    } else {
+//        //下一个
+//    }
+//}
+//for (var i = 0; i < arraySample.length; i++) {
+//    arraySample[i] = arraySample[i][0].toUpperCase() + arraySample[i].substring(1, 6).toLowerCase();
+//}
