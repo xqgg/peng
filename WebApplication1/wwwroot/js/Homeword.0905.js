@@ -70,3 +70,22 @@
 //for (var i = 0; i < arraySample.length; i++) {
 //    arraySample[i] = arraySample[i][0].toUpperCase() + arraySample[i].substring(1, 6).toLowerCase();
 //}
+
+//不使用JavaScript内置函数，将一个字符串顺序颠倒，比如：'hello,yuanzhan' 变成 'nahznauy,olleh'。
+//var str = 'hello,yuanzhan'
+//var temp = '';
+//for (var i = 0; i < str.length; i++) {
+//    temp = temp += str[str.length - (i + 1)];
+//}
+//console.log(temp)
+
+//创建一个函数getRandomArray(length, max) ，能返回一个长度不大于length，
+//每个元素值不大于max的随机整数数组。
+//function getRandomArray(length, max) {
+//    var arr = []
+//    for (var i = 0; i < length; i++) {
+//        arr.push(Math.floor(Math.random() * (max + 1)))
+//    }
+//    console.log(arr)
+//}
+//getRandomArray(10, 5)
