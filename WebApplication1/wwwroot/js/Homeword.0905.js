@@ -34,15 +34,22 @@
 
 //封装一个函数Swap(arr, i, j) ，可以交换数组arr里下标 i 和 j 的值
 //function Swap(arr, i, j) {
-//    var array = [arr, i, j];
+//    /*var array = [arr, i, j];
 //    var i = array[1];
 //    var j = array[2];
 //    var temp = i;
 //    i = j;
 //    j = temp;
 //    console.log("i=" + i + "j=" + j);
+//    错的
+//    */
+//    var arr;
+//    var temp = arr[i];
+//    arr[i] = arr[j];
+//    arr[j] = temp;
+//    console.log(arr);
 //}
-//Swap(11, 22, 33);
+//Swap([1, 2, 3, 4], 0, 1);
 
 //将源栈同学姓名 / 昵称装入数组，再根据该数组输出共有多少同学
 //var students = ["彭志强", "于维谦", " 陈元", " 王新", "薛明林", "幸龙泰", "杨进文", "陈晓斌"];
