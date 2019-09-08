@@ -30,23 +30,23 @@
 
 //封装一个函数，建立一个函数getMaxNumber() ，可以接受任意多各种类型
 //（整数、小数、正数、负数、字符串、布尔值等）的参数，并找出里面最大的数（忽略其他类型）
-function getMaxNumber() {
-    var result = -Infinity;
-    for (var i = 0; i < arguments.length; i++) {
-        if (typeof arguments[i] === typeof 0) {
-            if (arguments[i] > result) {
-                result = arguments[i];
-            } else {
-                //
-            }
-        } else {
-            //忽略当前元素
-        }
-    }
-    return result;
-}
-var max = getMaxNumber(2, 54, 5, 62, 7, NaN, false, Infinity, [555, 222]);
-console.log("最大值为：" + max);
+//function getMaxNumber() {
+//    var result = -Infinity;
+//    for (var i = 0; i < arguments.length; i++) {
+//        if (typeof arguments[i] === typeof 0) {
+//            if (arguments[i] > result) {
+//                result = arguments[i];
+//            } else {
+//                //
+//            }
+//        } else {
+//            //忽略当前元素
+//        }
+//    }
+//    return result;
+//}
+//var max = getMaxNumber(2, 54, 5, 62, 7, NaN, false, Infinity, [555, 222]);
+//console.log("最大值为：" + max);
 
 //封装一个函数Swap(arr, i, j) ，可以交换数组arr里下标 i 和 j 的值
 //function Swap(arr, i, j) {
@@ -112,3 +112,14 @@ console.log("最大值为：" + max);
 //    console.log(arr)
 //}
 //getRandomArray(10, 5)
+
+
+//删除一个数组里面重复的元素
+//var arr = [11, 23, 44, 23,];
+//var result = [];
+//for (var i = 0; i < arr.length; i++) {
+//    if (result.indexOf(arr[i]) === -1) {
+//        result.push(arr[i]);
+//    }
+//}
+//console.log(result)
