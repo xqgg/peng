@@ -20,9 +20,10 @@
     <Content Update="Pages\Plan\New.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Pages\ScriptTest.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\Jshemework\" />
   </ItemGroup>
 
 </Project>
