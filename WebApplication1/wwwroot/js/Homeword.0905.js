@@ -123,3 +123,30 @@
 //    }
 //}
 //console.log(result)
+
+//统计出这段文字中有多少个单词：
+/*There are two ways to create a RegExp object: a literal notation and a constructor.To indicate strings,
+the parameters to the literal notation do not use quotation marks while the parameters to the constructor
+function do use quotation - marks.So the following expressions create the same regular expression*/
+//1.计算“quotation - marks.So the following expressions”
+//结果为6
+
+//var whiteList = "abcdefghijklmnopqrstuvwxyz"
+//function count(content) {
+//    var str = content.toLowerCase();
+//    var counter = 1;
+//    for (var i = 0; i < str.length; i++) {
+//        var current = whiteList.indexOf(str[i]);
+//        var next = whiteList.indexOf(str[i + 1]);
+//        if (current < 0 && next >= 0) {
+//            counter++;
+//        } else {
+//            //nothing
+//        }
+//    }
+//    return counter;
+//}
+//console.log("目标单词量为："+count(`There are two ways to create a RegExp object: a literal notation and a constructor.To indicate strings, 
+//the parameters to the literal notation do not use quotation marks while the parameters to the constructor
+//function do use quotation - marks.So the following expressions create the same regular expression`));
+
