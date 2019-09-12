@@ -32,14 +32,35 @@ function has6(number) {
 
 //2.使用上述函数，找出10000以内有多少个数字包含：9或者8或者6。
 /*测试：
+ * 输入has(10)=3
+ * 输入has(16)=4
+ * 输入has(18)=5
  */
+//function has(max) {
+//    var result = 0;
+//    for (var i = 1; i < max + 1; i++) {
+//        if (has9(i) || has6(i) || has8(i)) {
+//            result++;
+//        } else {
+//            //nothing
+//        }
+//    }
+//    console.log(max + "以内有" + result + "个数包含9或者8或者6")
+//}
 
-var result = 0;
-for (var i = 1; i < 10000 + 1; i++) {
-    if (has9(i) || has6(i) || has8(i)) {
-        result++;
-    } else {
-        //nothing
+//3.使用“模拟名称空间”技术，构建一个函数函数yz.fei.get986(number)；
+var yz = {};
+yz.fei = {};
+yz.fei.get986 = function (nunmber) {
+    var result = 0;
+    for (var i = 1; i < nunmber + 1; i++) {
+        if (has9(i) || has6(i) || has8(i)) {
+            result++;
+        } else {
+            //nothing
+        }
     }
+    console.log(max + "以内有" + result + "个数包含9或者8或者6")
+
 }
-console.log("10000以内有" + result + "个数包含9")
+
