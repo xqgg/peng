@@ -84,34 +84,34 @@
 //}
 
 //4.在yz.fei.get986(number)中包含不带参数的函数has9()/has8()/has6()；
-function hasX(x, number) {
-    if (typeof (number) === 'number' && number > 0 && String(number)[1] != ".") {
-        var parameter = String(number);
-        var find = String(x);
-        return parameter.indexOf(find) >= 0;
-    } else {
-        console.log("请输入正整数");
-    }
-}
-var yz = {};
-yz.fei = {};
-yz.fei.get986 = function (number) {
-    var result = 0;
-    for (var i = 1; i < number + 1; i++) {
-        if (has9() || has6() || has8()) {
-            result++;
-        } else {
-            //nothing
-        }
-    }
-    function has9() {
-        return hasX(9, i);
-    }
-    function has8() {
-        return hasX(8, i);
-    }
-    function has6() {
-        return hasX(6, i);
-    }
-    console.log(number + "以内有" + result + "个数包含9或者8或者6")
-}
+//function hasX(x, number) {
+//    if (typeof (number) === 'number' && number > 0 && String(number)[1] != ".") {
+//        var parameter = String(number);
+//        var find = String(x);
+//        return parameter.indexOf(find) >= 0;
+//    } else {
+//        console.log("请输入正整数");
+//    }
+//}
+//var yz = {};
+//yz.fei = {};
+//yz.fei.get986 = function (number) {
+//    var result = 0;
+//    for (var i = 1; i < number + 1; i++) {
+//        if (has9() || has6() || has8()) {
+//            result++;
+//        } else {
+//            //nothing
+//        }
+//    }
+//    function has9() {
+//        return hasX(9, i);
+//    }
+//    function has8() {
+//        return hasX(8, i);
+//    }
+//    function has6() {
+//        return hasX(6, i);
+//    }
+//    console.log(number + "以内有" + result + "个数包含9或者8或者6")
+//}
