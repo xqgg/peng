@@ -20,8 +20,9 @@
                         <img src="/images/logo-big.ico" alt="一起帮logo" />
                     </a>
                     <p class="navbar-text pull-left">
-                        <span>一起帮</span>
+                        <span id="title-17bang">一起帮</span>
                         <span class="visible-lg-inline visible-md-inline">·网络互助平台</span>
+                        <a href="#" class="glyphicon glyphicon-bell" style="color:darkblue" id="bell"></a>
                     </p>
                 </div>
                 <!--移动端-->
@@ -167,6 +168,23 @@
             © 2019 - 首顾科技
         </div>
     </footer>
+    <script>
+        //function flicker() {
+        //    var bellColor = document.getElementById("bell").style.color === "backblue";
+        //    if (bellColor === "backblue") {
+        //        bellColor = "gray";
+        //    } else {
+        //        bellColor = "backblue";
+        //    }
+        //}
+        setInterval(function () {
+            if (bellColor = document.getElementById("bell").style.color === "darkblue") {
+                bellColor = document.getElementById("bell").style.color = "gray";
+            } else {
+                bellColor = document.getElementById("bell").style.color = "darkblue";
+            }
+        }, 1000)
+    </script>
 </body>
 </html>
 
