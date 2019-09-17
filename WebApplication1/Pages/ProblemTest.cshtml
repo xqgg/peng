@@ -521,6 +521,25 @@
         for (var i = 0; i < document.querySelectorAll("[peng-problem-single]").length; i++) {
             document.querySelectorAll("[peng-problem-single]")[i].style.paddingTop = 20;
         }
+        //1.
+        //模拟求助首页，并：
+        //统计有多少个悬赏大于1的求助
+        //将状态为“协助中”的求助背景改成灰黑色
+        //写一个函数，可以统计某个求助使用了多少关键字
+        //如果总结数为0，将其从DOM树中删除
+
+        var counter = 0;
+        var reward = document.getElementsByClassName("reward");
+        for (var i = 0; i < reward.length; i++) {
+            if (+reward[i].innerText > 0) {
+                counter++
+            } else {
+                //nothing
+            }
+        }
+        alert("reward大于1的有：" + counter + "个");
+
+
     </script>
 </body>
 </html>
