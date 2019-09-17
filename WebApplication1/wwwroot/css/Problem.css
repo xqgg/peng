@@ -13,6 +13,10 @@
     background-color: #777777;
 }
 
+.label-assisting {
+    background-color: #f0ad4e;
+}
+
 .article-main {
     font-size: 24px;
     word-break: break-all;
@@ -28,4 +32,8 @@
 
 .glyphicon-heart {
     color: red;
+}
+
+.badge {
+    margin-left: 10px;
 }
