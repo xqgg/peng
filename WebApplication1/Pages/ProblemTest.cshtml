@@ -123,7 +123,7 @@
     </header>
     <main class="container main-content">
         <div class="row">
-            <div class="col-lg-8">
+            <div peng-problem-main class="col-lg-8">
                 <!--筛选-->
                 <form class="form-group" method="post" id="sifter">
                     <label class="checkbox-inline">
@@ -198,27 +198,23 @@
                             <a class="glyphicon glyphicon-bitcoin"></a>
                             <span>
                                 悬赏：
-                            </span>
-                            <span title="定额" class="reward">
-                                15
+                                <span title="定额" class="reward">
+                                    15
+                                </span>
                             </span>
                         </span>
                         <span>
                             <span class="glyphicon glyphicon-heart"></span>
                             <span>
                                 <a href="">应答：</a>
-                            </span>
-                            <span>
-                                1
+                                <span>1</span>
                             </span>
                         </span>
                         <span>
                             <span class="glyphicon glyphicon-star"></span>
                             <span>
                                 <a href="">总结：</a>
-                            </span>
-                            <span>
-                                0
+                                <span peng-problem-summarize-count>5</span>
                             </span>
                         </span>
                     </div>
@@ -299,9 +295,7 @@
                             <span class="glyphicon glyphicon-star"></span>
                             <span>
                                 <a href="">总结：</a>
-                            </span>
-                            <span>
-                                0
+                                <span peng-problem-summarize-count>10</span>
                             </span>
                         </span>
                     </div>
@@ -365,9 +359,7 @@
                             <span class="glyphicon glyphicon-star"></span>
                             <span>
                                 <a href="">总结：</a>
-                            </span>
-                            <span>
-                                0
+                                <span peng-problem-summarize-count>0</span>
                             </span>
                         </span>
                     </div>
@@ -612,11 +604,18 @@
         //    assist[i].style.backgroundColor = "gray";
         //}
 
-        function statistics(index) {
-            alert("该求助共使用" +
-                document.querySelectorAll("[peng-problem-single]")[index].getElementsByClassName("badge").length + "个关键字");
-        }
+        //function statistics(index) {
+        //    alert("该求助共使用" +
+        //        document.querySelectorAll("[peng-problem-single]")[index].getElementsByClassName("badge").length + "个关键字");
+        //}
 
+        for (var i = 0; i < document.querySelectorAll("[peng-problem-single]").length; i++) {
+                if (document.querySelectorAll("[peng-problem-summarize-count]")[i].innerText == "0") {
+                    document.querySelectorAll("[peng-problem-single]")[i].remove()
+                } else {
+                    //nothing
+                }
+            }
     </script>
 </body>
 </html>
