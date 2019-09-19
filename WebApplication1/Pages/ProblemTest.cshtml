@@ -320,7 +320,7 @@
                     </span>
                     <div class="article-main">
                         <span class="problem-status label-assisting">协助中</span>
-                        <a href="" style="color:black">
+                        <a href="" style="color:black" class="">
                             ASP 网站迁移
                         </a>
                     </div>
@@ -336,10 +336,10 @@
                     <div>
                         <span class="glyphicon glyphicon-tags"></span>
                         <span>
-                            <a href="#" title="已使用1次" class="badge">asp</a>
+                            <a href="#" title="已使用1次" class="badge keyword">asp</a>
                         </span>
                         <span>
-                            <a href="#" title="已使用1次" class="badge">数据库</a>
+                            <a href="#" title="已使用1次" class="badge keyword">数据库</a>
                         </span>
                     </div>
                     <div class="status">
@@ -607,10 +607,16 @@
         //}
         //alert("reward大于1的有：" + counter + "个");
 
-        var assist = document.getElementsByClassName("label-assisting")
-        for (var i = 0; i < assist.length; i++) {
-            assist[i].style.backgroundColor = "gray";
+        //var assist = document.getElementsByClassName("label-assisting")
+        //for (var i = 0; i < assist.length; i++) {
+        //    assist[i].style.backgroundColor = "gray";
+        //}
+
+        function statistics(index) {
+            alert("该求助共使用" +
+                document.querySelectorAll("[peng-problem-single]")[index].getElementsByClassName("badge").length + "个关键字");
         }
+
     </script>
 </body>
 </html>
