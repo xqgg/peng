@@ -148,7 +148,7 @@
                             <label for="invitationCode">密码：（*必填，）</label>
                             <input peng-register-password type="password" class="form-control" placeholder="不少于4个字符" name="password" />
                             <label for="invitationCode">验证密码：（*必填，）</label>
-                            <input type="password" class="form-control" placeholder="与密码相同" name="password" />
+                            <input peng-register-password-verify type="password" class="form-control" placeholder="与密码相同" name="password" />
                             <label for="invitationCode">验证码：（*必填，）</label>
                             <div class="form-group">
                                 <input type="text" class="form-control" id="input-securityCode" name="securityCode" />
@@ -156,7 +156,7 @@
                                 <a href="#">看不清楚</a>
                             </div>
                             <div>
-                                <input class="btn btn-primary" type="submit" />
+                                <input peng-register-btn-submit class="btn btn-primary" type="submit" onclick="submitVerify()" />
                                 <input class="btn btn-default" type="reset" />
                             </div>
                         </form>
@@ -227,8 +227,15 @@
         //参考用户资料页面，控制台显示出用户的：性别 / 出生年月 / 关注（关键字）/ 自我介绍
 
 
-        function passwordLength() {
-            console.log("密码长度为" + document.querySelector("[peng-register-password]").value.length)
+        //function passwordLength() {
+        //    console.log("密码长度为" + document.querySelector("[peng-register-password]").value.length)
+        //}
+        function submitVerify() {
+            if (document.querySelector("[peng-register-password]").value === document.querySelector("[peng-register-password-verify]").value) {
+                //nothing
+            } else {
+                alert("验证密码必须与密码相同");
+            }
         }
     </script>
 </body>
