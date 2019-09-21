@@ -1,7 +1,22 @@
-﻿body
-{
+﻿body {
 }
-.home-card .content{
+
+.home-card .content {
     height: 360px;
     padding-top: 40px;
+}
+
+#ad-chats {
+    position: fixed;
+}
+
+.chats {
+    margin-bottom: 10px;
+    height: 780px;
+    overflow-y: scroll;
+    padding-right: 20px;
+}
+
+#chat-container {
+    height: 880px;
 }
