@@ -1,12 +1,14 @@
 ﻿@page
+
+
 <html>
 <head>
-    <title>首页·一起帮·peng</title>
-    <link href="/images/logo.ico" type="image/ico" rel="icon" media="screen" />
-    <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    <link href="/lib/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
-    <link href="/css/Index.css" rel="stylesheet" />
-    <link href="/css/navbar.css" rel="stylesheet" />
+    <title>常见问题·peng</title>
+    <link href="~/images/logo.ico" type="image/ico" rel="icon" media="screen" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/css/navbar.css" rel="stylesheet" />
+    <link href="~/css/FAQ.css" rel="stylesheet"  />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
@@ -20,12 +22,11 @@
                         <img src="/images/logo-big.ico" alt="一起帮logo" />
                     </a>
                     <p class="navbar-text pull-left">
-                        <span id="title-17bang">一起帮</span>
+                        <span>一起帮</span>
                         <span class="visible-lg-inline visible-md-inline">·网络互助平台</span>
-                        <a href="#" style="color:darkblue;font-size:18px;" id="bell">
-                            <span class="glyphicon glyphicon-bell"></span>
-                        </a>
                     </p>
+
+
                 </div>
                 <!--移动端-->
                 <div class="navbar-header">
@@ -104,9 +105,9 @@
                                     <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="/Log/On">登录</a></li>
-                                    <li><a href="/Register">注册</a></li>
-                                    <li><a href="/Password/forget">忘记密码</a></li>
+                                    <li><a href="#">登录</a></li>
+                                    <li><a href="/register">注册</a></li>
+                                    <li><a href="#">忘记密码</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -123,87 +124,53 @@
             </div>
         </div>
     </header>
-    <main class="container  ">
-        <div class="row">
-            <div class="col-md-7">
-                <div id="chat-container">
-                    <div class="text-center">
-                        <a href="#">更多历史</a>
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                    </div>
-                    <div class="chats">
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                    </div>
-                    <div class="input-group">
-                        <input type="text" class="form-control" />
-                        <span zyf-chat-send="" class="input-group-addon">发送</span>
-                    </div>
+    <main>
+        <div class="container">
+            <div class="row main-content">
+                <!--正文-->
+                <div class="col-lg-8">
+                    <span id="flag-Service" class="flag  visible-xs visible-sm">
+                        <a href="#">人工客服</a>
+                    </span>
+                    <h2>常见问题</h2>
+                    <hr />
+                    <h3><a href="~/FAQ/Credit"> <span class="glyphicon glyphicon-question-sign"></span>账户</a></h3>
+                    <p><a href="#">Q：邀请码是怎么回事</a></p>
+                    <p><a href="#">Q：为什么会提示“邀请人数达到上限”？</a></p>
+                    <p><a href="#">Q：系统如何是确定“最后（上次）登录时间”的？</a></p>
+                    <p><a href="#">Q：“最后登录时间”有什么用处？</a></p>
+                    <p><a href="#">Q：邮箱有什么作用？</a></p>
+                    <p><a href="#">Q：为什么我收不到邮件通知？</a></p>
+                    <h3><a href="~/FAQ/Credit"> <span class="glyphicon glyphicon-question-sign"></span>帮帮点</a></h3>
+                    <p><a href="/FAQ/Credit#what">Q：什么是帮帮点？有什么用处？</a></p>
+                    <p><a href="/FAQ/Credit#gain">Q：如何才能获得帮帮点？</a></p>
+                    <h3><a href="#"> <span class="glyphicon glyphicon-question-sign"></span>帮帮币</a></h3>
+                    <p><a href="#">Q：什么是帮帮币？有什么用处？</a></p>
+                    <p><a href="#">Q：引入“帮帮币”的目的是什么？</a></p>
+                    <p><a href="#">Q：如何才能获得帮帮币？</a></p>
+                    <p><a href="#">Q：作为买方，如何保证交易安全？</a></p>
+                    <p><a href="#">Q：如何出售帮帮币？</a></p>
+                    <p><a href="#">Q：如何成为“系统推荐卖家”？</a></p>
+                    <p><a href="#">Q：作为卖方，如何保证交易安全？</a></p>
+                    <p><a href="#">Q：帮帮币出售时为什么要设置“门槛”？</a></p>
                 </div>
-            </div>
-            <div class="col-md-5">
-                <div style="top:120px" id="ad-chats">
-                    <h3>“源栈”Web开发培训班</h3>
-                    <h3>
-                        <span class="glyphicon glyphicon-fire"></span>
-                        <span>火热</span>
-                        <span>招生中</span>
-                    </h3>
-                    <p>线上：全程直播，免费收看</p>
-                    <p>线下：灵活学制，拎包入住</p>
-                    <p>有意向的同学，可以加QQ群：326801052</p>
-                    <img src="/images/qq-group.png" />
-                </div>
+                <!--侧边栏-->
+                <aside class="col-lg-4 widget">
+                    <div>
+                        <h4>人工客服</h4>
+                        <div>
+                            <img src="~/images/QQ.png" alt="QQ:" />
+                            <a>自由飞（2282636022）</a>
+                        </div>
+                        <div>
+                            <img src="~/images/QQ.png" alt="QQ:" />
+                            <a>cjty8281（314060063）</a>
+                        </div>
+                    </div>
+                </aside>
             </div>
         </div>
     </main>
-    <aside></aside>
     <footer class=" container">
         <hr />
         <div>
@@ -220,42 +187,5 @@
             © 2019 - 首顾科技
         </div>
     </footer>
-    <script>
-        //function flicker() {
-        //    var bellColor = document.getElementById("bell").style.color === "backblue";
-        //    if (bellColor === "backblue") {
-        //        bellColor = "gray";
-        //    } else {
-        //        bellColor = "backblue";
-        //    }
-        //}
-        //setInterval(function () {
-        //    if (bellColor = document.getElementById("bell").style.color === "darkblue") {
-        //        bellColor = document.getElementById("bell").style.color = "gray";
-        //    } else {
-        //        bellColor = document.getElementById("bell").style.color = "darkblue";
-        //    }
-        //}, 1000);
-        setInterval(function () {
-            var bell = document.getElementById("bell");
-            if (bell.style.color === "darkblue") {
-                bell.style.color = "lightblue";
-            } else {
-                bell.style.color = "darkblue";
-            }
-        }, 800)
-        document.getElementsByTagName("body")[0].onscroll = function () {
-            var bodyScrollTop = document.getElementsByTagName("body")[0].scrollTop;
-            console.log("滚动条下拉距离：" + bodyScrollTop);
-            if (bodyScrollTop > 370) {
-                document.getElementById("ad-chats").style.top = 120 - (bodyScrollTop - 370)
-            } else {
-                document.getElementById("ad-chats").style.top = 120
-            }
-        }
-    </script>
 </body>
 </html>
-
-
-
