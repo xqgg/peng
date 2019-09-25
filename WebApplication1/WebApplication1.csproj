@@ -14,6 +14,9 @@
     <Content Update="Pages\Article.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Pages\Problem\New.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Pages\Message\Mine.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

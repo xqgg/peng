@@ -1,0 +1,16 @@
+﻿.page-header {
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.yellow-highlight {
+    background-color: #ffffe0;
+    border: 2px dashed #eee;
+    border-radius: 4px 5px;
+}
+
+.input-group-btn-middle .btn {
+    margin-right: -1px;
+    border-radius: 0 !important;
+}
