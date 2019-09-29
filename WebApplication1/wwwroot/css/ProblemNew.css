@@ -14,3 +14,11 @@
     margin-right: -1px;
     border-radius: 0 !important;
 }
+
+.glyphicon-remove {
+    margin-left: 5px;
+}
+
+.badge-has-used {
+    margin-right: 5px;
+}

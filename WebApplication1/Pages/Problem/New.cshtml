@@ -8,6 +8,7 @@
 <html>
 <head>
     <title>帮帮点·常见问题·peng</title>
+
     <link href="~/images/logo.ico" type="image/ico" rel="icon" media="screen" />
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="~/lib/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
@@ -16,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
+    <noscript></noscript>
     <header>
         <!--导航-->
         <div class="navbar navbar-default navbar-fixed-top">
@@ -161,20 +163,6 @@
                     <div class="form-group">
                         <label>关键字：（* 使用空格分隔）</label>
                         <div peng-keyword-show style="padding-bottom:3px">
-                            <span peng-keyword class="badge badge-has-used hidden">编程开发语言<span peng-keyword-remove class="glyphicon glyphicon-remove" style="margin-left:5px"></span></span>
-                            <span peng-keyword class="badge badge-has-used hidden">工具软件<span peng-keyword-remove class="glyphicon glyphicon-remove" style="margin-left:5px"></span></span>
-                            <span peng-keyword class="badge badge-has-used hidden">顾问咨询<span peng-keyword-remove class="glyphicon glyphicon-remove" style="margin-left:5px"></span></span>
-                            <span peng-keyword class="badge badge-has-used hidden">操作系统<span peng-keyword-remove class="glyphicon glyphicon-remove" style="margin-left:5px"></span></span>
-                            <span peng-keyword class="badge badge-has-used hidden">C#<span peng-keyword-remove class="glyphicon glyphicon-remove" style="margin-left:5px"></span></span>
-                            <span peng-keyword class="badge badge-has-used hidden">JAVA<span peng-keyword-remove class="glyphicon glyphicon-remove" style="margin-left:5px"></span></span>
-                            <span peng-keyword class="badge badge-has-used hidden">JavaScript<span peng-keyword-remove class="glyphicon glyphicon-remove" style="margin-left:5px"></span></span>
-                            <span peng-keyword class="badge badge-has-used hidden">html<span peng-keyword-remove class="glyphicon glyphicon-remove" style="margin-left:5px"></span></span>
-                            <span peng-keyword class="badge badge-has-used hidden">SQL<span peng-keyword-remove class="glyphicon glyphicon-remove" style="margin-left:5px"></span></span>
-                            <span peng-keyword class="badge badge-has-used hidden">Python<span peng-keyword-remove class="glyphicon glyphicon-remove" style="margin-left:5px"></span></span>
-                            <span peng-keyword class="badge badge-has-used hidden">css<span peng-keyword-remove class="glyphicon glyphicon-remove" style="margin-left:5px"></span></span>
-                            <span peng-keyword class="badge badge-has-used hidden">PHP<span peng-keyword-remove class="glyphicon glyphicon-remove" style="margin-left:5px"></span></span>
-                            <span peng-keyword class="badge badge-has-used hidden">C++<span peng-keyword-remove class="glyphicon glyphicon-remove" style="margin-left:5px"></span></span>
-                            <span peng-keyword class="badge badge-has-used hidden">C<span peng-keyword-remove class="glyphicon glyphicon-remove" style="margin-left:5px"></span></span>
                         </div>
                         <div class=" input-group">
                             <div class="input-group-btn" peng-dropdown-menu1>
@@ -184,10 +172,10 @@
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
                                 <ul class="dropdown-menu" peng-keyword-dropdownlist="1">
-                                    <li><a keyword>编程开发语言</a></li>
-                                    <li><a keyword>工具软件</a></li>
-                                    <li><a keyword>顾问咨询</a></li>
-                                    <li><a keyword>操作系统</a></li>
+                                    <li><a keyword-first>编程开发语言</a></li>
+                                    <li><a keyword-first>工具软件</a></li>
+                                    <li><a keyword-first>顾问咨询</a></li>
+                                    <li><a keyword-first>操作系统</a></li>
                                 </ul>
                             </div>
                             <div class="input-group-btn input-group-btn-middle" peng-dropdown-menu2>
@@ -197,16 +185,16 @@
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
                                 <ul class="dropdown-menu" peng-keyword-dropdownlist="2">
-                                    <li><a keyword>C#</a></li>
-                                    <li><a keyword>JAVA</a></li>
-                                    <li><a keyword>Javascript</a></li>
-                                    <li><a keyword>html</a></li>
-                                    <li><a keyword>SQL</a></li>
-                                    <li><a keyword>Python</a></li>
-                                    <li><a keyword>CSS</a></li>
-                                    <li><a keyword>PHP</a></li>
-                                    <li><a keyword>C++</a></li>
-                                    <li><a keyword>C</a></li>
+                                    @*<li><a keyword>C#</a></li>
+                                        <li><a keyword>JAVA</a></li>
+                                        <li><a keyword>Javascript</a></li>
+                                        <li><a keyword>html</a></li>
+                                        <li><a keyword>SQL</a></li>
+                                        <li><a keyword>Python</a></li>
+                                        <li><a keyword>CSS</a></li>
+                                        <li><a keyword>PHP</a></li>
+                                        <li><a keyword>C++</a></li>
+                                        <li><a keyword>C</a></li>*@
                                 </ul>
                             </div>
                             <input type="text" class="form-control" placeholder="自定义关键字，使用空格分隔" peng-keyword-input="">
@@ -260,6 +248,14 @@
     <footer class=" container">
         <hr />
         <div>
+            <span saa>测试</span>
+            <span saa>测试</span>
+            <span saa>测试</span>
+            <span saa>测试</span>
+            <span saa>测试</span>
+            
+        </div>
+        <div>
             <a>关于我们</a> |
             <a href="/faq">常见问题</a> |
             <a>意见建议</a> |
@@ -274,29 +270,107 @@
         </div>
     </footer>
     <script>
+        var first = ["编程开发语言", "工具软件", "顾问咨询", "操作系统"];
+        var second = [
+            ["C#", "Java", "Javascript", "html", "SQL", "Python", "CSS", "PHP", "C++", "C"],
+            ["VisualStudio", "eclipse", "IDEA", "Excel", "Word", "CAD", "Photoshop", "Powerpoint"],
+            ["职场", "法律", "财务", "心理", "亲子", "婚姻家庭"],
+            ["Linux", "Windows", "Android", "Unix"]
+        ];
+
+
         var dropdownMenuBtn1 = document.querySelector("[peng-keyword-dropdownlist1]");
         var dropdownMenu1 = document.querySelector("[peng-dropdown-menu1]");
         dropdownMenuBtn1.onclick = function () {
             dropdownMenu1.classList.toggle("open");
         }
+           
         var dropdownMenuBtn2 = document.querySelector("[peng-keyword-dropdownlist2]");
         var dropdownMenu2 = document.querySelector("[peng-dropdown-menu2]");
-        dropdownMenuBtn2.onclick = function () {
-            dropdownMenu2.classList.toggle("open")
+        function menu2Open() {
+            dropdownMenu2.classList.toggle("open");
         }
-        var keyWord = document.querySelectorAll("[peng-keyword]");
-        var keyWordOption = document.querySelectorAll("[keyword]");
-        for (let i = 0; i < keyWordOption.length; i++) {
-            keyWordOption[i].onclick = function () {
-                keyWord[i].classList.toggle("hidden");
+
+        //function addKeywordRemove() {
+        //    var keywordRemove = document.createElement("small");
+        //    keywordRemove.setAttribute("class", "glyphicon glyphicon-remove");
+        //    keywordRemove.setAttribute("peng-keyword-remove", "")
+        //    keywordRemove.onclick = function () {
+        //        this.parentElement.remove();
+        //    }
+        //    return keywordRemove;
+        //}
+
+        function addKeywordFirst(keywordText) {
+            var keywordFirst = document.createElement("span");
+            keywordFirst.setAttribute("class", "badge badge-has-used");
+            keywordFirst.setAttribute("peng-keyword-first", "")
+            keywordFirst.innerText = keywordText;
+            var keywordRemove = document.createElement("small");
+            keywordRemove.setAttribute("class", "glyphicon glyphicon-remove");
+            keywordRemove.setAttribute("peng-keyword-remove", "")
+            keywordFirst.appendChild(keywordRemove);
+            document.querySelector("[peng-keyword-show]").appendChild(keywordFirst);
+            document.querySelector("[peng-keyword-remove]").onclick = function () {
+                //document.querySelector("[peng-keyword-first]").remove();
+                this.parentElement.remove();
+                dropdownMenuBtn2.removeEventListener("click", menu2Open);
+            }
+            dropdownMenuBtn2.addEventListener("click", menu2Open);
+        }
+
+     
+
+        function addKeywordCecondGroup() {
+            document.querySelector("[peng-keyword-dropdownlist='2']").innerHTML = "";
+            var keywordSecondGroup = first.indexOf(document.querySelector("[peng-keyword-first]").innerText);
+            for (var j = 0; j < second[keywordSecondGroup].length; j++) {
+                var quote = document.createElement("li");
+                var TagA = document.createElement("a");
+                TagA.setAttribute("keyword-second", "");
+                TagA.innerText = second[keywordSecondGroup][j];
+                quote.appendChild(TagA);
+                document.querySelector("[peng-keyword-dropdownlist='2']").appendChild(quote);
+            }
+            for (var k = 0; k < length; k++) {
+
             }
         }
-        var removeKeyWord = document.querySelectorAll("[peng-keyword-remove]");
-        for (let i = 0; i < removeKeyWord.length; i++) {
-            removeKeyWord[i].onclick = function () {
-                keyWord[i].classList.add("hidden");
+
+        //function addKeywordSecond() {
+        //    var keyworSecond = document.createElement("span");
+        //    keyworSecond.setAttribute("class", "badge badge-has-used");
+        //    keyworSecond.setAttribute("peng-keyword-second", "")
+        //    keyworSecond.innerText = /*keywordText*/ "未定义";
+        //    var keywordRemove = document.createElement("small");
+        //    keywordRemove.setAttribute("class", "glyphicon glyphicon-remove");
+        //    keywordRemove.setAttribute("peng-keyword-remove", "")
+        //    keyworSecond.appendChild(keywordRemove);
+        //    document.querySelector("[peng-keyword-show]").appendChild(keyworSecond);
+        //    document.querySelector("[peng-keyword-remove]").onclick = function () {
+        //        document.querySelector("[peng-keyword-second]").remove();
+        //    }
+        //    dropdownMenuBtn2.addEventListener("click", menu2Open);
+        //}
+
+        for (let i = 0; i < first.length; i++) {
+            document.querySelectorAll("[keyword-first]")[i].onclick = function () {
+                if (!(document.querySelector("[peng-keyword-first]"))) {
+                    addKeywordFirst(this.innerText);
+                    addKeywordCecondGroup()
+                } else if (document.querySelector("[peng-keyword-first]").innerText !== this.innerText) {
+                    document.querySelector("[peng-keyword-first]").remove();
+                    addKeywordFirst(this.innerText);
+                    addKeywordCecondGroup()
+                } else {
+                    document.querySelector("[peng-keyword-first]").remove();
+                    dropdownMenuBtn2.removeEventListener("click", menu2Open);
+                }
             }
         }
+        
+
+
     </script>
 </body>
 </html>
