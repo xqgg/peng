@@ -22,24 +22,53 @@
         //JavaScript里面，类就是对象，对象也是类
         //只有Function才有prototype
         //Javascript是动态类型语言，所以对象的类型是可以随意更改的
+        function getTime(time) {
+            var date = time;
+            var seperator = "-";
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            if (month >= 1 && month <= 9) {
+                month = "0" + month;
+            }
+            if (day >= 0 && day <= 9) {
+                day = "0" + day;
+            }
+            var resultTime = year + seperator + month + seperator + day;
+            return resultTime;
+        }
         class Course {
             constructor(name, startDate, endDate, students) {
                 this.name = name;
                 this.startDate = startDate;
                 this.endDate = endDate;
                 this.students = students;
+                this.end = function () {
+                    console.log(this.name + "于" + getTime(this.startDate) + "开课，于" + getTime(this.endDate) + "结束。")
+                    //自有方法
+                }
             }
             begin() {
-                console.log(this.name + "于" + this.startDate + "开课，共有五名同学" + this.students + "同学报名")
+                console.log(this.name + "于" + getTime(this.startDate) + "开课，共有" + this.students.length + "名同学" + `"` + this.students + `"` + "同学报名。")
             }
-            end() {
-                console.log(this.name)
+            set EndDate(value) {
+                if (value < this.startDate) {
+                    throw new Error("结束时间不能小于开始时间！");
+                }
+                if ((value - this.startDate) / 1000 / 60 / 60 / 24 > 365) {
+                    throw new Error("结束时间于开始时间不能超过一年！");
+                }
+                this.endDate = value;
             }
         }
-        let JavaScript = new Course("JavaScript", "2019年5月5日", "2019年5月10日", "两开花、王枫、王平、采铃、老程");
-        let SQL = new Course("JavaScript", "2019年5月5日", "2019年5月10日", "两开花、王枫、王平、采铃、老程");
+        let JavaScript = new Course("JavaScript", new Date(2019, 7, 18), new Date(2019, 9, 18), ["彭志强", "陈元", "于维谦", "王新", "曾俊清", "陈晓斌", "杨进文"]);
+        let SQL = new Course("SQL", new Date(2019, 11, 18), new Date(2019, 12, 18), ["彭志强", "陈元", "于维谦", "王新", "曾俊清", "陈晓斌", "杨进文"]);
+        Course.prototype.begin = function () {
+            console.log("不修改class，动态的改变begin()方法，使其能影响所有Course对象");
+        }
+
+
+
     </script>
-
-
 </body>
 </html>
