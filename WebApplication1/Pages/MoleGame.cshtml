@@ -1,0 +1,63 @@
+﻿@page
+<html>
+<head>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="/lib/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="/css/MoleGame.css" rel="stylesheet" />
+</head>
+<body>
+    <div>MoleGame</div>
+    <button asdf>弹出</button>
+    <div class="container">
+        <div class="row main-content ">
+            <div class="col-lg-12" moleGame-background id="background" @*style="z-index:-2; background:url(/images/MoleGame/背景.jpg)"*@>
+                <div class="row hole-row">
+                    <span vacancy class="col-lg-1"></span>
+                    <span class="col-lg-3 ">
+                        <img class="hole" src="~/images/MoleGame/土堆.png" />
+                    </span>
+                    <span class="col-lg-3 ">
+                        <img class="hole" src="~/images/MoleGame/土堆.png" />
+                    </span>
+                    <span class="col-lg-3 ">
+                        <img class="hole" src="~/images/MoleGame/土堆.png" />
+                        <img class="mole" style="top: 15px;" src="~/images/MoleGame/坏地鼠.png" />
+                    </span>
+                </div>
+                <div class="row hole-row">
+                    <span vacancy class="col-lg-1"></span>
+                    <span vacancy class="col-lg-1"></span>
+                    <span class="col-lg-3 ">
+                        <img class="hole" src="~/images/MoleGame/土堆.png" />
+                        <img class="mole" src="~/images/MoleGame/哭地鼠.png" />
+                    </span>
+                    <span class="col-lg-3 ">
+                        <img class="hole" src="~/images/MoleGame/土堆.png" />
+                    </span>
+                    <span class="col-lg-3 ">
+                        <img class="hole" src="~/images/MoleGame/土堆.png" />
+                    </span>
+                </div>
+                <div class="row hole-row">
+                    <span vacancy class="col-lg-1"></span>
+                    <span class="col-lg-3 ">
+                        <img class="hole" src="~/images/MoleGame/土堆.png" />
+                    </span>
+                    <span class="col-lg-3 ">
+                        <img class="hole" src="~/images/MoleGame/土堆.png" />
+                    </span>
+                    <span class="col-lg-3 ">
+                        <img class="hole" src="~/images/MoleGame/土堆.png" />
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector("[asdf]").onclick = function () {
+            document.getElementsByClassName("mole")[0].style.top = "-35px"
+        }
+    </script>
+</body>
+</html>

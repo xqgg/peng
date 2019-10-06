@@ -38,6 +38,9 @@
     <Content Update="Pages\ObjClass.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Pages\MoleGame.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Pages\ScriptTest2.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
@@ -45,6 +48,7 @@
 
   <ItemGroup>
     <Folder Include="Pages\Jshemework\" />
+    <Folder Include="wwwroot\images\MoleGame\" />
   </ItemGroup>
 
 </Project>
