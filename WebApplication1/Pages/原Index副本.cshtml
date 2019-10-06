@@ -2,8 +2,6 @@
 <html>
 <head>
     <title>首页·一起帮·peng</title>
-    <script src="/lib/jquery/dist/jquery.js"></script>
-    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
     <link href="/images/logo.ico" type="image/ico" rel="icon" media="screen" />
     <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="/lib/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
@@ -44,7 +42,7 @@
                 <div class="collapse navbar-collapse">
                     <nav class="navbar-right">
                         <ul class="nav navbar-nav">
-                            <li class="dropdown" >
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle"
                                    data-toggle="dropdown" role="button"
                                    aria-haspopup="true" aria-expanded="false">
@@ -98,7 +96,7 @@
                                     <li><a href="#">iOS</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown open">
                                 <a href="#" class="dropdown-toggle"
                                    data-toggle="dropdown" role="button"
                                    aria-haspopup="true" aria-expanded="false">
@@ -125,82 +123,32 @@
             </div>
         </div>
     </header>
-    <main class="container  ">
-        <div class="row">
-            <div class="col-md-7">
-                <div id="chat-container">
-                    <div class="text-center">
-                        <a href="#">更多历史</a>
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                    </div>
-                    <div class="chats">
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                    </div>
-                    <div class="input-group">
-                        <input type="text" class="form-control" />
-                        <span zyf-chat-send="" class="input-group-addon">发送</span>
+    <main>
+        <div class="container main-content">
+            <div class="row">
+                <div class="col-lg-4 home-card">
+                    <div class="lead content">
+                        <img src="/images/求助.png" alt="图片：求助" class="img-responsive center-block" />
+                        <h1 class="text-center">一对一远程协助</h1>
+                        <p class="text-center">帮忙就要帮到底</p>
+                        <a href="/Problem" class="btn btn-primary btn-lg btn-block bottom">求助</a>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-5">
-                <div style="top:120px" id="ad-chats">
-                    <h3>“源栈”Web开发培训班</h3>
-                    <h3>
-                        <span class="glyphicon glyphicon-fire"></span>
-                        <span>火热</span>
-                        <span>招生中</span>
-                    </h3>
-                    <p>线上：全程直播，免费收看</p>
-                    <p>线下：灵活学制，拎包入住</p>
-                    <p>有意向的同学，可以加QQ群：326801052</p>
-                    <img src="/images/qq-group.png" />
+                <div class="col-lg-4 home-card">
+                    <div class="lead content">
+                        <img src="/images/督促.png" alt="图片：督促" class="img-responsive center-block" />
+                        <h1 class="text-center">就让我来督促你</h1>
+                        <p class="text-center">押上你的决心</p>
+                        <a href="#" class="btn btn-primary btn-lg btn-block bottom">督促</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 home-card">
+                    <div class="lead content">
+                        <img src="/images/文章.png" alt="图片：文章" class="img-responsive center-block" />
+                        <h1 class="text-center">发布之前先付费</h1>
+                        <p class="text-center">高质量内容的保证</p>
+                        <a href="#" class="btn btn-primary btn-lg btn-block bottom">文章</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -246,15 +194,6 @@
                 bell.style.color = "darkblue";
             }
         }, 800)
-        document.getElementsByTagName("body")[0].onscroll = function () {
-            var bodyScrollTop = document.getElementsByTagName("body")[0].scrollTop;
-            console.log("滚动条下拉距离：" + bodyScrollTop);
-            if (bodyScrollTop > 370) {
-                document.getElementById("ad-chats").style.top = 120 - (bodyScrollTop - 370)
-            } else {
-                document.getElementById("ad-chats").style.top = 120
-            }
-        }
     </script>
 </body>
 </html>
