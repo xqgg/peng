@@ -1,4 +1,7 @@
-﻿#background {
+﻿body {
+    /*cursor: url(/images/MoleGame/pending.png),auto*/
+}
+#background {
     width: 1020px;
     height: 676px;
 }
@@ -8,14 +11,24 @@
     padding-left: 90px;
 }
 
-.mole {
+.badMole {
     position: absolute;
     left: 84px;
-    z-index: -1;
+    width: 49px;
+    height: 49px;
+    top: 15px;
+}
+
+.lovelyMole {
+    position: absolute;
+    left: 84px;
+    width: 49px;
+    height: 49px;
+    top: 15px;
 }
 
 .hole {
-    width:190px;
-    height:78px;
-    /*z-index: -1;*/
+    width: 190px;
+    height: 78px;
+    position: relative;
 }

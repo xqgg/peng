@@ -41,6 +41,9 @@
     <Content Update="Pages\MoleGame.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Pages\hhhhhh.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Pages\ScriptTest2.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
