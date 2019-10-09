@@ -58,9 +58,17 @@
         </div>
     </div>
     <script>
+        var countdown = 3;
+        function startCountdown() {
+            while (countdown > 1) {
+                countdown--;
+            }
+        }
+
         function randomHole() {
             Math.floor(Math.random() * 9)
         }
+
         $("body").append(`<img src="/images/MoleGame/爆炸.png" />`)
         $("button").click(function () {
             $(".lovelyMole").animate({ top: "-35px" });
