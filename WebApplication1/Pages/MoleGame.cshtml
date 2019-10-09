@@ -9,17 +9,17 @@
 </head>
 <body style="">
     <div>MoleGame</div>
-    <button>弹出</button>
+    <button>开始游戏</button>
     <div class="container">
         <div class="row main-content ">
             <div class="col-lg-12" moleGame-background id="background" style=" background:url(/images/MoleGame/背景.jpg)">
                 <div class="row hole-row">
                     <div vacancy class="col-lg-1"></div>
                     <div class="col-lg-3 ">
-                        <img class="hole" src="~/images/MoleGame/土堆.png" />
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png)"></div>
                     </div>
                     <div class="col-lg-3 ">
-                        <img class="hole" src="~/images/MoleGame/土堆.png" />
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png)"></div>
                     </div>
                     <div class="col-lg-3 ">
                         <img class="lovelyMole" src="~/images/MoleGame/萌地鼠.png" />
@@ -34,56 +34,52 @@
                         <div class="hole" style="background:url(/images/MoleGame/土堆.png)"></div>
                     </div>
                     <div class="col-lg-3 ">
-                        <img class="hole" src="~/images/MoleGame/土堆.png" />
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png)"></div>
                     </div>
                     <div class="col-lg-3 ">
-                        <img class="hole" src="~/images/MoleGame/土堆.png" />
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png)"></div>
                     </div>
                 </div>
                 <div class="row hole-row">
                     <div vacancy class="col-lg-1"></div>
                     <div class="col-lg-3 ">
-                        <img class="hole" src="~/images/MoleGame/土堆.png" />
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png)"></div>
                     </div>
                     <div class="col-lg-3 ">
-                        <img class="hole" src="~/images/MoleGame/土堆.png" />
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png)"></div>
                     </div>
                     <div class="col-lg-3 ">
                         <img class="lovelyMole" src="~/images/MoleGame/萌地鼠.png" />
                         <div class="hole" style="background:url(/images/MoleGame/土堆.png)"></div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script>
-        //document.querySelector("button").onclick = function () {
-        //    document.getElementsByClassName("mole")[0].style.top = "-35px"
-        //}
-        //$(".hole").click(function (event) {
-        //    event.preventDefault;
-        //    console.log("点击")
-        //});
-        //document.querySelector("button").onmouseover = function () {
-        //    event.preventDefault;
-        //}
-        $("button").click(function () {
-            $(".lovelyMole").animate({ top: "-35px" });
-            $("body").attr("style", "cursor: url(/images/MoleGame/pending.png) 31 51,auto");
-            $("body").mouseup(function () {
+        document.onload = function (event) {
+            $(event).preventDefault;
+            $("body").append(`<img src="/images/MoleGame/爆炸.png" />`)
+            $("button").click(function () {
+                $(".lovelyMole").animate({ top: "-35px" });
                 $("body").attr("style", "cursor: url(/images/MoleGame/pending.png) 31 51,auto");
-            });
-            $("body").mousedown(function () {
-                $("body").attr("style", "cursor: url(/images/MoleGame/hitted.png) 31 51,auto");
-            });
-        })
-        $(".lovelyMole").click(function () {
-            $(".lovelyMole").attr("src", `/images/MoleGame/哭地鼠.png`);
-            $(".lovelyMole").animate({ top: "15px" }, 1000, function () {
-                $(".lovelyMole").remove();
-            });
+                $("body").mouseup(function (event) {
+                    $(event).preventDefault;
+                    $("body").attr("style", "cursor: url(/images/MoleGame/pending.png) 31 51,auto");
+                });
+                $("body").mousedown(function (event) {
+                    $(event).preventDefault;
+                    $("body").attr("style", "cursor: url(/images/MoleGame/hitted.png) 31 51,auto");
+                });
+            })
+            $(".lovelyMole").click(function () {
+                $(".lovelyMole").attr("src", `/images/MoleGame/哭地鼠.png`);
+                $(".lovelyMole").animate({ top: "15px" }, 1000, function () {
+                    $(".lovelyMole").remove();
+                });
+            })
 
-        })
     </script>
 </body>
 </html>
