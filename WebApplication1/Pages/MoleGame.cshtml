@@ -58,28 +58,28 @@
         </div>
     </div>
     <script>
-        document.onload = function (event) {
-            $(event).preventDefault;
-            $("body").append(`<img src="/images/MoleGame/爆炸.png" />`)
-            $("button").click(function () {
-                $(".lovelyMole").animate({ top: "-35px" });
+        function randomHole() {
+            Math.floor(Math.random() * 9)
+        }
+        $("body").append(`<img src="/images/MoleGame/爆炸.png" />`)
+        $("button").click(function () {
+            $(".lovelyMole").animate({ top: "-35px" });
+            $("body").attr("style", "cursor: url(/images/MoleGame/pending.png) 31 51,auto");
+            $("body").mouseup(function (event) {
+                $(event).preventDefault;
                 $("body").attr("style", "cursor: url(/images/MoleGame/pending.png) 31 51,auto");
-                $("body").mouseup(function (event) {
-                    $(event).preventDefault;
-                    $("body").attr("style", "cursor: url(/images/MoleGame/pending.png) 31 51,auto");
-                });
-                $("body").mousedown(function (event) {
-                    $(event).preventDefault;
-                    $("body").attr("style", "cursor: url(/images/MoleGame/hitted.png) 31 51,auto");
-                });
-            })
-            $(".lovelyMole").click(function () {
-                $(".lovelyMole").attr("src", `/images/MoleGame/哭地鼠.png`);
-                $(".lovelyMole").animate({ top: "15px" }, 1000, function () {
-                    $(".lovelyMole").remove();
-                });
-            })
-
+            });
+            $("body").mousedown(function (event) {
+                $(event).preventDefault;
+                $("body").attr("style", "cursor: url(/images/MoleGame/hitted.png) 31 51,auto");
+            });
+        })
+        $(".lovelyMole").click(function () {
+            $(".lovelyMole").attr("src", `/images/MoleGame/哭地鼠.png`);
+            $(".lovelyMole").animate({ top: "15px" }, 1000, function () {
+                $(".lovelyMole").remove();
+            });
+        })
     </script>
 </body>
 </html>
