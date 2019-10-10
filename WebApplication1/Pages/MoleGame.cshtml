@@ -16,41 +16,38 @@
                 <div class="row hole-row">
                     <div vacancy class="col-lg-1"></div>
                     <div hole class="col-lg-3 ">
-                        <div class="hole" style="background:url(/images/MoleGame/土堆.png) ; z-index:1"></div>
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png); z-index:1"></div>
                     </div>
                     <div hole class="col-lg-3 ">
-                        <div class="hole" style="background:url(/images/MoleGame/土堆.png) ; z-index:1"></div>
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png); z-index:1"></div>
                     </div>
                     <div hole class="col-lg-3 ">
-                        <img class="lovelyMole" src="~/images/MoleGame/萌地鼠.png" />
-                        <div class="hole" style="background:url(/images/MoleGame/土堆.png) ; z-index:1"></div>
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png); z-index:1"></div>
                     </div>
                 </div>
                 <div class="row hole-row">
                     <div vacancy class="col-lg-1"></div>
                     <div vacancy class="col-lg-1"></div>
                     <div hole class="col-lg-3 ">
-                        <img class="lovelyMole" src="~/images/MoleGame/萌地鼠.png" />
-                        <div class="hole" style="background:url(/images/MoleGame/土堆.png) ; z-index:1"></div>
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png); z-index:1"></div>
                     </div>
                     <div hole class="col-lg-3 ">
-                        <div class="hole" style="background:url(/images/MoleGame/土堆.png) ; z-index:1"></div>
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png); z-index:1"></div>
                         <div countdown id="countdown"></div>
                     </div>
                     <div hole class="col-lg-3 ">
-                        <div class="hole" style="background:url(/images/MoleGame/土堆.png) ; z-index:1"></div>
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png); z-index:1"></div>
                     </div>
                 </div>
                 <div class="row hole-row">
                     <div vacancy class="col-lg-1"></div>
                     <div hole class="col-lg-3 ">
-                        <div class="hole" style="background:url(/images/MoleGame/土堆.png ; z-index:1)"></div>
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png); z-index:1"></div>
                     </div>
                     <div hole class="col-lg-3 ">
-                        <div class="hole" style="background:url(/images/MoleGame/土堆.png ; z-index:1)"></div>
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png); z-index:1"></div>
                     </div>
                     <div hole class="col-lg-3 ">
-                        <img class="lovelyMole" src="~/images/MoleGame/萌地鼠.png" />
                         <div class="hole" style="background:url(/images/MoleGame/土堆.png); z-index:1"></div>
                     </div>
                 </div>
@@ -58,54 +55,64 @@
         </div>
     </div>
     <script>
-        function showMole() {
-            var mole;
+        function showLovelyMole() {
             var mole = document.createElement("img")
-            mole.setAttribute("class", "lovelyMole");
-            mole.setAttribute("src", "/images/MoleGame/萌地鼠.png")
-            document.querySelectorAll("[hole]")[0].appendChild(mole);
+            setTimeout(function () {
+                mole.setAttribute("class", "lovelyMole");
+                mole.setAttribute("mole", "");
+                mole.setAttribute("src", "/images/MoleGame/萌地鼠.png")
+                var random = Math.floor(Math.random() * 9);
+                while (document.querySelectorAll("[hole]")[random].querySelector("[mole]")) {
+                    random = Math.floor(Math.random() * 9);
+                }
+                document.querySelectorAll("[hole]")[random].appendChild(mole);
+                $(mole).animate({ top: "-35px" });
+                $(mole).click(function () {
+                    $(mole).attr("src", `/images/MoleGame/哭地鼠.png`);
+                    $(mole).animate({ top: "15px" }, 1000, function () {
+                        $(mole).remove();
+                    })
+                })
+            }, 1000)
         }
+                            //$(".lovelyMole").click(function () {
+                            //    $(".lovelyMole").attr("src", `/images/MoleGame/哭地鼠.png`);
+                            //    $(".lovelyMole").animate({ top: "15px" }, 1000, function () {
+                            //        $(".lovelyMole").remove();
+                            //    });
+                            //})
 
-        function randomHole() {
-            Math.floor(Math.random() * 9)
-        }
-        //setTimeout(function () {
-        //   var
-        //},1000)
-        //function showCountdown() {
-        //    var countdown = 3;
-        //    //var countdownTag = document.createElement("span");
-        //    //countdownTag.setAttribute("", "countdown");
-        //    //countdownTag.innerHTML = countdown;
-        //    document.querySelector("[countdown]").innerHTML = countdown;
+                                                                                                    //setTimeout(function () {
+                                                                                                    //   var
+                                                                                                    //},1000)
+                                                                                                    //function showCountdown() {
+                                                                                                    //    var countdown = 3;
+                                                                                                    //    //var countdownTag = document.createElement("span");
+                                                                                                    //    //countdownTag.setAttribute("", "countdown");
+                                                                                                    //    //countdownTag.innerHTML = countdown;
+                                                                                                    //    document.querySelector("[countdown]").innerHTML = countdown;
 
-        //}
-        //function startCountdown() {
-        //    if (countdown > 1) {
-        //        countdown--;
-        //    }
-        //}
-        //startCountdown();
-        //document.querySelector("[countdown]")
-        //$("body").append(`<img src="/images/MoleGame/爆炸.png" />`)
-        $("button").click(function () {
-            $(".lovelyMole").animate({ top: "-35px" });
-            $("body").attr("style", "cursor: url(/images/MoleGame/pending.png) 31 51,auto");
-            $("body").mouseup(function (event) {
-                $(event).preventDefault;
-                $("body").attr("style", "cursor: url(/images/MoleGame/pending.png) 31 51,auto");
-            });
-            $("body").mousedown(function (event) {
-                $(event).preventDefault;
-                $("body").attr("style", "cursor: url(/images/MoleGame/hitted.png) 31 51,auto");
-            });
-        })
-        $(".lovelyMole").click(function () {
-            $(".lovelyMole").attr("src", `/images/MoleGame/哭地鼠.png`);
-            $(".lovelyMole").animate({ top: "15px" }, 1000, function () {
-                $(".lovelyMole").remove();
-            });
-        })
+                                                                                                    //}
+                                                                                                    //function startCountdown() {
+                                                                                                    //    if (countdown > 1) {
+                                                                                                    //        countdown--;
+                                                                                                    //    }
+                                                                                                    //}
+                                                                                                    //startCountdown();
+                                                                                                    //document.querySelector("[countdown]")
+                                                                                                    //$("body").append(`<img src="/images/MoleGame/爆炸.png" />`)
+                                                                                                    //$("button").click(function () {
+                                                                                                    //    $("body").attr("style", "cursor: url(/images/MoleGame/pending.png) 31 51,auto");
+                                                                                                    //    $("body").mouseup(function (event) {
+                                                                                                    //        $(event).preventDefault;
+                                                                                                    //        $("body").attr("style", "cursor: url(/images/MoleGame/pending.png) 31 51,auto");
+                                                                                                    //    });
+                                                                                                    //    $("body").mousedown(function (event) {
+                                                                                                    //        $(event).preventDefault;
+                                                                                                    //        $("body").attr("style", "cursor: url(/images/MoleGame/hitted.png) 31 51,auto");
+                                                                                                    //    });
+                                                                                                    //})
+
     </script>
 </body>
 </html>
