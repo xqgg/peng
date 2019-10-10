@@ -15,61 +15,79 @@
             <div class="col-lg-12" moleGame-background id="background" style=" background:url(/images/MoleGame/背景.jpg)">
                 <div class="row hole-row">
                     <div vacancy class="col-lg-1"></div>
-                    <div class="col-lg-3 ">
-                        <div class="hole" style="background:url(/images/MoleGame/土堆.png)"></div>
+                    <div hole class="col-lg-3 ">
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png) ; z-index:1"></div>
                     </div>
-                    <div class="col-lg-3 ">
-                        <div class="hole" style="background:url(/images/MoleGame/土堆.png)"></div>
+                    <div hole class="col-lg-3 ">
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png) ; z-index:1"></div>
                     </div>
-                    <div class="col-lg-3 ">
+                    <div hole class="col-lg-3 ">
                         <img class="lovelyMole" src="~/images/MoleGame/萌地鼠.png" />
-                        <div class="hole" style="background:url(/images/MoleGame/土堆.png)"></div>
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png) ; z-index:1"></div>
                     </div>
                 </div>
                 <div class="row hole-row">
                     <div vacancy class="col-lg-1"></div>
                     <div vacancy class="col-lg-1"></div>
-                    <div class="col-lg-3 ">
+                    <div hole class="col-lg-3 ">
                         <img class="lovelyMole" src="~/images/MoleGame/萌地鼠.png" />
-                        <div class="hole" style="background:url(/images/MoleGame/土堆.png)"></div>
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png) ; z-index:1"></div>
                     </div>
-                    <div class="col-lg-3 ">
-                        <div class="hole" style="background:url(/images/MoleGame/土堆.png)"></div>
+                    <div hole class="col-lg-3 ">
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png) ; z-index:1"></div>
+                        <div countdown id="countdown"></div>
                     </div>
-                    <div class="col-lg-3 ">
-                        <div class="hole" style="background:url(/images/MoleGame/土堆.png)"></div>
+                    <div hole class="col-lg-3 ">
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png) ; z-index:1"></div>
                     </div>
                 </div>
                 <div class="row hole-row">
                     <div vacancy class="col-lg-1"></div>
-                    <div class="col-lg-3 ">
-                        <div class="hole" style="background:url(/images/MoleGame/土堆.png)"></div>
+                    <div hole class="col-lg-3 ">
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png ; z-index:1)"></div>
                     </div>
-                    <div class="col-lg-3 ">
-                        <div class="hole" style="background:url(/images/MoleGame/土堆.png)"></div>
+                    <div hole class="col-lg-3 ">
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png ; z-index:1)"></div>
                     </div>
-                    <div class="col-lg-3 ">
+                    <div hole class="col-lg-3 ">
                         <img class="lovelyMole" src="~/images/MoleGame/萌地鼠.png" />
-                        <div class="hole" style="background:url(/images/MoleGame/土堆.png)"></div>
-
+                        <div class="hole" style="background:url(/images/MoleGame/土堆.png); z-index:1"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script>
-        var countdown = 3;
-        function startCountdown() {
-            while (countdown > 1) {
-                countdown--;
-            }
+        function showMole() {
+            var mole;
+            var mole = document.createElement("img")
+            mole.setAttribute("class", "lovelyMole");
+            mole.setAttribute("src", "/images/MoleGame/萌地鼠.png")
+            document.querySelectorAll("[hole]")[0].appendChild(mole);
         }
 
         function randomHole() {
             Math.floor(Math.random() * 9)
         }
+        //setTimeout(function () {
+        //   var
+        //},1000)
+        //function showCountdown() {
+        //    var countdown = 3;
+        //    //var countdownTag = document.createElement("span");
+        //    //countdownTag.setAttribute("", "countdown");
+        //    //countdownTag.innerHTML = countdown;
+        //    document.querySelector("[countdown]").innerHTML = countdown;
 
-        $("body").append(`<img src="/images/MoleGame/爆炸.png" />`)
+        //}
+        //function startCountdown() {
+        //    if (countdown > 1) {
+        //        countdown--;
+        //    }
+        //}
+        //startCountdown();
+        //document.querySelector("[countdown]")
+        //$("body").append(`<img src="/images/MoleGame/爆炸.png" />`)
         $("button").click(function () {
             $(".lovelyMole").animate({ top: "-35px" });
             $("body").attr("style", "cursor: url(/images/MoleGame/pending.png) 31 51,auto");
