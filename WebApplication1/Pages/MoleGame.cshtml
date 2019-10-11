@@ -9,8 +9,11 @@
 </head>
 <body style="">
     <div>MoleGame</div>
-    <button>开始游戏</button>
-    <div timer></div>
+    <button beginButton>开始游戏</button>
+    <div>
+        游戏时间剩余：
+        <span timer></span>
+    </div>
     <div class="container">
         <div class="row main-content ">
             <div class="col-lg-12" moleGame-background id="background" style=" background:url(/images/MoleGame/背景.jpg)">
@@ -60,7 +63,7 @@
         //setTimeout(
 
         //)
-
+        $("[beginButton]").click(showTimer)
 
 
         function showTimer() {
@@ -76,7 +79,6 @@
                 //no showLovelyMole
             }
         }
-
         function showLovelyMole() {
             var mole = document.createElement("img")
             setTimeout(function () {
@@ -102,43 +104,43 @@
                 }, 3000)
             })
         }
-                                                                            //$(".lovelyMole").click(function () {
-                                                                            //    $(".lovelyMole").attr("src", `/images/MoleGame/哭地鼠.png`);
-                                                                            //    $(".lovelyMole").animate({ top: "15px" }, 1000, function () {
-                                                                            //        $(".lovelyMole").remove();
-                                                                            //    });
-                                                                            //})
+                                                                                        //$(".lovelyMole").click(function () {
+                                                                                        //    $(".lovelyMole").attr("src", `/images/MoleGame/哭地鼠.png`);
+                                                                                        //    $(".lovelyMole").animate({ top: "15px" }, 1000, function () {
+                                                                                        //        $(".lovelyMole").remove();
+                                                                                        //    });
+                                                                                        //})
 
-                                                                                                                                                    //setTimeout(function () {
-                                                                                                                                                    //   var
-                                                                                                                                                    //},1000)
-                                                                                                                                                    //function showCountdown() {
-                                                                                                                                                    //    var countdown = 3;
-                                                                                                                                                    //    //var countdownTag = document.createElement("span");
-                                                                                                                                                    //    //countdownTag.setAttribute("", "countdown");
-                                                                                                                                                    //    //countdownTag.innerHTML = countdown;
-                                                                                                                                                    //    document.querySelector("[countdown]").innerHTML = countdown;
+                                                                                                                                                                //setTimeout(function () {
+                                                                                                                                                                //   var
+                                                                                                                                                                //},1000)
+                                                                                                                                                                //function showCountdown() {
+                                                                                                                                                                //    var countdown = 3;
+                                                                                                                                                                //    //var countdownTag = document.createElement("span");
+                                                                                                                                                                //    //countdownTag.setAttribute("", "countdown");
+                                                                                                                                                                //    //countdownTag.innerHTML = countdown;
+                                                                                                                                                                //    document.querySelector("[countdown]").innerHTML = countdown;
 
-                                                                                                                                                    //}
-                                                                                                                                                    //function startCountdown() {
-                                                                                                                                                    //    if (countdown > 1) {
-                                                                                                                                                    //        countdown--;
-                                                                                                                                                    //    }
-                                                                                                                                                    //}
-                                                                                                                                                    //startCountdown();
-                                                                                                                                                    //document.querySelector("[countdown]")
-                                                                                                                                                    //$("body").append(`<img src="/images/MoleGame/爆炸.png" />`)
-                                                                                                                                                    //$("button").click(function () {
-                                                                                                                                                    //    $("body").attr("style", "cursor: url(/images/MoleGame/pending.png) 31 51,auto");
-                                                                                                                                                    //    $("body").mouseup(function (event) {
-                                                                                                                                                    //        $(event).preventDefault;
-                                                                                                                                                    //        $("body").attr("style", "cursor: url(/images/MoleGame/pending.png) 31 51,auto");
-                                                                                                                                                    //    });
-                                                                                                                                                    //    $("body").mousedown(function (event) {
-                                                                                                                                                    //        $(event).preventDefault;
-                                                                                                                                                    //        $("body").attr("style", "cursor: url(/images/MoleGame/hitted.png) 31 51,auto");
-                                                                                                                                                    //    });
-                                                                                                                                                    //})
+                                                                                                                                                                //}
+                                                                                                                                                                //function startCountdown() {
+                                                                                                                                                                //    if (countdown > 1) {
+                                                                                                                                                                //        countdown--;
+                                                                                                                                                                //    }
+                                                                                                                                                                //}
+                                                                                                                                                                //startCountdown();
+                                                                                                                                                                //document.querySelector("[countdown]")
+                                                                                                                                                                //$("body").append(`<img src="/images/MoleGame/爆炸.png" />`)
+                                                                                                                                                                //$("button").click(function () {
+                                                                                                                                                                //    $("body").attr("style", "cursor: url(/images/MoleGame/pending.png) 31 51,auto");
+                                                                                                                                                                //    $("body").mouseup(function (event) {
+                                                                                                                                                                //        $(event).preventDefault;
+                                                                                                                                                                //        $("body").attr("style", "cursor: url(/images/MoleGame/pending.png) 31 51,auto");
+                                                                                                                                                                //    });
+                                                                                                                                                                //    $("body").mousedown(function (event) {
+                                                                                                                                                                //        $(event).preventDefault;
+                                                                                                                                                                //        $("body").attr("style", "cursor: url(/images/MoleGame/hitted.png) 31 51,auto");
+                                                                                                                                                                //    });
+                                                                                                                                                                //})
 
     </script>
 </body>
