@@ -6,7 +6,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string name = "彭志强";
+            Console.WriteLine(name+".入栈口号：无忧");
         }
     }
 }
