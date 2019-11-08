@@ -26,3 +26,13 @@ REFERENCES Problem(Id)
 --2.只显示求助悬赏值大于5的数据 （JOIN）
 --3.已被加密
 --4.保证其使用的基表结构无法更改
+SELECT * FROM Response
+INSERT Response VALUES (N'示例',1,1,'2019-11-7')
+ALTER TABLE Response
+ALTER COLUMN Content NTEXT NOT NULL
+
+
+SELECT *
+FROM
+Response p JOIN [User] u 
+ON p.AuthorId=u.Id
