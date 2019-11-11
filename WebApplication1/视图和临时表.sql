@@ -32,7 +32,47 @@ ALTER TABLE Response
 ALTER COLUMN Content NTEXT NOT NULL
 
 
-SELECT *
-FROM
-Response p JOIN [User] u 
-ON p.AuthorId=u.Id
+--SELECT p.Id ResponseId, p.Content, p.AuthorId ResponseAuthorId, u.Username ReponseAuthorName,
+-- ProblemId
+
+--FROM
+--Response p JOIN [User] u 
+--ON p.AuthorId=u.Id
+
+SELECT * FROM Response
+SELECT * FROM Problem
+SELECT * FROM [User]
+
+
+
+
+--SELECT t.ResponseId,t.Content,t.ResponseAuthorId,t.ReponseAuthorName,t.ProblemId,p.AuthorId AS ProblemAuthorName,
+--p.title AS ProblemTitle,p.PublishDateTime AS CreateTime
+--FROM Problem p 
+--JOIN
+--(SELECT
+--rp.Id ResponseId, rp.Content, rp.AuthorId ResponseAuthorId, u.Username ReponseAuthorName,
+--rp.ProblemId
+--FROM
+--Response rp JOIN [User] u 
+--ON rp.AuthorId=u.Id) AS t
+--ON t.ProblemId = p.Id
+--SELECT * FROM [User]
+
+--然后生成一个视图 VResponse(ResponseId, Content, ResponseAuthorId，ReponseAuthorName,
+--ProblemId, ProblemAuthorName, ProblemTitle, CreateTime)，要求该视图：
+
+SELECT 
+r.Id ResponseId,
+r.Content Content,
+r.AuthorId ResponseAuthorId,
+ru.Username ReponseAuthorName,
+p.Id ProblemId,
+pu.Username ProblemAuthorName,
+p.title ProblemTitle,
+p.PublishDateTime CreateTime
+FROM 
+Response r JOIN Problem p ON R.ProblemId=p.Id
+JOIN [User] pu ON r.AuthorId = pu.Id
+JOIN [User] ru ON p.AuthorId = ru.Id
+WHERE p.Reward>5
