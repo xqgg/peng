@@ -52,6 +52,10 @@ namespace ConsoleApp1
             //Console.WriteLine(Math.Round((x / y), 2));
 
 
+            //输入一个字符，显示这个字符的unicode值
+            char str = '用';
+            Console.WriteLine((int)str);
+
         }
     }
 }
