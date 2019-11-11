@@ -87,9 +87,9 @@ namespace ConsoleApp1
             //按进栈时间装入一维数组，
             //按座位装入二维数组，
             ////并输出共有多少名同学。
-            string[] stutent = new string[] { "陈元", "幸龙泰", "彭志强", "于维谦", "王新", "曾俊清", "杨进文", "赵敬春", "刘江平" };
-            string[,] stutent_2 = new string[3, 4] { { "彭志强", "于维谦", "", "" }, { "陈元", "刘江平", "王新", "赵敬春" }, { "杨进文", "曾俊清", "幸龙泰", "" } };
-            //Console.WriteLine("源栈一共有："+stutent.Length+"名同学");
+            //string[] stutent = new string[] { "陈元", "幸龙泰", "彭志强", "于维谦", "王新", "曾俊清", "杨进文", "赵敬春", "刘江平" };
+            //string[,] stutent_2 = new string[3, 4] { { "彭志强", "于维谦", "", "" }, { "陈元", "刘江平", "王新", "赵敬春" }, { "杨进文", "曾俊清", "幸龙泰", "" } };
+            ////Console.WriteLine("源栈一共有："+stutent.Length+"名同学");
 
 
 
@@ -108,28 +108,35 @@ namespace ConsoleApp1
 
 
             //用for循环输出存储在一维 
-            for (int i = 0; i < stutent.Length; i++)
-            {
-                Console.WriteLine(stutent[i]);
-            };
-            //二维数组里的源栈所有同学姓名
-            for (int i = 0; i < stutent_2.GetLength(0); i++)
-            {
-                for (int j = 0; j < stutent_2.GetLength(1); j++)
-                {
-                    if (stutent_2[i, j] != "")
-                    {
-                        Console.WriteLine(stutent_2[i, j]);
-                    }
-                    else
-                    {
-                        //ignore
-                    }
-                }
-            };
+            //for (int i = 0; i < stutent.Length; i++)
+            //{
+            //    Console.WriteLine(stutent[i]);
+            //};
+            ////二维数组里的源栈所有同学姓名
+            //for (int i = 0; i < stutent_2.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < stutent_2.GetLength(1); j++)
+            //    {
+            //        if (stutent_2[i, j] != "")
+            //        {
+            //            Console.WriteLine(stutent_2[i, j]);
+            //        }
+            //        else
+            //        {
+            //            //ignore
+            //        }
+            //    }
+            //};
 
-            让电脑计算并输出：99+97+95+93+...+1的值
-
+            //让电脑计算并输出：99+97+95+93+...+1的值
+            int material = 99;
+            int result = 99;
+            while (material > 0)
+            {
+                material -= 2;
+                result += material;
+            }
+            Console.WriteLine(result);
         }
     }
 }
