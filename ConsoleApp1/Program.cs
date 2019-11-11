@@ -129,14 +129,57 @@ namespace ConsoleApp1
             //};
 
             //让电脑计算并输出：99+97+95+93+...+1的值
-            int material = 99;
-            int result = 99;
-            while (material > 1)
+            //int material = 99;
+            //int result = 99;
+            //while (material > 1)
+            //{
+            //    material -= 2;
+            //    result += material;
+            //}
+            //Console.WriteLine(result);
+
+
+
+            //将源栈同学的成绩存入一个double数组中，用循环找到最高分和最低分
+            double[] stutentScore = new double[] { 99, 84, 56, 88, 50.5, 64.5, 67 };
+            static double max(double[] score)
             {
-                material -= 2;
-                result += material;
-            }
-            Console.WriteLine(result);
+                double temp = score[0];
+                for (int i = 1; i < score.Length; i++)
+                {
+                    if (temp < score[i])
+                    {
+                        temp = score[i];
+                    }
+                    else
+                    {
+                        //noting
+                    }
+                };
+                return temp;
+            };
+
+            static double min(double[] score)
+            {
+                double temp = score[0];
+                for (int i = 1; i < score.Length; i++)
+                {
+                    if (temp > score[i])
+                    {
+                        temp = score[i];
+                    }
+                    else
+                    {
+                        //nothing
+                    }
+                }
+
+                return temp;
+            };
+            Console.WriteLine("最高分：" + max(stutentScore));
+            Console.WriteLine("最低分：" + min(stutentScore));
+
+
         }
     }
 }
