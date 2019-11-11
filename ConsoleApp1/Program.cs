@@ -53,8 +53,32 @@ namespace ConsoleApp1
 
 
             //输入一个字符，显示这个字符的unicode值
-            char str = '用';
-            Console.WriteLine((int)str);
+            //char str = '用';
+            //Console.WriteLine((int)str);
+
+            //输入一个整数，如果这个整数：
+            //能被6整除，显示：六六顺
+            //能被8整除，显示：发发发
+            //既能被6又能被6整除的显示：六六顺呀！发发发！
+            //否则，显示：大吉大利
+
+            int parameter = 36;
+            if (parameter % 6 == 0 && parameter % 8 == 0)
+            {
+                Console.WriteLine("六六顺呀！发发发！");
+            }
+            else if (parameter % 6 == 0)
+            {
+                Console.WriteLine("六六顺");
+            }
+            else if (parameter % 8 == 0)
+            {
+                Console.WriteLine("发发发");
+            }
+            else
+            {
+                Console.WriteLine("大吉大利");
+            }
 
         }
     }
