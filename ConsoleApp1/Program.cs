@@ -62,24 +62,34 @@ namespace ConsoleApp1
             //既能被6又能被6整除的显示：六六顺呀！发发发！
             //否则，显示：大吉大利
 
-            int parameter = 36;
-            if (parameter % 6 == 0 && parameter % 8 == 0)
-            {
-                Console.WriteLine("六六顺呀！发发发！");
-            }
-            else if (parameter % 6 == 0)
-            {
-                Console.WriteLine("六六顺");
-            }
-            else if (parameter % 8 == 0)
-            {
-                Console.WriteLine("发发发");
-            }
-            else
-            {
-                Console.WriteLine("大吉大利");
-            }
+            //int parameter = 36;
+            //if (parameter % 6 == 0 && parameter % 8 == 0)
+            //{
+            //    Console.WriteLine("六六顺呀！发发发！");
+            //}
+            //else if (parameter % 6 == 0)
+            //{
+            //    Console.WriteLine("六六顺");
+            //}
+            //else if (parameter % 8 == 0)
+            //{
+            //    Console.WriteLine("发发发");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("大吉大利");
+            //}
 
+
+
+
+            //将源栈同学姓名 / 昵称分别：
+            //按进栈时间装入一维数组，
+            //按座位装入二维数组，
+            //并输出共有多少名同学。
+            string[] stutent = new string[] { "陈元", "幸龙泰", "彭志强", "于维谦", "王新", "曾俊清", "杨进文", "赵敬春", "刘江平" };
+            string[,] stutent_2 = new string[3, 4] { { "彭志强", "于维谦", "", "" }, { "陈元", "刘江平", "王新", "赵敬春" }, { "杨进文", "曾俊清", "幸龙泰", "" } };
+            Console.WriteLine("源栈一共有："+stutent.Length+"名同学");
         }
     }
 }
