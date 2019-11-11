@@ -86,10 +86,50 @@ namespace ConsoleApp1
             //将源栈同学姓名 / 昵称分别：
             //按进栈时间装入一维数组，
             //按座位装入二维数组，
-            //并输出共有多少名同学。
+            ////并输出共有多少名同学。
             string[] stutent = new string[] { "陈元", "幸龙泰", "彭志强", "于维谦", "王新", "曾俊清", "杨进文", "赵敬春", "刘江平" };
             string[,] stutent_2 = new string[3, 4] { { "彭志强", "于维谦", "", "" }, { "陈元", "刘江平", "王新", "赵敬春" }, { "杨进文", "曾俊清", "幸龙泰", "" } };
-            Console.WriteLine("源栈一共有："+stutent.Length+"名同学");
+            //Console.WriteLine("源栈一共有："+stutent.Length+"名同学");
+
+
+
+
+            //分别用for循环和while循环输出：1,2,3,4,5 和 1,3,5,7,9
+            //for (int i = 1; i < 6; i++)
+            //{
+            //    Console.WriteLine(i);
+            //};
+            //int j = 1;
+            //while (j < 10)
+            //{
+            //    Console.WriteLine(j);
+            //    j += 2;
+            //}
+
+
+            //用for循环输出存储在一维 
+            for (int i = 0; i < stutent.Length; i++)
+            {
+                Console.WriteLine(stutent[i]);
+            };
+            //二维数组里的源栈所有同学姓名
+            for (int i = 0; i < stutent_2.GetLength(0); i++)
+            {
+                for (int j = 0; j < stutent_2.GetLength(1); j++)
+                {
+                    if (stutent_2[i, j] != "")
+                    {
+                        Console.WriteLine(stutent_2[i, j]);
+                    }
+                    else
+                    {
+                        //ignore
+                    }
+                }
+            };
+
+            让电脑计算并输出：99+97+95+93+...+1的值
+
         }
     }
 }
