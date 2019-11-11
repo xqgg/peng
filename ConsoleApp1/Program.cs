@@ -131,7 +131,7 @@ namespace ConsoleApp1
             //让电脑计算并输出：99+97+95+93+...+1的值
             int material = 99;
             int result = 99;
-            while (material > 0)
+            while (material > 1)
             {
                 material -= 2;
                 result += material;
