@@ -195,63 +195,72 @@ namespace ConsoleApp1
             ///   输入次数不得超过10次，超过10次，显示：游戏结束！未能猜中。
 
 
-            Random rnd = new Random();
-            int bingo = rnd.Next(0, 1000);
-            //int bingo = 888;
-            Console.WriteLine("猜数字游戏----");
-            Console.WriteLine("请输入一个不超过1000的自然数");
-            Console.WriteLine("共有10次机会");
-            int counter = 1;
-            while (counter < 11)
+            //Random rnd = new Random();
+            //int bingo = rnd.Next(0, 1000);
+            ////int bingo = 888;
+            //Console.WriteLine("猜数字游戏----");
+            //Console.WriteLine("请输入一个不超过1000的自然数");
+            //Console.WriteLine("共有10次机会");
+            //int counter = 1;
+            //while (counter < 11)
+            //{
+            //    string speculate = Console.ReadLine();
+            //    bool isInt = int.TryParse(speculate, out int intSpeculate);
+            //    int surplus = 10 - counter;
+            //    if (!isInt || intSpeculate > 1000 || intSpeculate < 0)
+            //    {
+            //        Console.WriteLine("输入错误，请输入一个不超过1000的自然数!");
+            //        Console.WriteLine($"还有{surplus}次机会。");
+            //    }
+            //    else if (intSpeculate > bingo)
+            //    {
+            //        Console.WriteLine($"太大了哟！（还剩{surplus}次)");
+            //    }
+            //    else if (intSpeculate < bingo)
+            //    {
+            //        Console.WriteLine($"太小了哦！（还剩{surplus}次）");
+            //    }
+            //    else
+            //    {
+            //        if (counter <= 4)
+            //        {
+            //            Console.WriteLine($"真厉害！猜对了！只用了{counter}次！");
+            //        }
+            //        else if (counter <= 10)
+            //        {
+            //            Console.WriteLine($"恭喜你！猜对了！用了{counter}次。");
+            //        }
+            //        break;
+            //    }
+            //    if (counter == 10)
+            //    {
+            //        Console.WriteLine("游戏结束,未能猜中!");
+            //    }
+            //    else
+            //    {
+            //        //keep
+            //    }
+            //    //Console.WriteLine(isInt);
+            //    //Console.WriteLine(intSpeculate);
+            //    counter++;
+            //}
+
+            //找出100以内的质数
+            for (int i = 0; i < 101; i++)
             {
-                string speculate = Console.ReadLine();
-                bool isInt = int.TryParse(speculate, out int intSpeculate);
-                int surplus = 10 - counter;
-                if (!isInt || intSpeculate > 1000 || intSpeculate < 0)
+                for (int j = 2; j < i / 2 + 1; j++)
                 {
-                    Console.WriteLine("输入错误，请输入一个不超过1000的自然数!");
-                    Console.WriteLine($"还有{surplus}次机会。");
-                }
-                else if (intSpeculate > bingo)
-                {
-                    Console.WriteLine($"太大了哟！（还剩{surplus}次)");
-                }
-                else if (intSpeculate < bingo)
-                {
-                    Console.WriteLine($"太小了哦！（还剩{surplus}次）");
-                }
-                else
-                {
-                    if (counter <= 4)
+                    if (i % j == 0)
                     {
-                        Console.WriteLine($"真厉害！猜对了！只用了{counter}次！");
+                        //Console.WriteLine(i + "不是质数！");
+                        break;
                     }
-                    else if (counter <= 10)
+                    else if (j >= i / 2)
                     {
-                        Console.WriteLine($"恭喜你！猜对了！用了{counter}次。");
+                        Console.WriteLine(i + "是质数");
                     }
-                    break;
                 }
-                if (counter==10)
-                {
-                    Console.WriteLine("游戏结束,未能猜中!");
-                }
-                else
-                {
-                    //keep
-                }
-
-
-
-
-
-
-                //Console.WriteLine(isInt);
-                //Console.WriteLine(intSpeculate);
-                counter++;
             }
-
-
 
 
 
