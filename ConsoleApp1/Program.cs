@@ -141,43 +141,120 @@ namespace ConsoleApp1
 
 
             //将源栈同学的成绩存入一个double数组中，用循环找到最高分和最低分
-            double[] stutentScore = new double[] { 99, 84, 56, 88, 50.5, 64.5, 67 };
-            static double max(double[] score)
-            {
-                double temp = score[0];
-                for (int i = 1; i < score.Length; i++)
-                {
-                    if (temp < score[i])
-                    {
-                        temp = score[i];
-                    }
-                    else
-                    {
-                        //noting
-                    }
-                };
-                return temp;
-            };
+            //double[] stutentScore = new double[] { 99, 84, 56, 88, 50.5, 64.5, 67 };
+            //static double max(double[] score)
+            //{
+            //    double temp = score[0];
+            //    for (int i = 1; i < score.Length; i++)
+            //    {
+            //        if (temp < score[i])
+            //        {
+            //            temp = score[i];
+            //        }
+            //        else
+            //        {
+            //            //noting
+            //        }
+            //    };
+            //    return temp;
+            //};
 
-            static double min(double[] score)
+            //static double min(double[] score)
+            //{
+            //    double temp = score[0];
+            //    for (int i = 1; i < score.Length; i++)
+            //    {
+            //        if (temp > score[i])
+            //        {
+            //            temp = score[i];
+            //        }
+            //        else
+            //        {
+            //            //nothing
+            //        }
+            //    }
+
+            //    return temp;
+            //};
+            //Console.WriteLine("最高分：" + max(stutentScore));
+            //Console.WriteLine("最低分：" + min(stutentScore));
+
+
+
+            ///猜数字游戏
+            ///   测试用例
+            ///   输入1001，返回“输入错误，请输入一个不超过1000的自然数!”和剩余的机会次数。
+            ///   输入-1，返回“输入错误，请输入一个不超过1000的自然数!”和剩余的机会次数。
+            ///   输入"",返回“输入错误，请输入一个不超过1000的自然数!”和剩余的机会次数。
+            ///   输入"sjagh&%"“输入错误，请输入一个不超过1000的自然数!”和剩余的机会次数。
+            ///   ps:只能输入0-1000以内的自然数
+            ///   假设结果为888
+            ///   输入777，返回：太小了哦！（还剩*次）
+            ///   输入999，返回：太大了哟！（还剩*次)
+            ///   输入888，所用次数小于4次，返回：真厉害！猜对了！只用了*次！/否则返回：恭喜你！猜对了！用了*次。
+            ///   输入次数不得超过10次，超过10次，显示：游戏结束！未能猜中。
+
+
+            Random rnd = new Random();
+            int bingo = rnd.Next(0, 1000);
+            //int bingo = 888;
+            Console.WriteLine("猜数字游戏----");
+            Console.WriteLine("请输入一个不超过1000的自然数");
+            Console.WriteLine("共有10次机会");
+            int counter = 1;
+            while (counter < 11)
             {
-                double temp = score[0];
-                for (int i = 1; i < score.Length; i++)
+                string speculate = Console.ReadLine();
+                bool isInt = int.TryParse(speculate, out int intSpeculate);
+                int surplus = 10 - counter;
+                if (!isInt || intSpeculate > 1000 || intSpeculate < 0)
                 {
-                    if (temp > score[i])
+                    Console.WriteLine("输入错误，请输入一个不超过1000的自然数!");
+                    Console.WriteLine($"还有{surplus}次机会。");
+                }
+                else if (intSpeculate > bingo)
+                {
+                    Console.WriteLine($"太大了哟！（还剩{surplus}次)");
+                }
+                else if (intSpeculate < bingo)
+                {
+                    Console.WriteLine($"太小了哦！（还剩{surplus}次）");
+                }
+                else
+                {
+                    if (counter <= 4)
                     {
-                        temp = score[i];
+                        Console.WriteLine($"真厉害！猜对了！只用了{counter}次！");
                     }
-                    else
+                    else if (counter <= 10)
                     {
-                        //nothing
+                        Console.WriteLine($"恭喜你！猜对了！用了{counter}次。");
                     }
+                    break;
+                }
+                if (counter==10)
+                {
+                    Console.WriteLine("游戏结束,未能猜中!");
+                }
+                else
+                {
+                    //keep
                 }
 
-                return temp;
-            };
-            Console.WriteLine("最高分：" + max(stutentScore));
-            Console.WriteLine("最低分：" + min(stutentScore));
+
+
+
+
+
+                //Console.WriteLine(isInt);
+                //Console.WriteLine(intSpeculate);
+                counter++;
+            }
+
+
+
+
+
 
 
         }
