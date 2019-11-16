@@ -402,7 +402,7 @@ namespace ConsoleApp1
             {
                 temp += score[i];
             }
-            Console.WriteLine((temp / score.Length).ToString("n2"));
+            Console.WriteLine("源栈同学的平均分为："+(temp / score.Length).ToString("n2"));
         }
 
     }
