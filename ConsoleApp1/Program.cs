@@ -268,18 +268,17 @@ namespace ConsoleApp1
 
 
             //SelfIntroduce("彭志强", 20, false, 165, "湖南");
-            Add(1, 2);
-            Minus(2, 4.55);
-            Mutiply(9, 1.2);
-            Divide(20, 5);
+            //Add(1, 2);
+            //Minus(2, 4.55);
+            //Mutiply(9, 1.2);
+            //Divide(20, 5);
 
+            //GetUnicode('哈');
 
+            GetMax(19, 55, 66, 99, 88, 77, 88, 99, 88, 77);
         }
         //将之前以下作业封装成方法（自行思考参数和返回值），并调用执行
         //自我介绍：SelfIntroduce()
-        //加减乘除：Add() / Minus() / Mutiply() / Divide()
-        //取字符值：GetUnicode()
-        //取最高分：GetMax()
 
         static void SelfIntroduce(string name, int age, bool isFemale, int height, string fromCity)
         {
@@ -291,6 +290,9 @@ namespace ConsoleApp1
             Console.WriteLine("fromCity:" + fromCity);
 
         }
+
+
+        //加减乘除：Add() / Minus() / Mutiply() / Divide()
 
         static void Add(double addEnd1, double addEnd2)
         {
@@ -310,6 +312,59 @@ namespace ConsoleApp1
         static void Divide(double dividend, double divisor)
         {
             Console.WriteLine(dividend / divisor);
+        }
+
+
+        //取字符值：GetUnicode()
+        static void GetUnicode(char input)
+        {
+            Console.WriteLine((int)input);
+        }
+
+        //取最高分：GetMaxFromScore()
+        //取十个成绩中最高的，成绩只能是整数
+        //成绩最低0分，最高100分
+        static void GetMax(int score1,
+                           int score2,
+                           int score3,
+                           int score4,
+                           int score5,
+                           int score6,
+                           int score7,
+                           int score8,
+                           int score9,
+                           int score10)
+        {
+
+            int[] score = new int[] { score1, score2, score3, score4, score5, score6, score7, score8, score9, score10 };
+            for (int i = 0; i < score.Length; i++)
+            {
+                Console.WriteLine(score[i]);
+                if (score[i] < 0 || score[i] > 100)
+                {
+                    Console.WriteLine("输入了不符合要求的成绩，请检查后重试。");
+                    Console.WriteLine("成绩最低0分，满分100分。");
+                    Console.WriteLine(score[i]);
+                    return;
+                }
+                else
+                {
+                    //nothing
+                }
+            }
+            int temp = 0;
+            for (int j = 0; j < score.Length; j++)
+            {
+                if (temp < score[j])
+                {
+                    temp = score[j];
+                }
+                else
+                {
+                    //noting
+                }
+            }
+            Console.WriteLine("最高分为：" + temp);
         }
     }
 }
