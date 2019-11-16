@@ -6,6 +6,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+
+
             //string name = "彭志强";
             //ushort age = 20;
             //bool isFemale = false;
@@ -246,25 +248,42 @@ namespace ConsoleApp1
             //}
 
             //找出100以内的质数
-            for (int i = 0; i < 101; i++)
-            {
-                for (int j = 2; j < i / 2 + 1; j++)
-                {
-                    if (i % j == 0)
-                    {
-                        //Console.WriteLine(i + "不是质数！");
-                        break;
-                    }
-                    else if (j >= i / 2)
-                    {
-                        Console.WriteLine(i + "是质数");
-                    }
-                }
-            }
+            //for (int i = 0; i < 101; i++)
+            //{
+            //    for (int j = 2; j < i / 20 + 1; j++)
+            //    {
+            //        if (i % j == 0)
+            //        {
+            //            //Console.WriteLine(i + "不是质数！");
+            //            break;
+            //        }
+            //        else if (j >= i / 2)
+            //        {
+            //            Console.WriteLine(i + "是质数");
+            //        }
+            //    }
+            //}
 
 
 
 
+            SelfIntroduce("彭志强", 20, false, 165, "湖南");
+
+        }
+        //将之前以下作业封装成方法（自行思考参数和返回值），并调用执行
+        //自我介绍：SelfIntroduce()
+        //加减乘除：Add() / Minus() / Mutiply() / Divide()
+        //取字符值：GetUnicode()
+        //取最高分：GetMax()
+    
+        static void SelfIntroduce(string name, int age, bool isFemale, int height, string fromCity)
+        {
+
+            Console.WriteLine("姓名：" + name);
+            Console.WriteLine("age:" + age);
+            Console.WriteLine("isFemale:" + isFemale);
+            Console.WriteLine("height:" + height);
+            Console.WriteLine("fromCity:" + fromCity);
 
         }
     }
