@@ -275,7 +275,9 @@ namespace ConsoleApp1
 
             //GetUnicode('哈');
 
-            GetMax(19, 55, 66, 99, 88, 77, 88, 99, 88, 77);
+            //GetMax(19, 55, 66, 99, 88, 77, 88, 99, 88, 77);
+
+            GetAverage(19, 55, 66, 99, 88, 77, 88, 99, 88, 77);
         }
         //将之前以下作业封装成方法（自行思考参数和返回值），并调用执行
         //自我介绍：SelfIntroduce()
@@ -366,5 +368,42 @@ namespace ConsoleApp1
             }
             Console.WriteLine("最高分为：" + temp);
         }
+
+        //计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
+        static void GetAverage(int score1,
+                               int score2,
+                               int score3,
+                               int score4,
+                               int score5,
+                               int score6,
+                               int score7,
+                               int score8,
+                               int score9,
+                               int score10)
+        {
+            int[] score = new int[] { score1, score2, score3, score4, score5, score6, score7, score8, score9, score10 };
+            for (int i = 0; i < score.Length; i++)
+            {
+                //Console.WriteLine(score[i]);
+                if (score[i] < 0 || score[i] > 100)
+                {
+                    Console.WriteLine("输入了不符合要求的成绩，请检查后重试。");
+                    Console.WriteLine("成绩最低0分，满分100分。");
+                    //Console.WriteLine(score[i]);
+                    return;
+                }
+                else
+                {
+                    //nothing
+                }
+            }
+            double temp = 0;
+            for (int i = 0; i < score.Length; i++)
+            {
+                temp += score[i];
+            }
+            Console.WriteLine((temp / score.Length).ToString("n2"));
+        }
+
     }
 }
