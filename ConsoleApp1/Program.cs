@@ -267,7 +267,12 @@ namespace ConsoleApp1
 
 
 
-            SelfIntroduce("彭志强", 20, false, 165, "湖南");
+            //SelfIntroduce("彭志强", 20, false, 165, "湖南");
+            Add(1, 2);
+            Minus(2, 4.55);
+            Mutiply(9, 1.2);
+            Divide(20, 5);
+
 
         }
         //将之前以下作业封装成方法（自行思考参数和返回值），并调用执行
@@ -275,7 +280,7 @@ namespace ConsoleApp1
         //加减乘除：Add() / Minus() / Mutiply() / Divide()
         //取字符值：GetUnicode()
         //取最高分：GetMax()
-    
+
         static void SelfIntroduce(string name, int age, bool isFemale, int height, string fromCity)
         {
 
@@ -285,6 +290,26 @@ namespace ConsoleApp1
             Console.WriteLine("height:" + height);
             Console.WriteLine("fromCity:" + fromCity);
 
+        }
+
+        static void Add(double addEnd1, double addEnd2)
+        {
+            Console.WriteLine(addEnd1 + addEnd2);
+        }
+
+        static void Minus(double minuend, double subtrahend)
+        {
+            Console.WriteLine(minuend - subtrahend);
+        }
+
+        static void Mutiply(double coefficient1, double coefficient2)
+        {
+            Console.WriteLine(coefficient1 * coefficient2);
+        }
+
+        static void Divide(double dividend, double divisor)
+        {
+            Console.WriteLine(dividend / divisor);
         }
     }
 }
