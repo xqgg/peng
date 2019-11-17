@@ -277,7 +277,14 @@ namespace ConsoleApp1
 
             //GetMax(19, 55, 66, 99, 88, 77, 88, 99, 88, 77);
 
-            GetAverage(19, 55, 66, 99, 88, 77, 88, 99, 88, 77);
+            //GetAverage(19, 55, 66, 99, 88, 77, 88, 99, 88, 77);
+            string a = "彭志强";
+            string b = "王新";
+            string[] dormitory = new string[] { "彭志强" };
+            //swapBed(ref a, ref b, ref string dormitory["jjj"]);
+
+
+
         }
         //将之前以下作业封装成方法（自行思考参数和返回值），并调用执行
         //自我介绍：SelfIntroduce()
@@ -402,8 +409,59 @@ namespace ConsoleApp1
             {
                 temp += score[i];
             }
-            Console.WriteLine("源栈同学的平均分为："+(temp / score.Length).ToString("n2"));
+            Console.WriteLine("源栈同学的平均分为：" + (temp / score.Length).ToString("n2"));
         }
 
+
+        //用ref调用Swap()方法交换两个同学的床位号
+        //string[] bed = new string[] { "", "", "" };
+
+
+        //static void swapBed(ref string stutent1, ref string stutent2, ref dormitory)
+        //{
+        //    int stutent1NumberOfBed = 0;
+        //    int stutent2NumberOfBed = 0;
+        //    string temp = "";
+
+        //    for (int i = 0; i <= dormitory.Length + 1; i++)
+        //    {
+        //        if (i == dormitory.Length)
+        //        {
+        //            Console.WriteLine("未找到该学生，请核查后重试。");
+        //            return;
+        //        }
+        //        if (stutent1 == dormitory[i])
+        //        {
+        //            stutent1NumberOfBed = i;
+        //            temp = dormitory[stutent1NumberOfBed];
+        //            break;
+        //        }
+        //        else
+        //        {
+        //            //noting
+        //        }
+        //    }
+        //    for (int j = 0; j < dormitory.Length + 1; j++)
+        //    {
+        //        if (j == dormitory.Length)
+        //        {
+        //            Console.WriteLine("未找到该学生，请核查后重试。");
+        //            return;
+        //        }
+        //        if (stutent2 == dormitory[j])
+        //        {
+        //            stutent2NumberOfBed = j;
+        //            dormitory[stutent2NumberOfBed] = dormitory[stutent1NumberOfBed];
+        //            dormitory[stutent2NumberOfBed] = temp;
+        //            break;
+        //        }
+        //        else
+        //        {
+        //            //noting
+        //        }
+        //    }
+
+
+        }
     }
 }
