@@ -1,4 +1,5 @@
 ﻿using System;
+using CSharp;
 
 namespace ConsoleApp1
 {
@@ -7,6 +8,9 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
 
+            User pzq = new User();
+            pzq.Name = "彭志强";
+            Console.WriteLine(pzq.Name);
 
             //string name = "彭志强";
             //ushort age = 20;
@@ -278,9 +282,9 @@ namespace ConsoleApp1
             //GetMax(19, 55, 66, 99, 88, 77, 88, 99, 88, 77);
 
             //GetAverage(19, 55, 66, 99, 88, 77, 88, 99, 88, 77);
-            string a = "彭志强";
-            string b = "王新";
-            string[] dormitory = new string[] { "彭志强" };
+            //string a = "彭志强";
+            //string b = "王新";
+            //string[] dormitory = new string[] { "彭志强" };
             //swapBed(ref a, ref b, ref string dormitory["jjj"]);
 
 
@@ -462,6 +466,6 @@ namespace ConsoleApp1
         //    }
 
 
-        }
+        //}
     }
 }
