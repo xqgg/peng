@@ -6,14 +6,14 @@ namespace CSharp
 {
     internal class User
     {
-        internal string Name;
-        private string Password;
-        internal User InvitedBy;
+        internal string Name { get; set; }
+        internal string Password { private get; set; }
+        internal User InvitedBy { get; set; }
         internal void Register()
         {
 
         }
         internal void Login() { }
-
+        private void ChangePasword() { }
     }
 }
