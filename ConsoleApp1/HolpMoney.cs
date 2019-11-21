@@ -6,12 +6,12 @@ namespace CSharp
 {
     internal class HolpMoney
     {
-        internal User User;
-        internal int balance;
-        internal int income;//正数为收入，负数为消费
-        internal DateTime gainTime;
-        internal string cause;
-        internal string remarks;
+        internal User User { get; set; }
+        internal int Balance { get; set; }
+        internal int Bncome { get; set; }//正数为收入，负数为消费
+        internal DateTime BainTime { get; set; }
+        internal string Cause { get; set; }
+        internal string Remarks { get; set; }
         internal void MoneyGain(User user, int balance, int income, DateTime gainTime, string cause, string remarks)
         {
 
