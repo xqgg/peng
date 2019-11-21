@@ -5,15 +5,15 @@ using CSharp;
 
 namespace CSharp
 {
-    public class Problem
+    internal class Problem
     {
-        string Title;
-        string Body;
-        int Reward;
-        DateTime PublishDateTime;
+        internal string Title;
+        internal string Body;
+        internal int Reward;
+        internal DateTime PublishDateTime;
         //User Author;
-        User Author;
-        void Publish() { }
+        internal User Author;
+        internal void Publish() { }
 
     }
 }
