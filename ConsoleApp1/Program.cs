@@ -8,9 +8,9 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
 
-            User pzq = new User();
-            pzq.Name = "彭志强";
-            Console.WriteLine(pzq.Name);
+            //User pzq = new User();
+            //pzq.Name = "彭志强";
+            //Console.WriteLine(pzq.Name);
 
             //string name = "彭志强";
             //ushort age = 20;
