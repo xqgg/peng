@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CSharp;
 
 namespace CSharp
 {
@@ -10,7 +11,8 @@ namespace CSharp
         string Body;
         int Reward;
         DateTime PublishDateTime;
-        string Author;
+        //User Author;
+        User Author;
         void Publish() { }
 
     }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharp
 {
-    public class User
+    internal class User
     {
         internal string Name;
         private string Password;
