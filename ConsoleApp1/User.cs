@@ -7,10 +7,13 @@ namespace CSharp
     public class User
     {
         internal string Name;
-        int Password;
-        string InvitedBy;
-        void Register() { }
-        void Login() { }
+        private string Password;
+        internal User InvitedBy;
+        internal void Register()
+        {
+
+        }
+        internal void Login() { }
 
     }
 }
