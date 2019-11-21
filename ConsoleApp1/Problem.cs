@@ -7,13 +7,12 @@ namespace CSharp
 {
     internal class Problem
     {
-        internal string Title;
-        internal string Body;
-        internal int Reward;
-        internal DateTime PublishDateTime;
-        //User Author;
-        internal User Author;
-        internal void Publish() { }
+        internal string Title { get; set; }
+        internal string Body { get; set; }
+        internal int Reward { get; set; }
+        internal DateTime PublishDateTime { get; set; }
+        internal User Author { get; set; }
+        internal void Publish(string Title, string Body, int Rewward, DateTime PublishDateTime, User Author) { }
 
     }
 }
