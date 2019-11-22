@@ -6,7 +6,6 @@ namespace CSharp
 {
     internal abstract class Content
     {
-        protected string kind;
         public Content(string kind)
         {
             if (kind == "")
@@ -18,6 +17,13 @@ namespace CSharp
             {
                 this.kind = kind;
             }
+        }
+        protected string kind;
+        private DateTime _createTime;
+        //private DateTime _PublishTime;
+        public DateTime PublishTime
+        {
+            get { return _createTime; }
         }
     }
 }
