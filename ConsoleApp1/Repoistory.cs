@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharp
 {
-    class Repoistory
+    static class Repoistory
     {
         public const int version = 1;
         internal static string connection { get; }
