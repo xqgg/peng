@@ -12,6 +12,7 @@ namespace CSharp
             if (kind == "")
             {
                 Console.WriteLine("内容的种类不能为空，请重试");
+                return;
             }
             else
             {
