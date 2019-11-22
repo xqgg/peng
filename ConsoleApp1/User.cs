@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharp
 {
-    internal class User
+    internal sealed class User
     {
         //internal string Name { get; set; }
         string _Name;
