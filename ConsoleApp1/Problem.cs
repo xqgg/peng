@@ -5,8 +5,15 @@ using CSharp;
 
 namespace CSharp
 {
-    internal class Problem
+    internal class Problem : Content
     {
+        private string v;
+
+        public Problem(string kind) : base(kind)
+        {
+        }
+
+
         internal string Title { get; set; }
         internal string Body { get; set; }
         internal int Reward { get; set; }
