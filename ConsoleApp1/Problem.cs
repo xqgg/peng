@@ -20,6 +20,10 @@ namespace CSharp
         {
             return this /*Problem*/;
         }
+        internal void Delete(int Id)
+        {
 
+        }
+        void repoistory() { }
     }
 }
