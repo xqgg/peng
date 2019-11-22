@@ -12,7 +12,14 @@ namespace CSharp
         internal int Reward { get; set; }
         internal DateTime PublishDateTime { get; set; }
         internal User Author { get; set; }
-        internal void Publish(string Title, string Body, int Rewward, DateTime PublishDateTime, User Author) { }
+        internal void Publish(string Title, string Body, int Rewward, DateTime PublishDateTime, User Author)
+        {
+
+        }
+        public Problem Load(int Id)
+        {
+            return this /*Problem*/;
+        }
 
     }
 }
