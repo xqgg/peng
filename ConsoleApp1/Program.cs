@@ -13,7 +13,8 @@ namespace ConsoleApp1
             ContentService publishArticle = new Article();
 
             publishProblem.Publish(pzq, 10, 2);
-            publishArticle.Publish(pzq, 10, );
+            publishArticle.Publish(pzq, 10);
+
 
             Console.WriteLine(pzq.getName());
 
