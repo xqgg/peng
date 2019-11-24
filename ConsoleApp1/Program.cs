@@ -15,7 +15,8 @@ namespace ConsoleApp1
             ContentService publishSuggest = new Suggest();
 
             publishProblem.Publish(pzq, 2);
-            publishArticle.Publish(pzq, 10);
+            publishArticle.Publish(pzq);
+            publishSuggest.Publish(pzq);
 
 
             Console.WriteLine(pzq.getName());
