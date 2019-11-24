@@ -9,9 +9,12 @@ namespace ConsoleApp1
         {
             User pzq = new User();
             pzq.setName("彭志强");
-            ContentService publish = new Problem();
+            ContentService publishProblem = new Problem();
+            ContentService publishArticle = new Article();
 
-            publish.Publish(pzq, 10, 2);
+            publishProblem.Publish(pzq, 10, 2);
+            publishArticle.Publish(pzq, 10, );
+
             Console.WriteLine(pzq.getName());
 
             //Problem P = new Problem("");//暂停用
