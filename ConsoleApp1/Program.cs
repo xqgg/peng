@@ -9,10 +9,12 @@ namespace ConsoleApp1
         {
             User pzq = new User();
             pzq.setName("彭志强");
+            pzq.bangMoney = 10;
             ContentService publishProblem = new Problem();
             ContentService publishArticle = new Article();
+            ContentService publishSuggest = new Suggest();
 
-            publishProblem.Publish(pzq, 10, 2);
+            publishProblem.Publish(pzq, 2);
             publishArticle.Publish(pzq, 10);
 
 

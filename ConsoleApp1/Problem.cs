@@ -8,7 +8,7 @@ namespace CSharp
     internal class Problem :/* Content*/ContentService
     {
 
-        internal override void Publish(User promulgator, int bangMoney, int Reward)
+        internal override void Publish(User promulgator, int Reward)
         {
             Console.WriteLine($"求助发布成功,用户{promulgator.getName()}消耗帮帮币{Reward}");
         }

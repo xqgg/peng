@@ -4,9 +4,9 @@ using System.Text;
 
 namespace CSharp
 {
-    class Article : ContentService
+    internal class Article : ContentService
     {
-        internal override void Publish(User promulgator, int bangMoney, int Reward)
+        internal override void Publish(User promulgator, int Reward)
         {
             Console.WriteLine($"成功发布Article，{promulgator.getName()}消耗棒棒币1个。");
         }

@@ -25,6 +25,8 @@ namespace CSharp
         }
         internal string Password { private get; set; }
         internal User InvitedBy { get; set; }
+        internal int bangMoney { set; get; }
+
         internal void Register()
         {
 
