@@ -5,13 +5,18 @@ using CSharp;
 
 namespace CSharp
 {
-    internal class Problem : Content
+    internal class Problem :/* Content*/ContentService
     {
+
+        internal override void Publish(User promulgator, int bangMoney, int Reward)
+        {
+            Console.WriteLine($"求助发布成功,用户{promulgator.getName()}消耗帮帮币{Reward}");
+        }
         private string v;
 
-        public Problem(string kind) : base(kind)
-        {
-        }
+        //public Problem(string kind) : base(kind)
+        //{
+        //}
 
 
         internal string Title { get; set; }
@@ -23,10 +28,10 @@ namespace CSharp
         {
 
         }
-        public Problem Load(int Id)
-        {
-            return this /*Problem*/;
-        }
+        //public Problem Load(int Id)
+        //{
+        //    return this /*Problem*/;
+        //}
         internal void Delete(int Id)
         {
 

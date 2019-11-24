@@ -7,8 +7,14 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            User pzq = new User();
+            pzq.setName("彭志强");
+            ContentService publish = new Problem();
 
-            Problem P = new Problem("");
+            publish.Publish(pzq, 10, 2);
+            Console.WriteLine(pzq.getName());
+
+            //Problem P = new Problem("");//暂停用
             //调用后显示： 内容的种类不能为空，请重试
 
             //User pzq = new User();
