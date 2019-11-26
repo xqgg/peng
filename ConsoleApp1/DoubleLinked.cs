@@ -8,6 +8,7 @@ namespace CSharp
     {
         public DoubleLinked Previous { get; private set; }
         public DoubleLinked Next { get; private set; }
+        public int Value { get; set; }
         public bool IsHead
         {
             get
@@ -21,6 +22,13 @@ namespace CSharp
             {
                 return Next == null;
             }
+        }
+
+        public DoubleLinked FindBy(int value)
+        {
+            //从任何一个节点向上向下分别查找一次
+            //如果没找到:
+            return null;
         }
     }
 }
