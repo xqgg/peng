@@ -30,5 +30,27 @@ namespace CSharp
             //如果没找到:
             return null;
         }
+        /// <summary>
+        /// 在node之后插入当前节点
+        /// </summary>
+        /// <param name="node"></param>
+        public void InsertAfter(DoubleLinked node)
+        {
+
+        }
+        /// <summary>
+        /// 在node之前插入当前节点
+        /// </summary>
+        /// <param name="node"></param>
+        public void InsertBfor(DoubleLinked node)
+        {
+        }
+        /// <summary>
+        /// 删除当前节点
+        /// </summary>
+        /// <param name="node"></param>
+        public void Delet(DoubleLinked node)
+        {
+        }
     }
 }
