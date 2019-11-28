@@ -42,5 +42,29 @@ namespace CSharpTest
             Assert.AreEqual(current_1.Next, current_2);
             Assert.AreEqual(current_2.Next, old);
         }
+        static DoubleLinked Creat(DoubleLinked attrLink_1, DoubleLinked attrLink_2)
+        {
+            DoubleLinked target = new DoubleLinked();
+            target.InsertAfter(attrLink_1);
+            attrLink_1.InsertAfter(attrLink_2);
+            return target;
+        }
+        [Test]
+        public void Delet()
+        {
+            DoubleLinked link_1 = new DoubleLinked();
+            DoubleLinked link_2 = new DoubleLinked();
+            Creat(link_1, link_2).Delet();
+            Assert.AreEqual(link_2.Next, link_1);
+            Assert.AreEqual(link_1.Previous, link_2);
+
+
+
+
+
+
+
+
+        }
     }
 }

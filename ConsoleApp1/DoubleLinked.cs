@@ -63,12 +63,27 @@ namespace CSharp
             }
             node.Previous = this;
         }
+
+
+
         /// <summary>
-        /// 删除当前节点
+        /// 删除当前节点//如果链表中只有一个节点就抛异常
         /// </summary>
         /// <param name="node"></param>
-        public void Delet(DoubleLinked node)
+        public void Delet()
         {
+            if (this.IsHead && this.IsTail)
+            {
+                throw new Exception();
+            }
+            if (!this.IsHead && !this.IsTail)
+            {
+                this.Next.Previous = this.Previous;
+                this.Previous.Next = this.Next;
+                this.Next = null;
+                this.Previous = null;
+            }
+
         }
         /// <summary>
         /// 交换a,b节点
