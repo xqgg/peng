@@ -52,5 +52,15 @@ namespace CSharp
         public void Delet(DoubleLinked node)
         {
         }
+        /// <summary>
+        /// 交换a,b节点
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        public void Swap(DoubleLinked a, DoubleLinked b)
+        {
+
+        }
+
     }
 }
