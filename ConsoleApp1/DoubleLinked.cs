@@ -36,18 +36,18 @@ namespace CSharp
         /// <param name="node"></param>
         public void InsertAfter(DoubleLinked node)
         {
-            if (node.Next == null)
-            {
-                node.Next = this;
-                this.Previous = node;
-            }
-            else
+            this.Previous = node;
+            if (node.Next != null)
             {
                 this.Next = node.Next;
                 this.Next.Previous = this;
-                node.Next = this;
-                this.Previous = node;
             }
+            else
+            {
+                //nothing
+            }
+            node.Next = this;
+
         }
         /// <summary>
         /// 在node之前插入当前节点
