@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace CSharpTest
 {
-    public class Tests
+    public class DoubleLinkedTest
     {
         [SetUp]
         public void Setup()
@@ -10,9 +10,15 @@ namespace CSharpTest
         }
 
         [Test]
-        public void Test1()
+        public void InsertAfter()
         {
             Assert.Pass();
+            Assert.AreEqual(1 + 3, 4);
+        }
+
+        [Test]
+        public void InsertBfor()
+        {
         }
     }
 }
