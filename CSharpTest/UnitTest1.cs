@@ -28,8 +28,19 @@ namespace CSharpTest
         }
 
         [Test]
-        public void InsertBfor()
+        public void InsertBefor()
         {
+            DoubleLinked old = new DoubleLinked();
+            DoubleLinked current_1 = new DoubleLinked();
+            current_1.InsertBefor(old);
+            Assert.AreEqual(old.Previous, current_1);
+            Assert.AreEqual(current_1.Next, old);
+            DoubleLinked current_2 = new DoubleLinked();
+            current_2.InsertBefor(old);
+            Assert.AreEqual(old.Previous, current_2);
+            Assert.AreEqual(current_2.Previous, current_1);
+            Assert.AreEqual(current_1.Next, current_2);
+            Assert.AreEqual(current_2.Next, old);
         }
     }
 }
