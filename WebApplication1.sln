@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebAppli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp", "ConsoleApp1\CSharp.csproj", "{13681673-224D-44FE-B255-C7EE1115D29B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestProject2", "NUnitTestProject2\NUnitTestProject2.csproj", "{67565DC8-42E0-448D-BF37-568358C37783}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpTest", "CSharpTest\CSharpTest.csproj", "{17452306-09D2-42C3-84D2-21C3007E30EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{13681673-224D-44FE-B255-C7EE1115D29B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13681673-224D-44FE-B255-C7EE1115D29B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13681673-224D-44FE-B255-C7EE1115D29B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{67565DC8-42E0-448D-BF37-568358C37783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67565DC8-42E0-448D-BF37-568358C37783}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67565DC8-42E0-448D-BF37-568358C37783}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67565DC8-42E0-448D-BF37-568358C37783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17452306-09D2-42C3-84D2-21C3007E30EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17452306-09D2-42C3-84D2-21C3007E30EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17452306-09D2-42C3-84D2-21C3007E30EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17452306-09D2-42C3-84D2-21C3007E30EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
