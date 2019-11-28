@@ -36,7 +36,18 @@ namespace CSharp
         /// <param name="node"></param>
         public void InsertAfter(DoubleLinked node)
         {
-
+            if (node.Next == null)
+            {
+                node.Next = this;
+                this.Previous = node;
+            }
+            else
+            {
+                this.Next = node.Next;
+                this.Next.Previous = this;
+                node.Next = this;
+                this.Previous = node;
+            }
         }
         /// <summary>
         /// 在node之前插入当前节点
@@ -44,6 +55,8 @@ namespace CSharp
         /// <param name="node"></param>
         public void InsertBfor(DoubleLinked node)
         {
+
+
         }
         /// <summary>
         /// 删除当前节点

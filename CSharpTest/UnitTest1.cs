@@ -25,8 +25,6 @@ namespace CSharpTest
 
             Assert.AreEqual(current_2.Previous, old);
             Assert.AreEqual(current_1.Previous, current_2);
-
-
         }
 
         [Test]
