@@ -104,9 +104,9 @@ namespace CSharp
         /// <param name="b"></param>
         public void Swap(DoubleLinked swapped)
         {
-            if (this.IsHead && this.IsTail)
+            if (this == swapped)
             {
-                //noting
+                throw new Exception("无法用节点自己与自己调换");
             }
             //if (this.IsHead && this.Next == swapped)
             //{
