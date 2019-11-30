@@ -108,51 +108,67 @@ namespace CSharp
             {
                 //noting
             }
-            if (this.IsHead && this.Next == swapped)
-            {
-                this.Previous = swapped;
-                this.Next = null;
-                swapped.Next = this;
-                swapped.Previous = null;
-                return;
-            }
-            if (this.IsTail && this.Previous == swapped)
-            {
-                this.Next = swapped;
-                this.Previous = null;
-                swapped.Previous = this;
-                swapped.Next = null;
-                return;
-            }
-            if (this.IsHead && swapped.IsTail && this.Next != swapped)
-            {
-                DoubleLinked thisN = this.Next;
-                DoubleLinked swappedP = swapped.Previous;
+            //if (this.IsHead && this.Next == swapped)
+            //{
+            //    this.Previous = swapped;
+            //    this.Next = null;
+            //    swapped.Next = this;
+            //    swapped.Previous = null;
+            //    return;
+            //}
+            //if (this.IsTail && this.Previous == swapped)
+            //{
+            //    this.Next = swapped;
+            //    this.Previous = null;
+            //    swapped.Previous = this;
+            //    swapped.Next = null;
+            //    return;
+            //}
+            //if (this.IsHead && swapped.IsTail && this.Next != swapped)
+            //{
+            //    DoubleLinked thisN = this.Next;
+            //    DoubleLinked swappedP = swapped.Previous;
 
-                this.Next = null;
-                this.Previous = swappedP;
-                swappedP.Next = this;
+            //    this.Next = null;
+            //    this.Previous = swappedP;
+            //    swappedP.Next = this;
 
-                swapped.Previous = null;
-                swapped.Next = thisN;
-                thisN.Previous = swapped;
-                return;
-            }
+            //    swapped.Previous = null;
+            //    swapped.Next = thisN;
+            //    thisN.Previous = swapped;
+            //    return;
+            //}
 
-            if (this.IsTail && swapped.IsHead && swapped.Next != this)
-            {
-                DoubleLinked thisP = this.Previous;
-                DoubleLinked swappedN = swapped.Next;
+            //if (this.IsTail && swapped.IsHead && swapped.Next != this)
+            //{
+            //    DoubleLinked thisP = this.Previous;
+            //    DoubleLinked swappedN = swapped.Next;
 
-                this.Previous = null;
-                this.Next = swappedN;
-                swappedN.Previous = this;
+            //    this.Previous = null;
+            //    this.Next = swappedN;
+            //    swappedN.Previous = this;
 
-                swapped.Next = null;
-                swapped.Previous = thisP;
-                thisP.Next = swapped;
-                return;
-            }
+            //    swapped.Next = null;
+            //    swapped.Previous = thisP;
+            //    thisP.Next = swapped;
+            //    return;
+            //}
+
+            DoubleLinked thisP = this.Previous;
+            DoubleLinked thisN = this.Next;
+            DoubleLinked swappedP = swapped.Previous;
+            DoubleLinked swappedN = swapped.Next;
+
+            this.Next = swappedN;
+            this.Previous = swappedP;
+            swappedN.Previous = this;
+            swappedP.Next = this;
+
+            swapped.Next = thisN;
+            swapped.Previous = thisP;
+            thisN.Previous = swapped;
+            thisP.Next = swapped;
+
 
 
 

@@ -116,6 +116,24 @@ namespace CSharpTest
             Assert.AreEqual(link_3.Previous, link_1);
             Assert.AreEqual(link_1.Previous, null);
 
+            DoubleLinked link_4 = new DoubleLinked();
+            link_4.InsertAfter(link_2);
+            //1324ееап
+
+            link_1.Swap(link_2);
+            //2314ееап
+            Assert.AreEqual(link_1.Next, link_4);
+            Assert.AreEqual(link_4.Previous, link_1);
+
+            Assert.AreEqual(link_1.Previous, link_3);
+            Assert.AreEqual(link_3.Next, link_1);
+
+            Assert.AreEqual(link_2.Previous, null);
+
+            Assert.AreEqual(link_2.Next, link_3);
+            Assert.AreEqual(link_3.Previous, link_2);
+
+
 
 
 
