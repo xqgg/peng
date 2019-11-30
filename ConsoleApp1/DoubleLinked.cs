@@ -102,9 +102,22 @@ namespace CSharp
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
-        public void Swap(DoubleLinked a, DoubleLinked b)
+        public void Swap(DoubleLinked swapped)
         {
-
+            if (this.IsHead && this.IsTail)
+            {
+                //noting
+            }
+            if (this.IsHead && this.Next == swapped)
+            {
+                this.Previous = swapped;
+                swapped.Next = Previous;
+            }
+            if (this.IsTail && this.Previous == swapped)
+            {
+                this.Next = swapped;
+                swapped.Previous = this;
+            }
         }
 
     }

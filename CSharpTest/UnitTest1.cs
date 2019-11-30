@@ -71,13 +71,16 @@ namespace CSharpTest
             target.Delet();
             Assert.AreEqual(link_2.Previous, null);
             Assert.AreEqual(target.Next, null);
-
-
-
-
-
-
-
+        }
+        [Test]
+        public void Swap()
+        {
+            DoubleLinked link_1 = new DoubleLinked();
+            DoubleLinked link_2 = new DoubleLinked();
+            link_1.InsertAfter(link_2);
+            link_1.Swap(link_2);
+            Assert.AreEqual(link_1.Next, link_2);
+            Assert.AreEqual(link_2.Previous, link_1);
 
 
         }
