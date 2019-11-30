@@ -111,13 +111,32 @@ namespace CSharp
             if (this.IsHead && this.Next == swapped)
             {
                 this.Previous = swapped;
-                swapped.Next = Previous;
+                this.Next = null;
+                swapped.Next = this;
+                swapped.Previous = null;
+                return;
             }
             if (this.IsTail && this.Previous == swapped)
             {
                 this.Next = swapped;
+                this.Previous = null;
                 swapped.Previous = this;
+                swapped.Next = null;
+                return;
             }
+            //if (this.IsHead && swapped.IsTail && this.Next != swapped)
+            //{
+            //    DoubleLinked thisN = this.Next;
+            //    DoubleLinked swappedP = swapped.Previous;
+
+            //    this.Next = null;
+            //    this.Previous = swappedP;
+            //    swappedP.Next = this;
+
+            //    swapped.Previous = null;
+            //    swapped.Next = thisN;
+            //    thisN.Previous = swapped;
+            //}
         }
 
     }

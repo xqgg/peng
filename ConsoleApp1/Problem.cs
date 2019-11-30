@@ -12,7 +12,6 @@ namespace CSharp
         {
             Console.WriteLine($"求助发布成功,用户{promulgator.getName()}消耗帮帮币{Reward}");
         }
-        private string v;
 
         //public Problem(string kind) : base(kind)
         //{

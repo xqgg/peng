@@ -75,12 +75,41 @@ namespace CSharpTest
         [Test]
         public void Swap()
         {
+            //链表中只有两个节点并且分别为头/尾
             DoubleLinked link_1 = new DoubleLinked();
             DoubleLinked link_2 = new DoubleLinked();
             link_1.InsertAfter(link_2);
+            //21排列
+
             link_1.Swap(link_2);
+            //12排列
+
             Assert.AreEqual(link_1.Next, link_2);
             Assert.AreEqual(link_2.Previous, link_1);
+            Assert.AreEqual(link_1.Previous, null);
+            Assert.AreEqual(link_2.Next, null);
+
+
+
+
+            //链表中有两个以上的节点，交换的节点分别为头 / 尾
+            DoubleLinked link_3 = new DoubleLinked();
+            link_3.InsertBefor(link_2);
+            //132排列
+
+            link_1.Swap(link_2);
+            //231排列
+
+            Assert.AreEqual(link_2.Next, link_3);
+            Assert.AreEqual(link_3.Next, link_1);
+            Assert.AreEqual(link_1.Next, null);
+            Assert.AreEqual(link_1.Previous, link_3);
+            Assert.AreEqual(link_3.Previous, link_2);
+            Assert.AreEqual(link_2.Previous, null);
+
+
+
+
 
 
         }
