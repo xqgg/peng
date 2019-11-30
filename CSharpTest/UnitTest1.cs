@@ -107,6 +107,16 @@ namespace CSharpTest
             Assert.AreEqual(link_3.Previous, link_2);
             Assert.AreEqual(link_2.Previous, null);
 
+            link_1.Swap(link_2);
+            //132ееап
+            Assert.AreEqual(link_1.Next, link_3);
+            Assert.AreEqual(link_3.Next, link_2);
+            Assert.AreEqual(link_2.Next, null);
+            Assert.AreEqual(link_2.Previous, link_3);
+            Assert.AreEqual(link_3.Previous, link_1);
+            Assert.AreEqual(link_1.Previous, null);
+
+
 
 
 
