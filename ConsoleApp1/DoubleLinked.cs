@@ -83,6 +83,18 @@ namespace CSharp
                 this.Next = null;
                 this.Previous = null;
             }
+            else if (this.IsTail)
+            {
+                this.Previous.Next = null;
+                this.Previous = null;
+            }
+            else
+            {
+                this.Next.Previous = null;
+                this.Next = null;
+            }
+
+
 
         }
         /// <summary>

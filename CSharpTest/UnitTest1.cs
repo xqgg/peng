@@ -42,21 +42,36 @@ namespace CSharpTest
             Assert.AreEqual(current_1.Next, current_2);
             Assert.AreEqual(current_2.Next, old);
         }
-        static DoubleLinked Creat(DoubleLinked attrLink_1, DoubleLinked attrLink_2)
-        {
-            DoubleLinked target = new DoubleLinked();
-            target.InsertAfter(attrLink_1);
-            attrLink_1.InsertAfter(attrLink_2);
-            return target;
-        }
+        //static DoubleLinked Creat(DoubleLinked attrLink_1, DoubleLinked attrLink_2)
+        //{
+        //    DoubleLinked target = new DoubleLinked();
+        //    target.InsertAfter(attrLink_1);
+        //    attrLink_1.InsertAfter(attrLink_2);
+        //    return target;
+        //}
         [Test]
         public void Delet()
         {
             DoubleLinked link_1 = new DoubleLinked();
             DoubleLinked link_2 = new DoubleLinked();
-            Creat(link_1, link_2).Delet();
+            DoubleLinked target = new DoubleLinked();
+            //target在中间
+            target.InsertAfter(link_1);
+            link_1.InsertAfter(link_2);
+            target.Delet();
             Assert.AreEqual(link_2.Next, link_1);
             Assert.AreEqual(link_1.Previous, link_2);
+            //target在末尾
+            target.InsertAfter(link_1);
+            target.Delet();
+            Assert.AreEqual(target.Previous, null);
+            Assert.AreEqual(link_1.Next, null);
+            //target在表头
+            target.InsertBefor(link_2);
+            target.Delet();
+            Assert.AreEqual(link_2.Previous, null);
+            Assert.AreEqual(target.Next, null);
+
 
 
 
