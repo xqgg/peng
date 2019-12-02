@@ -98,7 +98,7 @@ namespace CSharp
 
         }
         /// <summary>
-        /// 交换a,b节点
+        /// 将当前节点和swapped节点交换
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
@@ -108,66 +108,115 @@ namespace CSharp
             {
                 throw new Exception("无法用节点自己与自己调换");
             }
-            //if (this.IsHead && this.Next == swapped)
-            //{
-            //    this.Previous = swapped;
-            //    this.Next = null;
-            //    swapped.Next = this;
-            //    swapped.Previous = null;
-            //    return;
-            //}
-            //if (this.IsTail && this.Previous == swapped)
-            //{
-            //    this.Next = swapped;
-            //    this.Previous = null;
-            //    swapped.Previous = this;
-            //    swapped.Next = null;
-            //    return;
-            //}
-            //if (this.IsHead && swapped.IsTail && this.Next != swapped)
-            //{
-            //    DoubleLinked thisN = this.Next;
-            //    DoubleLinked swappedP = swapped.Previous;
 
-            //    this.Next = null;
-            //    this.Previous = swappedP;
-            //    swappedP.Next = this;
+            if (this.IsHead && this.Next == swapped)
+            {
+                this.Previous = swapped;
+                this.Next = null;
+                swapped.Next = this;
+                swapped.Previous = null;
+                return;
+            }
 
-            //    swapped.Previous = null;
-            //    swapped.Next = thisN;
-            //    thisN.Previous = swapped;
-            //    return;
-            //}
-
-            //if (this.IsTail && swapped.IsHead && swapped.Next != this)
-            //{
-            //    DoubleLinked thisP = this.Previous;
-            //    DoubleLinked swappedN = swapped.Next;
-
-            //    this.Previous = null;
-            //    this.Next = swappedN;
-            //    swappedN.Previous = this;
-
-            //    swapped.Next = null;
-            //    swapped.Previous = thisP;
-            //    thisP.Next = swapped;
-            //    return;
-            //}
+            if (this.IsTail && this.Previous == swapped)
+            {
+                this.Next = swapped;
+                this.Previous = null;
+                swapped.Previous = this;
+                swapped.Next = null;
+                return;
+            }
 
             DoubleLinked thisP = this.Previous;
             DoubleLinked thisN = this.Next;
             DoubleLinked swappedP = swapped.Previous;
             DoubleLinked swappedN = swapped.Next;
 
-            this.Next = swappedN;
-            this.Previous = swappedP;
-            swappedN.Previous = this;
-            swappedP.Next = this;
+            this.Delet();
+            this.InsertAfter(swapped);
+            swapped.Delet();
 
-            swapped.Next = thisN;
-            swapped.Previous = thisP;
-            thisN.Previous = swapped;
-            thisP.Next = swapped;
+            if (thisP == null)
+            {
+                swapped.InsertBefor(thisN);
+            }
+            else if (this.Next == swapped)
+            {
+                swapped.InsertBefor(this);
+            }
+            else
+            {
+                swapped.InsertAfter(thisP);
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+
+            //if (this.IsHead && swapped.IsTail)
+            //{
+            //    DoubleLinked thisN = this.Next;
+            //    DoubleLinked swappedP = swapped.Previous;
+            //    this.Previous = swappedP;
+            //    swappedP.Next = this;
+            //    this.Next = null;
+
+            //    swapped.Next = thisN;
+            //    thisN.Previous = swapped;
+            //    swapped.Previous = null;
+            //    return;
+            //}
+
+
+            //if (this.IsTail && swapped.IsHead)
+            //{
+            //    DoubleLinked thisNP = this.Previous;
+            //    DoubleLinked swappedN = swapped.Next;
+            //    this.Next = swappedN;
+            //    swappedN.Previous = this;
+            //    this.Previous = null;
+
+            //    swapped.Previous = thisNP;
+            //    thisNP.Next = swapped;
+            //    swapped.Next = null;
+            //    return;
+            //}
+
+            //if (!this.IsHead && !this.IsTail && !swapped.IsTail && !swapped.IsHead)
+            //{
+            //    DoubleLinked thisP = this.Previous;
+            //    DoubleLinked thisN = this.Next;
+            //    DoubleLinked swappedP = swapped.Previous;
+            //    DoubleLinked swappedN = swapped.Next;
+
+            //    this.Next = swappedN;
+            //    this.Previous = swappedP;
+            //    swappedN.Previous = this;
+            //    swappedP.Next = this;
+
+            //    swapped.Next = thisN;
+            //    swapped.Previous = thisP;
+            //    thisN.Previous = swapped;
+            //    thisP.Next = swapped;
+            //}
+
 
 
 
