@@ -4,10 +4,18 @@ using System.Text;
 
 namespace CSharp
 {
-    class TokenManager
+    internal class TokenManager
     {
-   
+
     }
 
+    internal enum Token
+    {
+        SuperAdmin = 1,
+        Admin = 2,
+        Blogger = 8,
+        Newbie = 16,
+        Registered = 32
+    }
 
 }
