@@ -6,7 +6,7 @@ namespace CSharp
 {
     internal class TokenManager
     {
-
+        private int _tokens;
     }
 
     internal enum Token
