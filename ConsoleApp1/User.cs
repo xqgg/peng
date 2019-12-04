@@ -6,6 +6,7 @@ namespace CSharp
 {
     internal sealed class User
     {
+        internal TokenManager _tokens;
         //internal string Name { get; set; }
         string _Name;
         internal void setName(string name)
