@@ -19,6 +19,17 @@ namespace CSharp
             _tokens = _tokens -= (int)token;
         }
 
+        internal bool Has(Token target)
+        {
+            if ((this._tokens & target) == target)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 
 
