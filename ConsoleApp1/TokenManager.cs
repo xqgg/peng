@@ -9,9 +9,9 @@ namespace CSharp
         private Token _tokens;
 
 
-        internal void Add(Token token)
+        internal void Add(Token newToken)
         {
-            _tokens = _tokens += (int)token;
+            this._tokens = this._tokens | newToken;
         }
 
         internal void Remove(Token token)
