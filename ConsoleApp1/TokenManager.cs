@@ -25,11 +25,11 @@ namespace CSharp
 
     internal enum Token
     {
-        SuperAdmin = 0,
-        Admin = 1 << 0,
-        Blogger = 1 << 1,
-        Newbie = 1 << 2,
-        Registered = 1 << 3
+        SuperAdmin = 1 << 0,
+        Admin = 1 << 1,
+        Blogger = 1 << 2,
+        Newbie = 1 << 3,
+        Registered = 1 << 4
     }
 
 }
