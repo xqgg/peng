@@ -13,6 +13,12 @@ namespace CSharp
         {
             _tokens = _tokens += (int)token;
         }
+
+        internal void Remove(Token token)
+        {
+            _tokens = _tokens -= (int)token;
+        }
+
     }
 
 
