@@ -14,9 +14,9 @@ namespace CSharp
             this._tokens = this._tokens | newToken;
         }
 
-        internal void Remove(Token token)
+        internal void Remove(Token delet)
         {
-            _tokens = _tokens -= (int)token;
+            this._tokens = this._tokens & ~delet;
         }
 
         internal bool Has(Token target)
