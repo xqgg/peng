@@ -21,14 +21,8 @@ namespace CSharp
 
         internal bool Has(Token target)
         {
-            if ((this._tokens & target) == target)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return (this._tokens & target) == target;
+
         }
     }
 
