@@ -11,22 +11,22 @@ namespace CSharp
 
         internal void Add(Token newToken)
         {
-            if (this.Has(newToken))
+            if (Has(newToken))
             {
                 throw new ArgumentException("不能重复添加相同的令牌");
             }
             else
             {
-                this._tokens = this._tokens | newToken;
+                _tokens = _tokens | newToken;
 
             }
         }
 
         internal void Remove(Token delet)
         {
-            if (this.Has(delet))
+            if (Has(delet))
             {
-                this._tokens = this._tokens & ~delet;
+                _tokens = _tokens & ~delet;
 
             }
             else
@@ -37,7 +37,7 @@ namespace CSharp
 
         internal bool Has(Token target)
         {
-            return (this._tokens & target) == target;
+            return (_tokens & target) == target;
 
         }
     }
