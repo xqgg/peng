@@ -10,16 +10,19 @@ namespace ConsoleApp1
             User pzq = new User();
             pzq.setName("彭志强");
             pzq.bangMoney = 10;
-            ContentService publishProblem = new Problem();
-            ContentService publishArticle = new Article();
-            ContentService publishSuggest = new Suggest();
+            //ContentService publishProblem = new Problem();
+            //ContentService publishArticle = new Article();
+            //ContentService publishSuggest = new Suggest();
 
-            publishProblem.Publish(pzq, 2);
-            publishArticle.Publish(pzq);
-            publishSuggest.Publish(pzq);
+            //publishProblem.Publish(pzq, 2);
+            //publishArticle.Publish(pzq);
+            //publishSuggest.Publish(pzq);
+            pzq._tokens = new TokenManager();
+            pzq._tokens.Add(Token.Admin);
+            
+            Console.WriteLine(pzq._tokens.Has(Token.Admin));
 
-
-            Console.WriteLine(pzq.getName());
+            //Console.WriteLine(pzq.getName());
 
             //Problem P = new Problem("");//暂停用
             //调用后显示： 内容的种类不能为空，请重试
