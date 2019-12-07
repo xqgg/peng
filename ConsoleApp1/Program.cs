@@ -22,6 +22,11 @@ namespace ConsoleApp1
             
             Console.WriteLine(pzq._tokens.Has(Token.Admin));
 
+            pzq._tokens.Add(Token.SuperAdmin);
+            Console.WriteLine(pzq._tokens.Has(Token.SuperAdmin));
+            Console.WriteLine(pzq._tokens.Has(Token.Admin));
+
+
             //Console.WriteLine(pzq.getName());
 
             //Problem P = new Problem("");//暂停用
