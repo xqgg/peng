@@ -11,7 +11,15 @@ namespace CSharp
 
         internal void Add(Token newToken)
         {
-            this._tokens = this._tokens | newToken;
+            if (this.Has(newToken))
+            {
+                throw new ArgumentException("不能重复添加相同的令牌");
+            }
+            else
+            {
+                this._tokens = this._tokens | newToken;
+
+            }
         }
 
         internal void Remove(Token delet)
