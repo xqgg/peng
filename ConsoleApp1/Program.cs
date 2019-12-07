@@ -19,12 +19,14 @@ namespace ConsoleApp1
             //publishSuggest.Publish(pzq);
             pzq._tokens = new TokenManager();
             pzq._tokens.Add(Token.Admin);
-            
+
             Console.WriteLine(pzq._tokens.Has(Token.Admin));
 
             pzq._tokens.Add(Token.SuperAdmin);
             Console.WriteLine(pzq._tokens.Has(Token.SuperAdmin));
             Console.WriteLine(pzq._tokens.Has(Token.Admin));
+            pzq._tokens.Remove(Token.SuperAdmin);
+            Console.WriteLine(pzq._tokens.Has(Token.SuperAdmin));
 
 
             //Console.WriteLine(pzq.getName());
