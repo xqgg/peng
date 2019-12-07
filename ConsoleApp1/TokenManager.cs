@@ -24,7 +24,15 @@ namespace CSharp
 
         internal void Remove(Token delet)
         {
-            this._tokens = this._tokens & ~delet;
+            if (this.Has(delet))
+            {
+                this._tokens = this._tokens & ~delet;
+
+            }
+            else
+            {
+                throw new ArgumentException("无法删除一个不存在的令牌")
+            }
         }
 
         internal bool Has(Token target)
