@@ -22,11 +22,11 @@ namespace CSharp
             }
         }
 
-        internal void Remove(Token delet)
+        internal void Remove(Token delete)
         {
-            if (Has(delet))
+            if (Has(delete))
             {
-                _tokens = _tokens & ~delet;
+                _tokens = _tokens & ~delete;
 
             }
             else
