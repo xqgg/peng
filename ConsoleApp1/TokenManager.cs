@@ -45,7 +45,7 @@ namespace CSharp
     }
 
 
-
+    [Flags]
     internal enum Token
     {
         SuperAdmin = 1 << 0,
