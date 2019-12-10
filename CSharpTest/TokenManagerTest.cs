@@ -16,9 +16,13 @@ namespace CSharpTest
             pzq._tokens = new TokenManager();
             pzq._tokens.Add(Token.Admin);
             Assert.AreEqual((int)pzq._tokens._tokens, 2);
+            Assert.AreEqual("Admin", pzq._tokens._tokens.ToString());
             pzq._tokens.Add(Token.Blogger);
             Assert.AreEqual((int)pzq._tokens._tokens, 6);
-          
+            Assert.AreEqual("Admin, Blogger", pzq._tokens._tokens.ToString());
+            //每级权限名中间用逗号“,（半角）”加一个空格隔开
+
+
         }
 
         [Test]
