@@ -34,6 +34,16 @@ namespace CSharpTest
             
         }
 
+        [Test]
+        public void Remove()
+        {
+            User pzq = new User();
+            pzq._tokens = new TokenManager();
+            pzq._tokens.Add(Token.Admin);
+            Assert.IsTrue(pzq._tokens.Has(Token.Admin));
+            pzq._tokens.Remove(Token.Admin);
+            Assert.IsFalse(pzq._tokens.Has(Token.Admin));
+        }
 
 
     }
