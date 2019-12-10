@@ -21,6 +21,18 @@ namespace CSharpTest
           
         }
 
+        [Test]
+        public void Has()
+        {
+
+            User pzq = new User();
+            pzq._tokens = new TokenManager();
+            pzq._tokens.Add(Token.Admin);
+            Assert.IsTrue(pzq._tokens.Has(Token.Admin));
+            pzq._tokens.Add(Token.Blogger);
+            Assert.IsTrue(pzq._tokens.Has(Token.Blogger));
+            
+        }
 
 
 
