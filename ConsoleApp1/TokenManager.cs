@@ -11,7 +11,7 @@ namespace CSharp
         public Token _tokens;
 
 
-        internal void Add(Token newToken)
+        public void Add(Token newToken)
         {
             if (Has(newToken))
             {
@@ -24,7 +24,7 @@ namespace CSharp
             }
         }
 
-        internal void Remove(Token delete)
+        public void Remove(Token delete)
         {
             if (Has(delete))
             {
@@ -37,7 +37,7 @@ namespace CSharp
             }
         }
 
-        internal bool Has(Token target)
+        public bool Has(Token target)
         {
             return (_tokens & target) == target;
 
