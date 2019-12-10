@@ -45,6 +45,7 @@ namespace CSharpTest
             Assert.IsFalse(pzq._tokens.Has(Token.Admin));
         }
 
+        //关于异常相关的测试暂缓
 
     }
 }
