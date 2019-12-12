@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebAppli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp", "ConsoleApp1\CSharp.csproj", "{13681673-224D-44FE-B255-C7EE1115D29B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpTest", "CSharpTest\CSharpTest.csproj", "{17452306-09D2-42C3-84D2-21C3007E30EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpTest", "CSharpTest\CSharpTest.csproj", "{17452306-09D2-42C3-84D2-21C3007E30EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Csharp", "Csharp", "{BAC433BC-B9E2-4D6B-846A-D29E81D10FC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "17bangHTML", "17bangHTML", "{AA327C62-E2FB-428C-8B34-240F58DA940C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +34,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{30DF4382-5415-499A-8798-69A832A876C5} = {AA327C62-E2FB-428C-8B34-240F58DA940C}
+		{13681673-224D-44FE-B255-C7EE1115D29B} = {BAC433BC-B9E2-4D6B-846A-D29E81D10FC4}
+		{17452306-09D2-42C3-84D2-21C3007E30EB} = {BAC433BC-B9E2-4D6B-846A-D29E81D10FC4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3D658146-FC2A-402D-BA0F-8F6A99799E0F}
