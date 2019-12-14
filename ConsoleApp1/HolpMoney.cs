@@ -4,19 +4,19 @@ using System.Text;
 
 namespace CSharp
 {
-    internal class HolpMoney
+    public class HolpMoney
     {
-        internal User user { get; set; }
-        internal int balance { get; set; }
-        internal int income { get; set; }//正数为收入，负数为消费
-        internal DateTime bainTime { get; set; }
-        internal string cause { get; set; }
-        internal string remarks { get; set; }
-        internal void moneyGain(User user, int balance, int income, DateTime gainTime, string cause, string remarks)
+        public User User { get; set; }
+        public int Balance { get; set; }
+        public int Income { get; set; }//正数为收入，负数为消费
+        public DateTime BainTime { get; set; }
+        public string Cause { get; set; }
+        public string Remarks { get; set; }
+        public void MoneyGain(User user, int balance, int income, DateTime gainTime, string cause, string remarks)
         {
 
         }
-        internal void moneyExpense(User user, int balance, int income, DateTime gainTime, string cause, string remarks)
+        public void MoneyExpense(User user, int balance, int income, DateTime gainTime, string cause, string remarks)
         {
 
         }
