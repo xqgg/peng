@@ -22,6 +22,14 @@ namespace CSharp
         public string Body { get; set; }
         private int _reward;
 
+        public KeyWord[] KeyWords = new KeyWord[10];
+
+        // Define the indexer to allow client code to use [] notation.
+        public KeyWord this[int i]
+        {
+            get { return KeyWords[i]; }
+            set { KeyWords[i] = value; }
+        }
 
         public int Reward
         {

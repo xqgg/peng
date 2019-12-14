@@ -6,5 +6,10 @@ namespace CSharp
 {
     class KeyWord
     {
+        public string Name { get; set; }
+        public KeyWord(string name)
+        {
+            Name = name;
+        }
     }
 }
