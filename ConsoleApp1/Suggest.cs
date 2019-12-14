@@ -13,7 +13,7 @@ namespace CSharp
         internal override void Publish(User promulgator, int Reward = 0)
         {
             //base.Publish(promulgator, bangMoney, Reward);){ }
-            Console.WriteLine($"{promulgator.getName()}成功发布Suggest，无需消耗帮帮币。");
+            Console.WriteLine($"{promulgator.GetName()}成功发布Suggest，无需消耗帮帮币。");
         }
     }
 }
