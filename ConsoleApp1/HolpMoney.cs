@@ -8,7 +8,7 @@ namespace CSharp
     {
         internal User User { get; set; }
         internal int Balance { get; set; }
-        internal int Bncome { get; set; }//正数为收入，负数为消费
+        internal int income { get; set; }//正数为收入，负数为消费
         internal DateTime BainTime { get; set; }
         internal string Cause { get; set; }
         internal string Remarks { get; set; }
