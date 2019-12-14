@@ -15,7 +15,8 @@ namespace ConsoleApp1
 
             problem.Title = "222";
 
-
+            User pzq = new User("彭志强", "123");
+            
 
 
             //Console.WriteLine(pzq.getName());

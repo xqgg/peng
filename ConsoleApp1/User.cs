@@ -6,7 +6,15 @@ namespace CSharp
 {
     public sealed class User
     {
+        public User(string name, string pasword)
+        {
+            SetName(name);
+            Password = pasword;
+        }
+
         private TokenManager _tokens;
+
+
         //public string Name { get; set; }
         string _Name;
         public void SetName(string name)
