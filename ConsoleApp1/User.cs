@@ -8,31 +8,31 @@ namespace CSharp
     {
         internal TokenManager _tokens;
         //internal string Name { get; set; }
-        string _Name;
+        string _name;
         internal void setName(string name)
         {
             if (name == "admin")
             {
-                _Name = "系统管理员";
+                _name = "系统管理员";
             }
             else
             {
-                _Name = name;
+                _name = name;
             }
         }
         internal string getName()
         {
-            return _Name;
+            return _name;
         }
-        internal string Password { private get; set; }
-        internal User InvitedBy { get; set; }
+        internal string password { private get; set; }
+        internal User invitedBy { get; set; }
         internal int bangMoney { set; get; }
 
-        internal void Register()
+        internal void register()
         {
 
         }
-        internal void Login() { }
-        private void ChangePasword() { }
+        internal void login() { }
+        private void _changePasword() { }
     }
 }
