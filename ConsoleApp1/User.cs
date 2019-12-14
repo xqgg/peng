@@ -4,35 +4,35 @@ using System.Text;
 
 namespace CSharp
 {
-    internal sealed class User
+    public sealed class User
     {
-        internal TokenManager _tokens;
-        //internal string Name { get; set; }
-        string _name;
-        internal void setName(string name)
+        private TokenManager _tokens;
+        //public string Name { get; set; }
+        string _Name;
+        public void SetName(string name)
         {
             if (name == "admin")
             {
-                _name = "系统管理员";
+                _Name = "系统管理员";
             }
             else
             {
-                _name = name;
+                _Name = name;
             }
         }
-        internal string getName()
+        public string GetName()
         {
-            return _name;
+            return _Name;
         }
-        internal string password { private get; set; }
-        internal User invitedBy { get; set; }
-        internal int bangMoney { set; get; }
+        public string Password { private get; set; }
+        public User InvitedBy { get; set; }
+        public int BangMoney { set; get; }
 
-        internal void register()
+        public void Register()
         {
 
         }
-        internal void login() { }
+        public void Login() { }
         private void _changePasword() { }
     }
 }
