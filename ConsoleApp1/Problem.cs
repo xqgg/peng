@@ -20,7 +20,21 @@ namespace CSharp
 
         public string Title { get; set; }
         public string Body { get; set; }
-        public int Reward { get; set; }
+        private int _reward;
+
+
+        public int Reward
+        {
+            get { return _reward; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("悬赏不能小于0");
+                }
+                _reward = value;
+            }
+        }
         public DateTime PublishDateTime { get; set; }
         public User Author { get; set; }
         public void Publish(string Title, string Body, int Rewward, DateTime PublishDateTime, User Author)

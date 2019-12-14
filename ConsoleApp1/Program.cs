@@ -7,27 +7,10 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            User pzq = new User();
-            pzq.setName("彭志强");
-            pzq.bangMoney = 10;
-            //ContentService publishProblem = new Problem();
-            //ContentService publishArticle = new Article();
-            //ContentService publishSuggest = new Suggest();
-
-            //publishProblem.Publish(pzq, 2);
-            //publishArticle.Publish(pzq);
-            //publishSuggest.Publish(pzq);
-            pzq._tokens = new TokenManager();
-            pzq._tokens.Add(Token.Admin);
-
-            Console.WriteLine(pzq._tokens.Has(Token.Admin));
-
-            pzq._tokens.Add(Token.SuperAdmin);
-            Console.WriteLine(pzq._tokens.Has(Token.SuperAdmin));
-            Console.WriteLine(pzq._tokens.Has(Token.Admin));
-            pzq._tokens.Remove(Token.SuperAdmin);
-            Console.WriteLine(pzq._tokens.Has(Token.SuperAdmin));
-
+            Problem problem = new Problem();
+            problem.Reward = 10;
+            Console.WriteLine(problem.Reward);
+            
 
             //Console.WriteLine(pzq.getName());
 
