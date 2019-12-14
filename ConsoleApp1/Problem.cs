@@ -18,12 +18,12 @@ namespace CSharp
         //}
 
 
-        internal string Title { get; set; }
-        internal string Body { get; set; }
-        internal int Reward { get; set; }
-        internal DateTime PublishDateTime { get; set; }
-        internal User Author { get; set; }
-        internal void Publish(string Title, string Body, int Rewward, DateTime PublishDateTime, User Author)
+        public string Title { get; set; }
+        public string Body { get; set; }
+        public int Reward { get; set; }
+        public DateTime PublishDateTime { get; set; }
+        public User Author { get; set; }
+        public void Publish(string Title, string Body, int Rewward, DateTime PublishDateTime, User Author)
         {
 
         }
