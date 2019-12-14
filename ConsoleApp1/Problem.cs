@@ -17,7 +17,10 @@ namespace CSharp
         //{
         //}
 
-
+        public Problem(string body)
+        {
+            Body = body;
+        }
         public string Title { get; set; }
         public string Body { get; set; }
         private int _reward;

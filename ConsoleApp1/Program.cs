@@ -7,15 +7,17 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Problem problem = new Problem();
+            Problem problem = new Problem("ssss");
             problem.Reward = 10;
             //Console.WriteLine(problem.Reward);
             problem.KeyWords[1] = new KeyWord("2");
             Console.WriteLine(problem.KeyWords[1].Name);
 
+            problem.Title = "222";
 
 
-          
+
+
             //Console.WriteLine(pzq.getName());
 
             //Problem P = new Problem("");//暂停用
