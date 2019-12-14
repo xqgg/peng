@@ -10,7 +10,7 @@ namespace CSharp
 
         internal override void Publish(User promulgator, int Reward)
         {
-            Console.WriteLine($"求助发布成功,用户{promulgator.getName()}消耗帮帮币{Reward}");
+            Console.WriteLine($"求助发布成功,用户{promulgator.GetName()}消耗帮帮币{Reward}");
         }
 
         //public Problem(string kind) : base(kind)
