@@ -48,7 +48,7 @@ namespace CSharp
         }
         public DateTime PublishDateTime { get; set; }
         public User Author { get; set; }
-        public void Publish(string Title, string Body, int Rewward, DateTime PublishDateTime, User Author)
+        public void Publish()
         {
 
         }
