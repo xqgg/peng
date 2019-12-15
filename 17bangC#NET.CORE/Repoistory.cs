@@ -7,7 +7,7 @@ namespace CSharp
     static class Repoistory
     {
         public const int version = 1;
-        internal static string connection { get; }
+        internal static readonly string connection;
 
 
     }
