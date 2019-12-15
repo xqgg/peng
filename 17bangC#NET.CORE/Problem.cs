@@ -56,9 +56,9 @@ namespace CSharp
         {
             return new Problem("hh");/*Problem*/;
         }
-        internal void Delete(int Id)
+        static public void Delete(int Id)
         {
-
+           //根据ID删除指定的Problem
         }
         void repoistory() { }
     }
