@@ -52,10 +52,10 @@ namespace CSharp
         {
 
         }
-        //public Problem Load(int Id)
-        //{
-        //    return this /*Problem*/;
-        //}
+        static public Problem Load(int Id)
+        {
+            return new Problem("hh");/*Problem*/;
+        }
         internal void Delete(int Id)
         {
 
