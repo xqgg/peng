@@ -12,7 +12,7 @@ namespace CSharpTest
         [Test]
         public void Add()
         {
-            User pzq = new User();
+            User pzq = new User("","");
             pzq._tokens = new TokenManager();
             pzq._tokens.Add(Token.Admin);
             Assert.AreEqual((int)pzq._tokens._tokens, 2);
@@ -29,7 +29,7 @@ namespace CSharpTest
         public void Has()
         {
 
-            User pzq = new User();
+            User pzq = new User("","");
             pzq._tokens = new TokenManager();
             pzq._tokens.Add(Token.Admin);
             Assert.IsTrue(pzq._tokens.Has(Token.Admin));
@@ -41,7 +41,7 @@ namespace CSharpTest
         [Test]
         public void Remove()
         {
-            User pzq = new User();
+            User pzq = new User("","");
             pzq._tokens = new TokenManager();
             pzq._tokens.Add(Token.Admin);
             Assert.IsTrue(pzq._tokens.Has(Token.Admin));

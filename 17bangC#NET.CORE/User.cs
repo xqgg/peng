@@ -12,7 +12,7 @@ namespace CSharp
             Password = pasword;
         }
 
-        private TokenManager _tokens;
+        internal TokenManager _tokens;
 
 
         //public string Name { get; set; }
