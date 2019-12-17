@@ -10,7 +10,7 @@ namespace CSharp
         Article = 2,
         Suggest = 3
     }
-    internal abstract class Content
+    internal abstract class Content :Entity
     {
         public kind GetKind()
         {

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharp
 {
-    public class HolpMoney
+    public class HolpMoney : Entity
     {
         public User User { get; set; }
         public int Balance { get; set; }

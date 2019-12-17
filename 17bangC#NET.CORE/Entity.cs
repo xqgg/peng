@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharp
 {
-    class Entity
+    public class Entity
     {
         public int Id { get; private set; }
     }

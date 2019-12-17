@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharp
 {
-    public sealed class User
+    public sealed class User : Entity
     {
         public User(string name, string pasword)
         {
