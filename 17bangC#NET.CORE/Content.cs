@@ -15,7 +15,7 @@ namespace CSharp
         }
         public Content(string kind)
         {
-            if (kind == "")
+            if (kind == string.Empty)
             {
                 Console.WriteLine("内容的种类不能为空，请重试");
                 return;
