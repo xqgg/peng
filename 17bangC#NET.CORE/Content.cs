@@ -12,7 +12,10 @@ namespace CSharp
     }
     internal abstract class Content
     {
-
+        public kind GetKind()
+        {
+            return kind;
+        }
         public string Title { get; set; }
         public string Body { get; set; }
         public User Author { get; set; }
@@ -20,9 +23,9 @@ namespace CSharp
         public void Publish()
         {
         }
-        public Content(kind inputkind)
+        public  Content()
         {
-            kind = inputkind;
+            
         }
         protected kind kind;
         private DateTime _createTime;

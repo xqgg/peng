@@ -5,22 +5,23 @@ using CSharp;
 
 namespace CSharp
 {
-    internal class Problem :/* Content*/ContentService
+    internal class Problem : Content
     {
 
-        internal override void Publish(User promulgator, int Reward)
-        {
-            Console.WriteLine($"求助发布成功,用户{promulgator.GetName()}消耗帮帮币{Reward}");
-        }
-
-        //public Problem(string kind) : base(kind)
+        //internal override void Publish(User promulgator, int Reward)
         //{
+        //    Console.WriteLine($"求助发布成功,用户{promulgator.GetName()}消耗帮帮币{Reward}");
         //}
+
+
 
         public Problem(string body)
         {
             Body = body;
+            kind = kind.Problem;
         }
+
+       
         public string Title { get; set; }
         public string Body { get; set; }
         private int _reward;
@@ -58,7 +59,7 @@ namespace CSharp
         }
         static public void Delete(int Id)
         {
-           //根据ID删除指定的Problem
+            //根据ID删除指定的Problem
         }
         void repoistory() { }
     }
