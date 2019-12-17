@@ -19,12 +19,11 @@ namespace CSharp
         public string Title { get; set; }
         public string Body { get; set; }
         public User Author { get; set; }
-        public DateTime PublishDateTime { get; set; }
         public void Publish()
         {
             _createTime = DateTime.Now;
         }
-        private  DateTime _createTime;
+        private DateTime _createTime;
 
         public Content()
         {
