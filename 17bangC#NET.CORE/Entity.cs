@@ -6,5 +6,6 @@ namespace CSharp
 {
     class Entity
     {
+        public int Id { get; private set; }
     }
 }
