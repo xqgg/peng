@@ -12,10 +12,7 @@ namespace CSharp
             kind = kind.Article;
         }
 
-        public kind GetKind()
-        {
-            return kind;
-        }
+       
         //internal override void Publish(User promulgator, int Reward)
         //{
         //    Console.WriteLine($"成功发布Article，{promulgator.GetName()}消耗棒棒币1个。");
