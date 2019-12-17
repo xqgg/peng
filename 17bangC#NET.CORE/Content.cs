@@ -6,6 +6,13 @@ namespace CSharp
 {
     internal abstract class Content
     {
+        public string Title { get; set; }
+        public string Body { get; set; }
+        public User Author { get; set; }
+        public DateTime PublishDateTime { get; set; }
+        public void Publish()
+        { 
+        }
         public Content(string kind)
         {
             if (kind == "")
