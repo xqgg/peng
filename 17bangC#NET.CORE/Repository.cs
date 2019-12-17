@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharp
 {
-    static class Repoistory
+    static class Repository
     {
         public const int version = 1;
         internal static readonly string connection;
