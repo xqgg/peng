@@ -7,28 +7,13 @@ namespace CSharp
 {
     internal class Problem : Content
     {
-
-        //internal override void Publish(User promulgator, int Reward)
-        //{
-        //    Console.WriteLine($"求助发布成功,用户{promulgator.GetName()}消耗帮帮币{Reward}");
-        //}
-
-
-
         public Problem(string body)
         {
             Body = body;
             kind = kind.Problem;
         }
-
-       
-        public string Title { get; set; }
-        public string Body { get; set; }
         private int _reward;
-
         public KeyWord[] KeyWords = new KeyWord[10];
-
-        // Define the indexer to allow client code to use [] notation.
         public KeyWord this[int i]
         {
             get { return KeyWords[i]; }
@@ -47,20 +32,15 @@ namespace CSharp
                 _reward = value;
             }
         }
-        public DateTime PublishDateTime { get; set; }
-        public User Author { get; set; }
-        public void Publish()
-        {
 
-        }
         static public Problem Load(int Id)
         {
-            return new Problem("hh");/*Problem*/;
+            return new Problem("hh");;
         }
         static public void Delete(int Id)
         {
             //根据ID删除指定的Problem
         }
-        void repoistory() { }
+        void Repository() { }
     }
 }
