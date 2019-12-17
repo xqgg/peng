@@ -22,18 +22,21 @@ namespace CSharp
         public DateTime PublishDateTime { get; set; }
         public void Publish()
         {
+            _createTime = DateTime.Now;
         }
-        public  Content()
+        private  DateTime _createTime;
+
+        public Content()
         {
-            
+
         }
         protected kind kind;
-        private DateTime _createTime;
-        //private DateTime _PublishTime;
+
         public DateTime PublishTime
         {
             get { return _createTime; }
         }
+
 
     }
 }
