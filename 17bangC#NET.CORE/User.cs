@@ -34,7 +34,7 @@ namespace CSharp
         }
         public string Password { private get; set; }
         public User InvitedBy { get; set; }
-        public int BangMoney { set; get; }
+        public int HelpMoney { set; get; }
 
         public void Register()
         {

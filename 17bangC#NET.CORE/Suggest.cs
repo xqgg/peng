@@ -20,5 +20,11 @@ namespace CSharp
         {
             kind = kind.Suggest;
         }
+
+        public override void Publish()
+        {
+            base.Publish();
+
+        }
     }
 }

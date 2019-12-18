@@ -7,10 +7,11 @@ namespace CSharp
 {
     internal class Problem : Content
     {
-        public Problem(string body)
+        public Problem(string body, int reward)
         {
             Body = body;
             kind = kind.Problem;
+            Reward = reward;
         }
         private int _reward;
         public KeyWord[] KeyWords = new KeyWord[10];
@@ -33,9 +34,15 @@ namespace CSharp
             }
         }
 
+        public override void Publish()
+        {
+            base.Publish();
+            Author.HelpMoney -= _reward;
+        }
+
         static public Problem Load(int Id)
         {
-            return new Problem("hh");;
+            return new Problem("hh", 1);
         }
         static public void Delete(int Id)
         {

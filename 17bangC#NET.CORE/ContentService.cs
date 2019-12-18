@@ -4,11 +4,12 @@ using System.Text;
 
 namespace CSharp
 {
-    internal class ContentService
+    internal static class ContentService
     {
-        internal virtual void Publish(User promulgator, int Reward = 0)
+        internal static void Publish( Content content)
         {
-            //父类
+            content.Publish();
+            Console.WriteLine("将content存入数据库");
         }
     }
 

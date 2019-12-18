@@ -10,7 +10,7 @@ namespace CSharp
         Article = 2,
         Suggest = 3
     }
-    internal abstract class Content :Entity
+    internal abstract class Content : Entity
     {
         public kind GetKind()
         {
@@ -19,7 +19,7 @@ namespace CSharp
         public string Title { get; set; }
         public string Body { get; set; }
         public User Author { get; set; }
-        public void Publish()
+        public virtual void Publish()
         {
             _createTime = DateTime.Now;
         }
