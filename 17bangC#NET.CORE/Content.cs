@@ -21,7 +21,7 @@ namespace CSharp
         public User Author { get; set; }
         public virtual void Publish()
         {
-            _createTime = DateTime.Now;
+            _createTime = SystemTime.Now();
         }
         private DateTime _createTime;
 
