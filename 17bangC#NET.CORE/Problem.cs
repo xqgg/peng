@@ -7,11 +7,12 @@ namespace CSharp
 {
     internal class Problem : Content
     {
-        public Problem(string body, int reward)
+        public Problem(string body, int reward, User author)
         {
             Body = body;
             kind = kind.Problem;
             Reward = reward;
+            Author = author;
         }
         private int _reward;
         public KeyWord[] KeyWords = new KeyWord[10];
@@ -40,10 +41,11 @@ namespace CSharp
             Author.HelpMoney -= _reward;
         }
 
-        static public Problem Load(int Id)
-        {
-            return new Problem("hh", 1);
-        }
+        //static public Problem Load(int Id)
+        //{
+        //    return new Problem("hh", 1, author);
+        //}
+        //暂无法实现
         static public void Delete(int Id)
         {
             //根据ID删除指定的Problem

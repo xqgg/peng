@@ -7,9 +7,10 @@ namespace CSharp
     internal class Article : Content
     {
 
-        public Article()
+        public Article(User author)
         {
             kind = kind.Article;
+            Author = author;
         }
         public override void Publish()
         {

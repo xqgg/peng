@@ -16,9 +16,10 @@ namespace CSharp
         //    Console.WriteLine($"{promulgator.GetName()}成功发布Suggest，无需消耗帮帮币。");
         //}
 
-        public Suggest()
+        public Suggest(User author)
         {
             kind = kind.Suggest;
+            Author = author;
         }
 
         public override void Publish()
