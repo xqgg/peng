@@ -37,8 +37,15 @@ namespace CSharp
 
         public override void Publish()
         {
-            base.Publish();
-            Author.HelpMoney -= _reward;
+            if (Author.HelpMoney < Reward)
+            {
+                throw new Exception("帮帮币余额不足，请调整悬赏后重试");
+            }
+            else
+            {
+                base.Publish();
+                Author.HelpMoney -= _reward;
+            }
         }
 
         //static public Problem Load(int Id)

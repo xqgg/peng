@@ -14,8 +14,15 @@ namespace CSharp
         }
         public override void Publish()
         {
-            base.Publish();
-            Author.HelpMoney -= 1;
+            if (Author.HelpMoney < 1)
+            {
+                throw new Exception("帮帮币余额不足1，不能发布文章");
+            }
+            else
+            {
+                base.Publish();
+                Author.HelpMoney -= 1;
+            }
         }
 
         //internal override void Publish(User promulgator, int Reward)
