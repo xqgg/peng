@@ -4,17 +4,35 @@ using System.Text;
 
 namespace CSharp
 {
-    internal class Suggest : Content
+    internal class Suggest : Content, IAppraise
     {
-        //internal override void Publish(User promulgator, int bangMoney, int Reward)
-        //{
-        //    //父类
-        //}
-        //internal override void Publish(User promulgator, int Reward = 0)
-        //{
-        //    //base.Publish(promulgator, bangMoney, Reward);){ }
-        //    Console.WriteLine($"{promulgator.GetName()}成功发布Suggest，无需消耗帮帮币。");
-        //}
+
+        public void Agree(User voter)
+        {
+            if (voter.HelpCradit <= 0)
+            {
+                throw new NotImplementedException("帮帮点余额不足，赞/踩需要消耗帮帮点");
+            }
+            Author.HelpCradit += 1;
+            voter.HelpCradit -= 1;
+        }
+
+        public void Disagree(User voter)
+        {
+            if (voter.HelpCradit < 1)
+            {
+                throw new NotImplementedException("帮帮点余额不足，赞/踩需要消耗帮帮点");
+            }
+            voter.HelpCradit -= 1;
+            if (Author.HelpCradit > 0)
+            {
+                Author.HelpCradit -= 1;
+            }
+            else
+            {
+                //作者的棒棒点为0，无法扣除遂不作处理。
+            }
+        }
 
         public Suggest(User author)
         {

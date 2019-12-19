@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharp
 {
-    internal class Article : Content
+    internal class Article : Content,IAppraise
     {
 
         public Article(User author)
@@ -12,6 +12,34 @@ namespace CSharp
             kind = kind.Article;
             Author = author;
         }
+
+        public void Agree(User voter)
+        {
+            if (voter.HelpCradit <= 0)
+            {
+                throw new NotImplementedException("帮帮点余额不足，赞/踩需要消耗帮帮点");
+            }
+            Author.HelpCradit += 1;
+            voter.HelpCradit -= 1;
+        }
+
+        public void Disagree(User voter)
+        {
+            if (voter.HelpCradit < 1)
+            {
+                throw new NotImplementedException("帮帮点余额不足，赞/踩需要消耗帮帮点");
+            }
+            voter.HelpCradit -= 1;
+            if (Author.HelpCradit > 0)
+            {
+                Author.HelpCradit -= 1;
+            }
+            else
+            {
+                //作者的棒棒点为0，无法扣除遂不作处理。
+            }
+        }
+
         public override void Publish()
         {
             if (Author.HelpMoney < 1)
