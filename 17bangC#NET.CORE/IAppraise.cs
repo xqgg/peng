@@ -8,5 +8,7 @@ namespace CSharp
     {
         public void Agree(User voter);
         public void Disagree(User voter);
+        int Agrees { get; set; }
+        int Disagrees { get; set; }
     }
 }

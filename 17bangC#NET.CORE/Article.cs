@@ -7,6 +7,8 @@ namespace CSharp
     internal class Article : Content,IAppraise
     {
 
+        public int Agrees { get; set; }
+        public int Disagrees { get; set; }
         public Article(User author)
         {
             kind = kind.Article;
@@ -21,6 +23,7 @@ namespace CSharp
             }
             Author.HelpCradit += 1;
             voter.HelpCradit -= 1;
+            Agrees += 1;
         }
 
         public void Disagree(User voter)
@@ -38,6 +41,7 @@ namespace CSharp
             {
                 //作者的棒棒点为0，无法扣除遂不作处理。
             }
+            Disagrees += 1;
         }
 
         public override void Publish()

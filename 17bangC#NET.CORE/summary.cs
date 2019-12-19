@@ -4,10 +4,24 @@ using System.Text;
 
 namespace CSharp
 {
-    internal class Suggest : Content, IAppraise
+    class Summary : IAppraise
     {
+
+        public User Author { get; set; }
+        public string Body { get; set; }
         public int Agrees { get; set; }
         public int Disagrees { get; set; }
+
+        public virtual void Publish()
+        {
+            _createTime = SystemTime.Now();
+        }
+        private DateTime _createTime;
+
+        public DateTime PublishTime
+        {
+            get { return _createTime; }
+        }
 
         public void Agree(User voter)
         {
@@ -36,18 +50,6 @@ namespace CSharp
                 //作者的棒棒点为0，无法扣除遂不作处理。
             }
             Disagrees += 1;
-        }
-
-        public Suggest(User author)
-        {
-            kind = kind.Suggest;
-            Author = author;
-        }
-
-        public override void Publish()
-        {
-            base.Publish();
-
         }
     }
 }

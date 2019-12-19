@@ -8,6 +8,9 @@ namespace CSharp
     {
         public string Body { get; set; }
         public User Author { get; set; }
+        public int Agrees { get; set; }
+        public int Disagrees { get; set; }
+
         public virtual void Publish()
         {
             _createTime = SystemTime.Now();
@@ -19,6 +22,7 @@ namespace CSharp
             get { return _createTime; }
         }
 
+
         public void Agree(User voter)
         {
             if (voter.HelpCradit <= 0)
@@ -27,6 +31,7 @@ namespace CSharp
             }
             Author.HelpCradit += 1;
             voter.HelpCradit -= 1;
+            Agrees += 1;
         }
 
         public void Disagree(User voter)
@@ -44,6 +49,7 @@ namespace CSharp
             {
                 //作者的棒棒点为0，无法扣除遂不作处理。
             }
+            Disagrees += 1;
         }
     }
 }
