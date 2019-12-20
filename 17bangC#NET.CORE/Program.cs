@@ -7,8 +7,12 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            IChat user = new User("", "");
+            user.Send();
 
+            ISendMessage message = new User("", "");
+            message.Send();
         }
-       
+
     }
 }

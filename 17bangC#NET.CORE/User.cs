@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharp
 {
-    public sealed class User : Entity
+    public sealed class User : Entity, IChat, ISendMessage
     {
         public User(string name, string pasword)
         {
@@ -43,5 +43,15 @@ namespace CSharp
         }
         public void Login() { }
         private void _changePasword() { }
+
+        void IChat.Send()
+        {
+            Console.WriteLine("Chat");
+        }
+
+        void ISendMessage.Send()
+        {
+            Console.WriteLine("Message");
+        }
     }
 }
