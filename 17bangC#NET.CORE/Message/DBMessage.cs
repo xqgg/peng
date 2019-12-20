@@ -8,7 +8,7 @@ namespace CSharp
     {
         public void Send()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("已将消息存入数据库");
         }
     }
 }

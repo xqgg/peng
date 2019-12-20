@@ -8,7 +8,7 @@ namespace CSharp
     {
         public void Send()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("邮件发送成功！");
         }
     }
 }
