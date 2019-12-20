@@ -21,21 +21,35 @@ namespace CSharp
         public User Author { get; set; }
         public virtual void Publish()
         {
-            _createTime = SystemTime.Now();
+            PublishTime = SystemTime.Now();
         }
         private DateTime _createTime;
 
         public Content()
         {
-
+            _createTime = SystemTime.Now();
         }
         protected kind kind;
 
-        public DateTime PublishTime
+        public DateTime PublishTime { get; private set; }
+        public DateTime CreatTime
         {
-            get { return _createTime; }
+            get
+            {
+                return _createTime;
+            }
         }
 
+        static public void ContentDo()
+        {
+            User user = new User("", "");
+            user.HelpMoney = 10;
+            Article article = new Article(user);
+            Console.WriteLine("创建时间：" + article.CreatTime);
+            System.Threading.Thread.Sleep(3000);
+            article.Publish();
+            Console.WriteLine("发布时间：" + article.PublishTime);
+        }
 
     }
 }
