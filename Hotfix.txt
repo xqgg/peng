@@ -3,4 +3,5 @@
 3. Second change message!
 4. third change message!
 5. change (4)
+6. Remote change 
 7. Local change
