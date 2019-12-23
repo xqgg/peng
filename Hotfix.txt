@@ -1,2 +1,3 @@
 1. New Branch "hotfix"
 2. First change message!
+3. Second change message!
