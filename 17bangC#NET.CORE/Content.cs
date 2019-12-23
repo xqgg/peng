@@ -44,7 +44,7 @@ namespace CSharp
         {
             User user = new User("", "");
             user.HelpMoney = 10;
-            Article article = new Article(user);
+            Article article = new Article(user,"Sanmple");
             Console.WriteLine("创建时间：" + article.CreatTime);
             System.Threading.Thread.Sleep(3000);
             article.Publish();

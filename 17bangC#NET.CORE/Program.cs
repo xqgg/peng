@@ -8,7 +8,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Content.ContentDo();
+            //Content.ContentDo();
+            Article.ArticleDo();
 
 
 

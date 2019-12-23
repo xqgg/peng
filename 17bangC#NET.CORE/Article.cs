@@ -4,13 +4,24 @@ using System.Text;
 
 namespace CSharp
 {
-    internal class Article : Content,IAppraise
+    internal class Article : Content, IAppraise
     {
 
         public int Agrees { get; set; }
         public int Disagrees { get; set; }
-        public Article(User author)
+
+        public Article(User author, string title)
         {
+            if (title == null)
+            {
+                throw new ArgumentOutOfRangeException("标题不能为null值");
+            }
+            string t = title.Trim();
+            if (t == string.Empty)
+            {
+                throw new ArgumentOutOfRangeException("标题不能为空字符串");
+            }
+            Title = t;
             kind = kind.Article;
             Author = author;
         }
@@ -57,9 +68,13 @@ namespace CSharp
             }
         }
 
-        //internal override void Publish(User promulgator, int Reward)
-        //{
-        //    Console.WriteLine($"成功发布Article，{promulgator.GetName()}消耗棒棒币1个。");
-        //}
+        static public void ArticleDo()
+        {
+            User user = new User("", "");
+            Article article = new Article(user, "title");
+            Console.WriteLine(article.Title);
+        }
+
+
     }
 }
