@@ -49,6 +49,14 @@ namespace CSharp
             System.Threading.Thread.Sleep(3000);
             article.Publish();
             Console.WriteLine("发布时间：" + article.PublishTime);
+            
+            Problem problem = new Problem("", 1, user);
+            Console.WriteLine(problem.CreatTime);
+            System.Threading.Thread.Sleep(2000);
+            
+            Console.WriteLine(problem._createTime);
+            problem.Publish();
+            Console.WriteLine(problem.PublishTime);
         }
 
     }
