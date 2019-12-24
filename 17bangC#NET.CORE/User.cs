@@ -1,13 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CSharp
 {
     public sealed class User : Entity, IChat, ISendMessage
     {
+        private string[] _blacklist = { "admin", "17bang", "管理员" };
+
         public User(string name, string pasword)
         {
+
+            for (int i = 0; i < _blacklist.Length; i++)
+            {
+                if (name.Contains(_blacklist[i]))
+                {
+                    throw new ArgumentOutOfRangeException("用户名不能为（admin, 17bang, 管理员）等违禁词");
+                }
+            }
             SetName(name);
             Password = pasword;
         }
@@ -52,6 +63,13 @@ namespace CSharp
         void ISendMessage.Send()
         {
             Console.WriteLine("Message");
+        }
+
+
+        public static void UserDo()
+        {
+            User user = new User("sss管理员sss", "");
+
         }
     }
 }

@@ -9,7 +9,9 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             //Content.ContentDo();
-            Article.ArticleDo();
+            //Article.ArticleDo();
+            User.UserDo();
+
 
             
 
