@@ -7,20 +7,20 @@ namespace CSharp
 {
     public sealed class User : Entity, IChat, ISendMessage
     {
-        private string[] _blacklist = { "admin", "17bang", "管理员" };
 
-        public User(string name, string pasword)
+
+        public User(string name, string password)
         {
-
-            for (int i = 0; i < _blacklist.Length; i++)
+            if (new CheckPassword().Check(password) &&
+                new CheckUserName().Check(name))
             {
-                if (name.Contains(_blacklist[i]))
-                {
-                    throw new ArgumentOutOfRangeException("用户名不能为（admin, 17bang, 管理员）等违禁词");
-                }
+                SetName(name);
+                Password = password;
             }
-            SetName(name);
-            Password = pasword;
+            else
+            {
+                throw new Exception ("用户名或密码不规范");
+            }
         }
 
         internal TokenManager _tokens;
@@ -68,7 +68,7 @@ namespace CSharp
 
         public static void UserDo()
         {
-            User user = new User("sss管理员sss", "");
+            User user = new User("ssssss", "sss&&8");
 
         }
     }

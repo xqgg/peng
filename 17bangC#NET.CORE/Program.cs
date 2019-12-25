@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using CSharp;
+using System.Linq;
 
 namespace ConsoleApp1
 {
@@ -12,8 +13,6 @@ namespace ConsoleApp1
             //Article.ArticleDo();
             User.UserDo();
 
-
-            
 
 
 
