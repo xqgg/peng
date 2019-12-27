@@ -11,8 +11,11 @@ namespace ConsoleApp1
         {
             //Content.ContentDo();
             //Article.ArticleDo();
-            User.UserDo();
+            //User.UserDo();
 
+
+            //CheckPassword check = new CheckPassword();
+            //Console.WriteLine(check.Checked("222&g"));
 
 
 

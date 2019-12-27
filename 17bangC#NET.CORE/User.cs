@@ -7,11 +7,17 @@ namespace CSharp
 {
     public sealed class User : Entity, IChat, ISendMessage
     {
+        internal TokenManager _tokens;
+        string _Name;
+        public string Password { private get; set; }
+        public User InvitedBy { get; set; }
+        public int HelpMoney { set; get; }
+        public int HelpCradit { get; set; }
 
 
         public User(string name, string password)
         {
-            if (new CheckPassword().Check(password) &&
+            if (new CheckPassword().Checked(password) &&
                 new CheckUserName().Check(name))
             {
                 SetName(name);
@@ -19,15 +25,9 @@ namespace CSharp
             }
             else
             {
-                throw new Exception ("用户名或密码不规范");
+                throw new ArgumentOutOfRangeException("用户名或密码不规范");
             }
         }
-
-        internal TokenManager _tokens;
-
-
-        //public string Name { get; set; }
-        string _Name;
         public void SetName(string name)
         {
             if (name == "admin")
@@ -43,10 +43,6 @@ namespace CSharp
         {
             return _Name;
         }
-        public string Password { private get; set; }
-        public User InvitedBy { get; set; }
-        public int HelpMoney { set; get; }
-        public int HelpCradit { get; set; }
 
         public void Register()
         {
@@ -65,10 +61,9 @@ namespace CSharp
             Console.WriteLine("Message");
         }
 
-
         public static void UserDo()
         {
-            User user = new User("ssssss", "sss&&8");
+            User user = new User("ssssss", "ss&&8");
 
         }
     }
