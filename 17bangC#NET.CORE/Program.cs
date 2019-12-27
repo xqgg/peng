@@ -12,8 +12,9 @@ namespace ConsoleApp1
             //Content.ContentDo();
             //Article.ArticleDo();
             //User.UserDo();
-            GetCount.GetCountDo();
-
+            //GetCount.GetCountDo();
+            Console.WriteLine(new MimicJoin().mimicJoin("~","soijd8","21123ejoi"));
+            ;
             //CheckPassword check = new CheckPassword();
             //Console.WriteLine(check.Checked("222&g"));
 
