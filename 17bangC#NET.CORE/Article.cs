@@ -9,8 +9,9 @@ namespace CSharp
         public List<Comment> Comments { get; set; }
         public int Agrees { get; set; }
         public int Disagrees { get; set; }
-
-        public Article(User author, string title)
+        //一篇文章可以有多个关键字
+        public List<KeyWord> keyWords { get; set; }
+        public Article(User author, string title, params KeyWord[] keyWords)
         {
             if (title == null)
             {
