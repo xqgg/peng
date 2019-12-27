@@ -12,7 +12,7 @@ namespace ConsoleApp1
             //Content.ContentDo();
             //Article.ArticleDo();
             //User.UserDo();
-
+            GetCount.GetCountDo();
 
             //CheckPassword check = new CheckPassword();
             //Console.WriteLine(check.Checked("222&g"));
