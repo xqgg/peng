@@ -6,21 +6,27 @@ namespace CSharp
 {
     class Comment : IAppraise
     {
+        public Article Refer { get; set; }
         public string Body { get; set; }
         public User Author { get; set; }
         public int Agrees { get; set; }
         public int Disagrees { get; set; }
+        public DateTime PublishTime { private set; get; }
 
-        public virtual void Publish()
+        public Comment(User author, string body, Article refer)
         {
             _createTime = SystemTime.Now();
+            Body = body;
+            Refer = refer;
+            Author = author;
+        }
+        public void Publish()
+        {
+            PublishTime = SystemTime.Now();
         }
         private DateTime _createTime;
 
-        public DateTime PublishTime
-        {
-            get { return _createTime; }
-        }
+
 
 
         public void Agree(User voter)

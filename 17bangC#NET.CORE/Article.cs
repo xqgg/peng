@@ -6,7 +6,7 @@ namespace CSharp
 {
     internal class Article : Content, IAppraise
     {
-
+        public List<Comment> Comments { get; set; }
         public int Agrees { get; set; }
         public int Disagrees { get; set; }
 
