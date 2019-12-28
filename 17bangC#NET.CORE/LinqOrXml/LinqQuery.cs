@@ -30,11 +30,11 @@ namespace CSharp
             Article AfterEnd = new Article(fg, "后端", csharp, net);
             Article UI = new Article(xy, "UI", css);
             LeadingEnd.Publish();
-            Wait();
+            //Wait();
             DataBase.Publish();
-            Wait();
+            //Wait();
             AfterEnd.Publish();
-            Wait();
+            //Wait();
             UI.Publish();
             Comment comment1 = new Comment(pzq, "飞哥真帅", LeadingEnd);
             Comment comment2 = new Comment(cy, "讲得好", AfterEnd);
@@ -92,6 +92,26 @@ namespace CSharp
             {
                 Console.WriteLine(item.Title);
                 Console.WriteLine(item.PublishTime);
+            }
+
+            //统计每个用户各发布了多少篇文章
+            var articleCount = from a in articles
+                               group a by a.Author into ac
+                               select new
+                               {
+                                   name = ac.Key.GetName(),
+                                   count = ac.Count()
+                               };
+            var articleCountLam = articles.GroupBy(a => a.Author)
+                                          .Select(ac => new
+                                          {
+                                              name = ac.Key.GetName(),
+                                              count = ac.Count()
+                                          });
+
+            foreach (var item in articleCount)
+            {
+                Console.WriteLine(item.name + item.count);
             }
 
 
