@@ -49,13 +49,28 @@ namespace CSharp
             var articleOfFg = from a in articles
                               where a.Author.GetName() == "飞哥"
                               select a;
-            var articleOfFg1 = articles.Where(a => a.Author.GetName() == "飞哥");
+            var articleOfFgLam = articles.Where(a => a.Author.GetName() == "飞哥");
             Console.WriteLine("飞哥发布的文章有如下：");
             foreach (var item in articleOfFg)
             {
                 Console.WriteLine(item.Title);
             }
 
+            //找出2019年1月1日以后“小鱼”发布的文章
+            var articleTo190101OfXy = from a in articles
+                                      where a.PublishTime > new DateTime(2019 - 1 - 1) && a.Author.GetName() == "小余"
+                                      select a;
+            var articleTo190101OfXyLam = articles.Where(a => a.PublishTime > new DateTime(2019 - 1 - 1) && a.Author.GetName() == "小余");
+            Console.WriteLine();
+            Console.WriteLine("小余于2019-01-01之后发布的文章有如下：");
+            foreach (var item in articleTo190101OfXy)
+            {
+                Console.WriteLine(item.Title);
+            }
+            //foreach (var item in articleTo190101OfXyLam)
+            //{
+            //    Console.WriteLine(item.Title);
+            //}
 
         }
     }
