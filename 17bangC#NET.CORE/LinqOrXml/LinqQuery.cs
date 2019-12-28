@@ -30,8 +30,11 @@ namespace CSharp
             Article AfterEnd = new Article(fg, "后端", csharp, net);
             Article UI = new Article(xy, "UI", css);
             LeadingEnd.Publish();
+            Wait();
             DataBase.Publish();
+            Wait();
             AfterEnd.Publish();
+            Wait();
             UI.Publish();
             Comment comment1 = new Comment(pzq, "飞哥真帅", LeadingEnd);
             Comment comment2 = new Comment(cy, "讲得好", AfterEnd);
@@ -71,6 +74,26 @@ namespace CSharp
             //{
             //    Console.WriteLine(item.Title);
             //}
+
+
+            //按发布时间升序 / 降序排列显示文章
+            var articleOrderByTimeAsce = from a in articles
+                                         orderby a.PublishTime ascending
+                                         select a;
+
+            var articleOrderByTimeDesc = from a in articles
+                                         orderby a.PublishTime descending
+                                         select a;
+
+            var articleOrderByTimeAsceLam = articles.OrderBy(a => a.PublishTime);
+            var articleOrderByTimeDescLam = articles.OrderByDescending(a => a.PublishTime);
+
+            foreach (var item in articleOrderByTimeAsce)
+            {
+                Console.WriteLine(item.Title);
+                Console.WriteLine(item.PublishTime);
+            }
+
 
         }
     }
