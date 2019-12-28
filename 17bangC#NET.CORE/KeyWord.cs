@@ -4,12 +4,12 @@ using System.Text;
 
 namespace CSharp
 {
-    class KeyWord
+    class Keyword
     {
         //一个关键字可以对应多篇文章
         public List<Article> Articles { set; get; }
         public string Name { get; set; }
-        public KeyWord(string name)
+        public Keyword(string name)
         {
             Name = name;
         }

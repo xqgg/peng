@@ -15,8 +15,8 @@ namespace CSharp
             Author = author;
         }
         private int _reward;
-        public KeyWord[] KeyWords = new KeyWord[10];
-        public KeyWord this[int i]
+        public Keyword[] KeyWords = new Keyword[10];
+        public Keyword this[int i]
         {
             get { return KeyWords[i]; }
             set { KeyWords[i] = value; }

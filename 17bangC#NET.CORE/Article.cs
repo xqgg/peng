@@ -10,8 +10,8 @@ namespace CSharp
         public int Agrees { get; set; }
         public int Disagrees { get; set; }
         //一篇文章可以有多个关键字
-        public List<KeyWord> keyWords { get; set; }
-        public Article(User author, string title, params KeyWord[] keyWords)
+        public List<Keyword> keyWords { get; set; }
+        public Article(User author, string title, params Keyword[] keyWords)
         {
             if (title == null)
             {
