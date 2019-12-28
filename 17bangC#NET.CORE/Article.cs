@@ -10,7 +10,7 @@ namespace CSharp
         public int Agrees { get; set; }
         public int Disagrees { get; set; }
         //一篇文章可以有多个关键字
-        public List<Keyword> keyWords { get; set; }
+        public List<Keyword> KeyWords { get; set; }
         public Article(User author, string title, params Keyword[] keyWords)
         {
             if (title == null)
@@ -25,6 +25,10 @@ namespace CSharp
             Title = t;
             kind = kind.Article;
             Author = author;
+            for (int i = 0; i < keyWords.Length; i++)
+            {
+                KeyWords.Add(keyWords[i]);
+            }
         }
 
         public void Agree(User voter)
@@ -67,6 +71,7 @@ namespace CSharp
                 base.Publish();
                 Author.HelpMoney -= 1;
             }
+
         }
 
         static public void ArticleDo()
