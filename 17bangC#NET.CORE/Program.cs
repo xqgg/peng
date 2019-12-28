@@ -4,6 +4,7 @@ using CSharp;
 using System.Linq;
 
 
+
 namespace ConsoleApp1
 {
     class Program
@@ -18,23 +19,12 @@ namespace ConsoleApp1
             //;
             //CheckPassword check = new CheckPassword();
             //Console.WriteLine(check.Checked("222&g"));
-            int wait = new Random().Next(0, 3000);
-            for (int i = 0; i < 10; i++)
-            {
-                LinqQuery.Wait();
-                Console.WriteLine(wait);
-
-            }
+            LinqQuery.LinqDo();
 
 
 
 
 
         }
-
-
-
-
-
     }
 }

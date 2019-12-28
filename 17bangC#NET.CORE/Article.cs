@@ -6,12 +6,13 @@ namespace CSharp
 {
     internal class Article : Content, IAppraise
     {
-        public List<Comment> Comments { get; set; }
         public int Agrees { get; set; }
         public int Disagrees { get; set; }
         //一篇文章可以有多个关键字
-        public List<Keyword> KeyWords { get; set; }
-        public Article(User author, string title, params Keyword[] keyWords)
+        public List<Keyword> Keywords = new List<Keyword>();
+        public List<Comment> Comments = new List<Comment>();
+
+        public Article(User author, string title, params Keyword[] InputKeywords)
         {
             if (title == null)
             {
@@ -25,10 +26,12 @@ namespace CSharp
             Title = t;
             kind = kind.Article;
             Author = author;
-            for (int i = 0; i < keyWords.Length; i++)
+            //List<Keyword> NewKeywords = new List<Keyword> { };
+            for (int i = 0; i < InputKeywords.Length; i++)
             {
-                KeyWords.Add(keyWords[i]);
+                Keywords.Add(InputKeywords[i]);
             }
+            //Keywords = NewKeywords;
         }
 
         public void Agree(User voter)

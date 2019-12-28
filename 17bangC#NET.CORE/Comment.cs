@@ -22,6 +22,7 @@ namespace CSharp
         }
         public void Publish()
         {
+            
             Refer.Comments.Add(this);
             PublishTime = SystemTime.Now();
         }
