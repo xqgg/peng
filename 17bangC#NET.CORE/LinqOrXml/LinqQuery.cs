@@ -137,7 +137,13 @@ namespace CSharp
             }
             Console.WriteLine();
 
-
+            //找出评论数量最多的文章，相同就取第一个
+            var articleOfCommentMost = from a in articles
+                                       orderby a.Comments.Count() ascending
+                                       select a;
+            Console.WriteLine("找出评论数量最多的文章：");
+            Console.WriteLine(articleOfCommentMost.First().Title);
+            Console.WriteLine();
         }
     }
 }
