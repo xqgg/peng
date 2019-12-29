@@ -144,6 +144,16 @@ namespace CSharp
             Console.WriteLine("找出评论数量最多的文章：");
             Console.WriteLine(articleOfCommentMost.First().Title);
             Console.WriteLine();
+
+            //找出每个作者评论数最多的文章
+            var CommentMostOfAuthor = from a in articles
+                                      group a by a.Author into cm
+                                      //orderby cm.
+                                      select new
+                                      {
+                                          name = cm.Key.GetName(),
+                                          title = cm.First().Title
+                                      };
         }
     }
 }
