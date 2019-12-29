@@ -24,10 +24,10 @@ namespace CSharp
             Keyword html = new Keyword("html");
             Keyword css = new Keyword("css");
             Keyword csharp = new Keyword("C#");
-            Keyword net = new Keyword(".NET");
+            Keyword dotnet = new Keyword(".NET");
             Article LeadingEnd = new Article(fg, "前端", html, js);
             Article DataBase = new Article(fg, "数据库", sql);
-            Article AfterEnd = new Article(fg, "后端", csharp, net);
+            Article AfterEnd = new Article(fg, "后端", csharp, dotnet);
             Article UI = new Article(xy, "UI", css);
             LeadingEnd.Publish();
             //Wait();
@@ -58,18 +58,22 @@ namespace CSharp
             {
                 Console.WriteLine(item.Title);
             }
+            Console.WriteLine();
+
 
             //找出2019年1月1日以后“小鱼”发布的文章
             var articleTo190101OfXy = from a in articles
                                       where a.PublishTime > new DateTime(2019 - 1 - 1) && a.Author.GetName() == "小余"
                                       select a;
             var articleTo190101OfXyLam = articles.Where(a => a.PublishTime > new DateTime(2019 - 1 - 1) && a.Author.GetName() == "小余");
-            Console.WriteLine();
+
+
             Console.WriteLine("小余于2019-01-01之后发布的文章有如下：");
             foreach (var item in articleTo190101OfXy)
             {
                 Console.WriteLine(item.Title);
             }
+            Console.WriteLine();
             //foreach (var item in articleTo190101OfXyLam)
             //{
             //    Console.WriteLine(item.Title);
@@ -87,12 +91,14 @@ namespace CSharp
 
             var articleOrderByTimeAsceLam = articles.OrderBy(a => a.PublishTime);
             var articleOrderByTimeDescLam = articles.OrderByDescending(a => a.PublishTime);
-
+            Console.WriteLine("按发布时间升序排列：");
             foreach (var item in articleOrderByTimeAsce)
             {
                 Console.WriteLine(item.Title);
                 Console.WriteLine(item.PublishTime);
             }
+            Console.WriteLine();
+
 
             //统计每个用户各发布了多少篇文章
             var articleCount = from a in articles
@@ -108,11 +114,28 @@ namespace CSharp
                                               name = ac.Key.GetName(),
                                               count = ac.Count()
                                           });
-
+            Console.WriteLine("统计用户发布的文章：");
             foreach (var item in articleCount)
             {
                 Console.WriteLine(item.name + item.count);
             }
+            Console.WriteLine();
+
+
+            //找出包含关键字“C#”或“.NET”的文章
+            var articleContainToCsharpOrDotnet = from a in articles
+                                                 where a.Keywords.IndexOf(csharp) >= 0 || a.Keywords.IndexOf(dotnet) >= 0
+                                                 select a;
+            var articleContainToCsharpOrDotnetLam = articles.Where(
+                                            a =>
+                                            a.Keywords.Contains(csharp) ||
+                                            a.Keywords.Contains(dotnet));
+            foreach (var item in articleContainToCsharpOrDotnet)
+            {
+                Console.WriteLine("包含关键字“C#”或“.NET”的文章：");
+                Console.WriteLine(item.Title);
+            }
+            Console.WriteLine();
 
 
         }
