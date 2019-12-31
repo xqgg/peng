@@ -12,7 +12,7 @@ namespace CSharp
         public List<Keyword> Keywords = new List<Keyword>();
         public List<Comment> Comments = new List<Comment>();
 
-        public Article(User author, string title, params Keyword[] InputKeywords)
+        public Article(User author, string title, params Keyword[] InputKeywords) : base(kind.Article)
         {
             if (title == null)
             {
@@ -23,15 +23,14 @@ namespace CSharp
             {
                 throw new ArgumentOutOfRangeException("标题不能为空字符串");
             }
-            Title = t;
-            kind = kind.Article;
             Author = author;
-            //List<Keyword> NewKeywords = new List<Keyword> { };
+            Title = title;
+
             for (int i = 0; i < InputKeywords.Length; i++)
             {
                 Keywords.Add(InputKeywords[i]);
             }
-            //Keywords = NewKeywords;
+
         }
 
         public void Agree(User voter)
@@ -77,12 +76,6 @@ namespace CSharp
 
         }
 
-        static public void ArticleDo()
-        {
-            User user = new User("", "");
-            Article article = new Article(user, "title");
-            Console.WriteLine(article.Title);
-        }
 
 
     }

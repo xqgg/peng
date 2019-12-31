@@ -9,6 +9,11 @@ namespace CSharp
         public int Agrees { get; set; }
         public int Disagrees { get; set; }
 
+        public Suggest(User author) : base(kind.Suggest)
+        {
+            Author = author;
+        }
+
         public void Agree(User voter)
         {
             if (voter.HelpCradit <= 0)
@@ -38,11 +43,7 @@ namespace CSharp
             Disagrees += 1;
         }
 
-        public Suggest(User author)
-        {
-            kind = kind.Suggest;
-            Author = author;
-        }
+
 
         public override void Publish()
         {

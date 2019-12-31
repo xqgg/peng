@@ -16,6 +16,7 @@ namespace CSharp
         {
             return kind;
         }
+        protected kind kind;
         public string Title { get; set; }
         public string Body { get; set; }
         public User Author { get; set; }
@@ -25,11 +26,11 @@ namespace CSharp
         }
         private DateTime _createTime;
 
-        public Content()
+        public Content(kind kind)
         {
+            this.kind = kind;
             _createTime = SystemTime.Now();
         }
-        protected kind kind;
 
         public DateTime PublishTime { get; private set; }
         public DateTime CreatTime
@@ -44,16 +45,16 @@ namespace CSharp
         {
             User user = new User("", "");
             user.HelpMoney = 10;
-            Article article = new Article(user,"Sanmple");
+            Article article = new Article(user, "Sanmple");
             Console.WriteLine("创建时间：" + article.CreatTime);
             System.Threading.Thread.Sleep(3000);
             article.Publish();
             Console.WriteLine("发布时间：" + article.PublishTime);
-            
+
             Problem problem = new Problem("", 1, user);
             Console.WriteLine(problem.CreatTime);
             System.Threading.Thread.Sleep(2000);
-            
+
             Console.WriteLine(problem._createTime);
             problem.Publish();
             Console.WriteLine(problem.PublishTime);
