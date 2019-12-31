@@ -14,23 +14,16 @@ namespace CSharp
 
         public Article(User author, string title, params Keyword[] InputKeywords) : base(kind.Article)
         {
-            if (title == null)
+            if (string.IsNullOrWhiteSpace(title))
             {
-                throw new ArgumentOutOfRangeException("标题不能为null值");
-            }
-            string t = title.Trim();
-            if (t == string.Empty)
-            {
-                throw new ArgumentOutOfRangeException("标题不能为空字符串");
+                throw new ArgumentOutOfRangeException("标题不能为null值或空格");
             }
             Author = author;
-            Title = title;
-
+            Title = title.Trim();
             for (int i = 0; i < InputKeywords.Length; i++)
             {
                 Keywords.Add(InputKeywords[i]);
             }
-
         }
 
         public void Agree(User voter)

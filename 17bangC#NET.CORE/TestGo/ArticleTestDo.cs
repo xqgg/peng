@@ -9,7 +9,7 @@ namespace CSharp
         public static void Do()
         {
             User user = new User("sasdj", "asdfa22&");
-            Article article = new Article(user, "斤斤计较军军军军军军军军");
+            Article article = new Article(user, "   ss    ");
             Console.WriteLine(article.Title);
             Console.WriteLine(article.GetKind());
         }
