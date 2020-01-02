@@ -16,11 +16,10 @@ namespace Training1
 
 
 
-        //public int GetWater(ProvideWater provideWater)
-        //{
-        //    provideWater(new Person());
-        //    return 1;
-        //}
+        public static void GetWater(ProvideWater provideWater)
+        {
+            Console.WriteLine($"得到水{provideWater(new Person())}");
+        }
 
         public static void Do()
         {
@@ -40,6 +39,10 @@ namespace Training1
             //3.lambda表达式
             provide = p => 3;
             Console.WriteLine(provide(man));
+
+            //声明一个方法GetWater()，该方法接受ProvideWater作为参数，并能将ProvideWater的返回值输出
+            GetWater(provide);
+
 
         }
     }
