@@ -38,6 +38,9 @@ namespace Training1
             Console.WriteLine(provide(man));
 
             //3.lambda表达式
+            provide = p => 3;
+            Console.WriteLine(provide(man));
+
         }
     }
 }
