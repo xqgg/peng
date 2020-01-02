@@ -31,6 +31,12 @@ namespace Training1
             Console.WriteLine(provide(man));
 
             //2.匿名方法
+            provide = delegate (Person person)
+            {
+                return 2;
+            };
+            Console.WriteLine(provide(man));
+
             //3.lambda表达式
         }
     }
