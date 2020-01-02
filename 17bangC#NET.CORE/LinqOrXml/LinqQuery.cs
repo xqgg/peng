@@ -182,6 +182,19 @@ namespace CSharp
             ContentService.Publish(problem1);
             ContentService.Publish(problem2);
             ContentService.Publish(problem3);
+            IList<Problem> problems = new List<Problem>() { problem1, problem2, problem3 };
+
+            //找出每一篇求助的悬赏都大于5个帮帮币的文章作者
+            var highPrice = problems.GroupBy(gp => gp.Author)
+                                    .Where(p => p.Min(r => r.Reward) > 5)
+                                    .Select(a => a.Key.GetName());
+            foreach (var item in highPrice)
+            {
+                Console.WriteLine(item);
+            }
+
+
+
 
 
 

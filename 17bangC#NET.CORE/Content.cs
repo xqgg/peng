@@ -51,7 +51,7 @@ namespace CSharp
             article.Publish();
             Console.WriteLine("发布时间：" + article.PublishTime);
 
-            Problem problem = new Problem("", 1, user);
+            Problem problem = new Problem("", user, 1);
             Console.WriteLine(problem.CreatTime);
             System.Threading.Thread.Sleep(2000);
 
