@@ -9,12 +9,29 @@ namespace Training1
 
     class Person
     {
+        public static int UseDelegate(Person person)
+        {
+            return 1;
+        }
+
+
+
         //public int GetWater(ProvideWater provideWater)
         //{
         //    provideWater(new Person());
         //    return 1;
         //}
 
+        public static void Do()
+        {
+            //使用：
+            //1.方法
+            Person man = new Person();
+            ProvideWater provide = new ProvideWater(UseDelegate);
+            Console.WriteLine(provide(man));
 
+            //2.匿名方法
+            //3.lambda表达式
+        }
     }
 }
