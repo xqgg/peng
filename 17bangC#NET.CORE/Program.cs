@@ -13,7 +13,8 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
 
-            ArticleTestDo.Do();
+            //ArticleTestDo.Do();
+            LinqQuery.LinqDo();
 
 
 

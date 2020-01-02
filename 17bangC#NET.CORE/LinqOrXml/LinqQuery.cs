@@ -148,12 +148,35 @@ namespace CSharp
             //找出每个作者评论数最多的文章
             var CommentMostOfAuthor = from a in articles
                                       group a by a.Author into cm
-                                      //orderby cm.
                                       select new
                                       {
                                           name = cm.Key.GetName(),
-                                          title = cm.First().Title
+                                          title = cm.OrderBy(c => c.Comments.Count()).First().Title
                                       };
+            Console.WriteLine("找出每个作者评论数最多的文章：");
+            foreach (var item in CommentMostOfAuthor)
+            {
+                Console.WriteLine(item.name + item.title);
+            }
+            Console.WriteLine();
+
+
+            //找出每个作者最近发布的一篇文章
+            var FinallyArticle = from a in articles
+                                 group a by a.Author into ga
+                                 select new
+                                 {
+                                     author = ga.Key.GetName(),
+                                     title = ga.OrderByDescending(a => a.PublishTime).First().Title
+                                 };
+            Console.WriteLine("找出每个作者最近发布的一篇文章：");
+            foreach (var item in FinallyArticle)
+            {
+                Console.WriteLine(item.author + item.title);
+            }
+
+
+
         }
     }
 }
