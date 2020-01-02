@@ -7,7 +7,7 @@ namespace CSharp
 {
     internal class Problem : Content
     {
-        public Problem(string body, int reward, User author) : base(kind.Problem)
+        public Problem(string body, User author, int reward = 0) : base(kind.Problem)
         {
             Body = body;
 

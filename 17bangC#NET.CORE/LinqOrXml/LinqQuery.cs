@@ -176,6 +176,16 @@ namespace CSharp
             }
 
 
+            Problem problem1 = new Problem("标题1", fg, 19);
+            Problem problem2 = new Problem("标题2", fg);
+            Problem problem3 = new Problem("标题2", xlt, 20);
+            ContentService.Publish(problem1);
+            ContentService.Publish(problem2);
+            ContentService.Publish(problem3);
+
+
+
+
 
         }
     }
