@@ -9,8 +9,8 @@ namespace CSharp
     {
         public Problem(string body, User author, int reward = 0) : base(kind.Problem)
         {
+            rewardCheck(reward);
             Body = body;
-
             Reward = reward;
             Author = author;
         }
@@ -27,16 +27,14 @@ namespace CSharp
             get { return _reward; }
             set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentException("悬赏不能小于0");
-                }
+                rewardCheck(value);
                 _reward = value;
             }
         }
 
         public override void Publish()
         {
+            //Reward属性的Get中已有检查，所以无需在发布时显式运行rewardCheck()。
             if (Author.HelpMoney < Reward)
             {
                 throw new Exception("帮帮币余额不足，请调整悬赏后重试");
@@ -48,6 +46,13 @@ namespace CSharp
             }
         }
 
+        private void rewardCheck(int byReward)
+        {
+            if (byReward < 0)
+            {
+                throw new ArgumentException("悬赏不能小于0");
+            }
+        }
         //static public Problem Load(int Id)
         //{
         //    return new Problem("hh", 1, author);

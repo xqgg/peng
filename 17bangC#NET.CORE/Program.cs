@@ -14,7 +14,8 @@ namespace ConsoleApp1
         {
 
             //ArticleTestDo.Do();
-            LinqQuery.LinqDo();
+            //LinqQuery.LinqDo();
+            CSharp.TestGo.ProblemTestDo.Do();
 
 
 
