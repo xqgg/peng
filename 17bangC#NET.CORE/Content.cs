@@ -22,6 +22,10 @@ namespace CSharp
         public User Author { get; set; }
         public virtual void Publish()
         {
+            if (Author == null)
+            {
+                throw new ArgumentNullException("Content的作者不能为空！");
+            }
             PublishTime = SystemTime.Now();
         }
         private DateTime _createTime;
