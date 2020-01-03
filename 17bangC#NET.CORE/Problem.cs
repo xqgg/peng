@@ -48,6 +48,7 @@ namespace CSharp
 
         private void rewardCheck(int byReward)
         {
+            //是否可使用 uint 来保证Reward不为负数？
             if (byReward < 0)
             {
                 throw new ArgumentException("悬赏不能小于0");
