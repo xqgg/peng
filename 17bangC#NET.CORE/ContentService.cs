@@ -16,7 +16,12 @@ namespace CSharp
             catch (ArgumentNullException ae)
             {
                 Console.WriteLine("内容的作者不能为空");
-                throw new Exception("", new Exception("",ae));
+                throw new Exception("", new Exception("", ae));
+            }
+            //如果是参数越界异常，Console.WriteLine()输出：求助的Reward为负数（-XX），不再抛出异常
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("求助的Reward为负数");
             }
             Console.WriteLine("将content存入数据库");
         }

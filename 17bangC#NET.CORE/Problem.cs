@@ -27,7 +27,15 @@ namespace CSharp
             get { return _reward; }
             set
             {
-                rewardCheck(value);
+                try
+                {
+                    rewardCheck(value);
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    Console.WriteLine("求助的Reward为负数");
+                    throw;
+                }
                 _reward = value;
             }
         }
@@ -51,7 +59,7 @@ namespace CSharp
             //是否可使用 uint 来保证Reward不为负数？
             if (byReward < 0)
             {
-                throw new ArgumentException("悬赏不能小于0");
+                throw new ArgumentOutOfRangeException("悬赏不能小于0");
             }
         }
         //static public Problem Load(int Id)
