@@ -23,6 +23,7 @@ namespace CSharp
             {
                 Console.WriteLine("求助的Reward为负数");
             }
+            Console.WriteLine(SystemTime.Now().ToString("yyyy年MM月dd日 hh点mm分ss秒") + "请求发布内容（Id=XXX）");
             Console.WriteLine("将content存入数据库");
         }
     }
