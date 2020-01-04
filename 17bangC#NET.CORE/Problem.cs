@@ -9,7 +9,16 @@ namespace CSharp
     {
         public Problem(string body, User author, int reward = 0) : base(kind.Problem)
         {
-            rewardCheck(reward);
+            try
+            {
+                rewardCheck(reward);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("求助的Reward为负数");
+                throw;
+            }
+            //rewardCheck(reward);
             Body = body;
             Reward = reward;
             Author = author;
