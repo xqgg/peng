@@ -1,136 +1,134 @@
 ﻿@page
 @model RazorPage.Pages.IndexModel
-@{
-}
-<html>
-<head>
+@section head{
     <title>首页·一起帮·peng</title>
- 
+    <link href="~/images/logo.ico" rel="shortcut icon" />
     <link href="/css/Index.css" rel="stylesheet" />
     <link href="/css/navbar.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <script>
         $(document).ready
     </script>
-</head>
-<body>
-    <main class="container  ">
-        <div class="row">
-            <div class="col-md-7">
-                <div id="chat-container">
-                    <div class="text-center">
-                        <a href="#">更多历史</a>
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                    </div>
-                    <div class="chats">
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                        hahahah <br />
-                    </div>
-                    <div class="input-group">
-                        <input type="text" class="form-control" />
-                        <span zyf-chat-send="" class="input-group-addon">发送</span>
-                    </div>
+}
+
+<main class="container  ">
+    <div class="row">
+        <div class="col-md-7">
+            <div id="chat-container">
+                <div class="text-center">
+                    <a href="#">更多历史</a>
+                    <span class="glyphicon glyphicon-chevron-up"></span>
                 </div>
-            </div>
-            <div class="col-md-5">
-                <div style="top:120px" id="ad-chats">
-                    <h3>“源栈”Web开发培训班</h3>
-                    <h3>
-                        <span class="glyphicon glyphicon-fire"></span>
-                        <span>火热</span>
-                        <span>招生中</span>
-                    </h3>
-                    <p>线上：全程直播，免费收看</p>
-                    <p>线下：灵活学制，拎包入住</p>
-                    <p>有意向的同学，可以加QQ群：326801052</p>
-                    <img src="/images/qq-group.png" />
+                <div class="chats">
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                    hahahah <br />
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" />
+                    <span zyf-chat-send="" class="input-group-addon">发送</span>
                 </div>
             </div>
         </div>
-    </main>
-    <aside></aside>
-    <script>
-        //function flicker() {
-        //    var bellColor = document.getElementById("bell").style.color === "backblue";
-        //    if (bellColor === "backblue") {
-        //        bellColor = "gray";
-        //    } else {
-        //        bellColor = "backblue";
-        //    }
-        //}
-        //setInterval(function () {
-        //    if (bellColor = document.getElementById("bell").style.color === "darkblue") {
-        //        bellColor = document.getElementById("bell").style.color = "gray";
-        //    } else {
-        //        bellColor = document.getElementById("bell").style.color = "darkblue";
-        //    }
-        //}, 1000);
-        setInterval(function () {
-            var bell = document.getElementById("bell");
-            if (bell.style.color === "darkblue") {
-                bell.style.color = "lightblue";
-            } else {
-                bell.style.color = "darkblue";
-            }
-        }, 800)
-        document.getElementsByTagName("body")[0].onscroll = function () {
-            var bodyScrollTop = document.getElementsByTagName("body")[0].scrollTop;
-            console.log("滚动条下拉距离：" + bodyScrollTop);
-            if (bodyScrollTop > 370) {
-                document.getElementById("ad-chats").style.top = 120 - (bodyScrollTop - 370)
-            } else {
-                document.getElementById("ad-chats").style.top = 120
-            }
+        <div class="col-md-5">
+            <div style="top:120px" id="ad-chats">
+                <h3>“源栈”Web开发培训班</h3>
+                <h3>
+                    <span class="glyphicon glyphicon-fire"></span>
+                    <span>火热</span>
+                    <span>招生中</span>
+                </h3>
+                <p>线上：全程直播，免费收看</p>
+                <p>线下：灵活学制，拎包入住</p>
+                <p>有意向的同学，可以加QQ群：326801052</p>
+                <img src="/images/qq-group.png" />
+            </div>
+        </div>
+    </div>
+</main>
+<aside></aside>
+<script>
+    //function flicker() {
+    //    var bellColor = document.getElementById("bell").style.color === "backblue";
+    //    if (bellColor === "backblue") {
+    //        bellColor = "gray";
+    //    } else {
+    //        bellColor = "backblue";
+    //    }
+    //}
+    //setInterval(function () {
+    //    if (bellColor = document.getElementById("bell").style.color === "darkblue") {
+    //        bellColor = document.getElementById("bell").style.color = "gray";
+    //    } else {
+    //        bellColor = document.getElementById("bell").style.color = "darkblue";
+    //    }
+    //}, 1000);
+    setInterval(function () {
+        var bell = document.getElementById("bell");
+        if (bell.style.color === "darkblue") {
+            bell.style.color = "lightblue";
+        } else {
+            bell.style.color = "darkblue";
         }
-    </script>
-</body>
-</html>
+    }, 800)
+
+    document.getElementsByTagName("body")[0].onscroll = function () {
+        var bodyScrollTop = document.documentElement.scrollTop;
+        //var bodyScrollTop = document.getElementsByTagName("body")[0].scrollTop;
+        console.log("滚动条下拉距离：" + bodyScrollTop);
+        if (bodyScrollTop > 370) {
+
+            document.getElementById("ad-chats").style.top = 120 - bodyScrollTop + 370 + "px"
+        } else {
+            document.getElementById("ad-chats").style.top = 120 + "px"
+        }
+    }
+</script>
 
 
 
