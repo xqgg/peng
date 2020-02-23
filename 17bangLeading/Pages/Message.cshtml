@@ -1,7 +1,5 @@
 ﻿@page
-@{
-    Layout = null;
-}
+
 
 <!DOCTYPE html>
 
@@ -16,116 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
-    <header>
-        <!--导航-->
-        <div class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid container">
-                <!--标题-->
-                <div class="navbar-left">
-                    <a href="/Index" title="返回首页" class="navbar-left pull-left">
-                        <img src="/images/logo-big.ico" alt="一起帮logo" />
-                    </a>
-                    <p class="navbar-text pull-left">
-                        <span>一起帮</span>
-                        <span class="visible-lg-inline visible-md-inline">·网络互助平台</span>
-                    </p>
-                </div>
-                <!--移动端-->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed"
-                            data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-                            aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <!--pc-->
-                <div class="collapse navbar-collapse">
-                    <nav class="navbar-right">
-                        <ul class="nav navbar-nav">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle"
-                                   data-toggle="dropdown" role="button"
-                                   aria-haspopup="true" aria-expanded="false">
-                                    <span class=" glyphicon glyphicon-question-sign"></span>
-                                    求助
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">督导班</a></li>
-                                    <li><a href="#">疑问发布</a></li>
-                                    <li><a href="#">疑问列表</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">列表</a></li>
-                                    <li><a href="#">发布</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle"
-                                   data-toggle="dropdown" role="button"
-                                   aria-haspopup="true" aria-expanded="false">
-                                    <span class=" glyphicon glyphicon-eye-open"></span>
-                                    督促
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">求督促</a></li>
-                                    <li><a href="#">督促别人</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">我的目标</a></li>
-                                    <li><a href="#">我的督促</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle"
-                                   data-toggle="dropdown" role="button"
-                                   aria-haspopup="true" aria-expanded="false">
-                                    <span class="glyphicon glyphicon-paperclip"></span>
-                                    文章
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">列表</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle"
-                                   data-toggle="dropdown" role="button"
-                                   aria-haspopup="true" aria-expanded="false">
-                                    APP下载
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Android</a></li>
-                                    <li><a href="#">iOS</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle"
-                                   data-toggle="dropdown" role="button"
-                                   aria-haspopup="true" aria-expanded="false">
-                                    登录状态
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">登录</a></li>
-                                    <li><a href="/register">注册</a></li>
-                                    <li><a href="#">忘记密码</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div style="clear:both"></div>
-                </div>
-            </div>
-        </div>
-        <!--页眉-->
-        <div class="container visible-lg top-user-message">
-            <a class="pull-right">全部消息</a>
-            <div>
-                <span> Saber捡走了 skyline ② 掉落的 帮帮币 1枚 </span>
-            </div>
-        </div>
-    </header>
+
     <main class="container">
         <div class="row">
             <!--正文-->
@@ -237,7 +126,7 @@
                         <a class="text-info" href="http://17bang.ren/FAQ/Money#gain">掉落</a>的  <a class="text-info" href="http://17bang.ren/FAQ/Money">帮帮币</a> 4枚
                     </div>
                 </div>
-                <hr class="thin visible-sm visible-md visible-lg"> 
+                <hr class="thin visible-sm visible-md visible-lg">
             </div>
             <!--侧边栏-->
             <aside class="col-lg-3 widget">
@@ -255,22 +144,7 @@
             </aside>
         </div>
     </main>
-    <footer class=" container">
-        <hr />
-        <div>
-            <a>关于我们</a> |
-            <a href="/faq">常见问题</a> |
-            <a>意见建议</a> |
-            <a>历史通知</a> |
-            <a>友情捐赠</a> |
-            <a>融资2019</a>
-        </div>
-        <div>友情链接：</div>
-        <div class="pull-right">
-            <a href="">渝ICP备18007191号（备案）</a>
-            © 2019 - 首顾科技
-        </div>
-    </footer>
+
     <script>
         var selectAll = document.querySelector("[peng-select-all]")
         selectAll.onclick = function () {
