@@ -19,5 +19,10 @@ namespace RazorPage
         {
 
         }
+        public void OnPost()
+        {
+
+        }
+
     }
 }
