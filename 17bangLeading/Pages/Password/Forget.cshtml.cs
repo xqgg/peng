@@ -9,6 +9,10 @@ namespace RazorPage
 {
     public class ForgetModel : PageModel
     {
+        public string Email { set; get; }
+        public string UserName { set; get; }
+        public string SecurityCode { get; set; }
+
         public void OnGet()
         {
 
