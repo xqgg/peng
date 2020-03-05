@@ -9,6 +9,12 @@ namespace RazorPage
 {
     public class RegisterModel : PageModel
     {
+        public string Password { get; set; }
+        public string VerifyPassword { get; set; }
+        public string UserName { get; set; }
+        public int InvitationCode { get; set; }
+        public string inviter { get; set; }
+        public string SecurityCode { get; set; }
         public void OnGet()
         {
 
