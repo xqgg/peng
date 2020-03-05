@@ -31,7 +31,8 @@
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Pages\Password\Forget.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Update="Pages\Plan\New.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
