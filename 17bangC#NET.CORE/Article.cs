@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharp
 {
-    internal class Article : Content, IAppraise
+    public class Article : Content, IAppraise
     {
         public int Agrees { get; set; }
         public int Disagrees { get; set; }

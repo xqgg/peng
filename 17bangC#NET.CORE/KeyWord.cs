@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharp
 {
-    class Keyword
+    public class Keyword
     {
         //一个关键字可以对应多篇文章
         public List<Article> Articles { set; get; }

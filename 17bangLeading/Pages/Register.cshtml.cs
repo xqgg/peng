@@ -19,9 +19,9 @@ namespace RazorPage
         {
 
         }
-        public void OnPost()
+        public ActionResult OnPost()
         {
-
+            return RedirectToPage("LogOn");
         }
 
     }

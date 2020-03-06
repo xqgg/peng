@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharp
 {
-    class Comment : IAppraise
+    public class Comment : IAppraise
     {
         public Article Refer { get; set; }
         public string Body { get; set; }
@@ -22,7 +22,7 @@ namespace CSharp
         }
         public void Publish()
         {
-            
+
             Refer.Comments.Add(this);
             PublishTime = SystemTime.Now();
         }

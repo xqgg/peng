@@ -5,7 +5,7 @@ using CSharp;
 
 namespace CSharp
 {
-    internal class Problem : Content
+    public class Problem : Content
     {
         public Problem(string body, User author, int reward = 0) : base(kind.Problem)
         {

@@ -4,13 +4,13 @@ using System.Text;
 
 namespace CSharp
 {
-    enum kind
+    public enum kind
     {
         Problem = 1,
         Article = 2,
         Suggest = 3
     }
-    internal abstract class Content : Entity
+    public abstract class Content : Entity
     {
         public kind GetKind()
         {
