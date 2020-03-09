@@ -24,12 +24,12 @@ namespace CSharp
             Author = author;
         }
         private int _reward;
-        public Keyword[] KeyWords = new Keyword[10];
-        public Keyword this[int i]
-        {
-            get { return KeyWords[i]; }
-            set { KeyWords[i] = value; }
-        }
+        public IList<Keyword> KeyWords;
+        //public Keyword this[int i]
+        //{
+        //    get { return KeyWords[i]; }
+        //    set { KeyWords[i] = value; }
+        //}
 
         public int Reward
         {
