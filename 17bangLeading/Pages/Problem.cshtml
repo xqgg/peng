@@ -1,354 +1,358 @@
 ﻿@page
-<html>
+@model RazorPage.ProblemModel
+@{
+    ViewData["Title"] = "Problem";
+    Layout = "~/Pages/Shared/_All.cshtml";
+}
+
+
 <head>
     <title>求助·一起帮·peng</title>
     <link href="/css/Problem.css" rel="stylesheet" />
-    <link href="/css/navbar.css" rel="stylesheet" />
     <link href="/css/widget.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
-<body>
 
-    <main>
-        <div class="container main-content">
-            <div class="row">
-                <div class="col-lg-8">
-                    <!--筛选-->
-                    <form class="form-group" method="post" id="sifter">
-                        <label class="checkbox-inline">
-                            <span class="glyphicon glyphicon-eye-close"></span>
-                            <span>不显示：</span>
-                        </label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="已酬谢" />已酬谢
-                        </label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="已撤销" />已撤销
-                        </label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="协助中" />协助中
-                        </label>
-                        <label class="checkbox-inline">
-                            <span class="glyphicon glyphicon-eye-open"></span>
-                            <span>只显示：</span>
-                        </label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="我的关注" />我的关注
-                        </label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="有总结" />有总结
-                        </label>
-                    </form>
-                    <!--帖子-->
-                    <div>
-                        <hr />
-                        <time>
-                            <span class="glyphicon glyphicon-calendar"></span>
-                            2019年08月05日 10点07分
-                        </time>
-                        <span class="pull-right">
-                            <span><span class="glyphicon glyphicon-user"></span><a>28zhu</a></span>
-                            <span>
-                                <a href="#" title="初级教师">④</a>
-                            </span>
+
+<main>
+    <div class="container main-content">
+        <div class="row">
+            <div class="col-lg-8">
+                <!--筛选-->
+                <form class="form-group" method="post" id="sifter">
+                    <label class="checkbox-inline">
+                        <span class="glyphicon glyphicon-eye-close"></span>
+                        <span>不显示：</span>
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="已酬谢" />已酬谢
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="已撤销" />已撤销
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="协助中" />协助中
+                    </label>
+                    <label class="checkbox-inline">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                        <span>只显示：</span>
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="我的关注" />我的关注
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="有总结" />有总结
+                    </label>
+                </form>
+                <!--帖子-->
+                <div>
+                    <hr />
+                    <time>
+                        <span class="glyphicon glyphicon-calendar"></span>
+                        2019年08月05日 10点07分
+                    </time>
+                    <span class="pull-right">
+                        <span><span class="glyphicon glyphicon-user"></span><a>28zhu</a></span>
+                        <span>
+                            <a href="#" title="初级教师">④</a>
                         </span>
-                        <div class="article-main">
-                            <span class="problem-status label-default">已撤销</span>
-                            <a href="" style="color:black">
-                                有一个自定义UI控件，此控件使用在不同的系统中会有不同的呈现，
-                                之前的做法是各种switch case，阅读代码时让人很难受，另外新创建一
-                                个用到此控件的系统，要修改代码的地方也多，只要有swich case 的地
-                                方都要再加一个case。请教一个好一些的方式来处理这个问题，目的是
-                                让代码更加清楚
-                            </a>
-                        </div>
+                    </span>
+                    <div class="article-main">
+                        <span class="problem-status label-default">已撤销</span>
+                        <a href="" style="color:black">
+                            有一个自定义UI控件，此控件使用在不同的系统中会有不同的呈现，
+                            之前的做法是各种switch case，阅读代码时让人很难受，另外新创建一
+                            个用到此控件的系统，要修改代码的地方也多，只要有swich case 的地
+                            方都要再加一个case。请教一个好一些的方式来处理这个问题，目的是
+                            让代码更加清楚
+                        </a>
+                    </div>
 
-                        <div>
-                            <span>
-                                RT，也不知道描述的清楚不清楚。求一个思路
-                            </span>
-                            <span>
-                                <a href="" title="全文">......</a>
-                            </span>
-                        </div>
-                        <div>
-                            <span>
-                                <a href="" title="已使用1次" class="badge">不限</a>
-                            </span>
-                            <span>
-                                <a href="" title="已使用1次" class="badge">顾问咨询</a>
-                            </span>
-                            <span>
-                                <a href="" title="已使用1次" class="badge ">编程开发语言</a>
-                            </span>
-                        </div>
-                        <div class="status">
-                            <span>
-                                <a class="glyphicon glyphicon-bitcoin"></a>
-                                <span>
-                                    悬赏：
-                                </span>
-                                <span title="定额">
-                                    15
-                                </span>
-                            </span>
-                            <span>
-                                <span class="glyphicon glyphicon-heart"></span>
-                                <span>
-                                    <a href="">应答：</a>
-                                </span>
-                                <span>
-                                    1
-                                </span>
-                            </span>
-                            <span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span>
-                                    <a href="">总结：</a>
-                                </span>
-                                <span>
-                                    0
-                                </span>
-                            </span>
-                        </div>
+                    <div>
+                        <span>
+                            RT，也不知道描述的清楚不清楚。求一个思路
+                        </span>
+                        <span>
+                            <a href="" title="全文">......</a>
+                        </span>
                     </div>
                     <div>
-                        <hr />
-                        <time>
-                            <span class="glyphicon glyphicon-calendar">
-                            </span>2019年08月05日 10点07分
-                        </time>
-                        <span class="pull-right">
-                            <span><span class="glyphicon glyphicon-user"></span><a>WhiteWater</a></span>
+                        <span>
+                            <a href="" title="已使用1次" class="badge">不限</a>
+                        </span>
+                        <span>
+                            <a href="" title="已使用1次" class="badge">顾问咨询</a>
+                        </span>
+                        <span>
+                            <a href="" title="已使用1次" class="badge ">编程开发语言</a>
+                        </span>
+                    </div>
+                    <div class="status">
+                        <span>
+                            <a class="glyphicon glyphicon-bitcoin"></a>
                             <span>
-                                <a href="#" title="初级教师">④</a>
+                                悬赏：
+                            </span>
+                            <span title="定额">
+                                15
                             </span>
                         </span>
-                        <div class="article-main">
-                            <span class="problem-status label-default">已撤销</span>
-                            <a href="" style="color:black">
-                                手动导入jar包，运行报错的问题
+                        <span>
+                            <span class="glyphicon glyphicon-heart"></span>
+                            <span>
+                                <a href="">应答：</a>
+                            </span>
+                            <span>
+                                1
+                            </span>
+                        </span>
+                        <span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span>
+                                <a href="">总结：</a>
+                            </span>
+                            <span>
+                                0
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div>
+                    <hr />
+                    <time>
+                        <span class="glyphicon glyphicon-calendar">
+                        </span>2019年08月05日 10点07分
+                    </time>
+                    <span class="pull-right">
+                        <span><span class="glyphicon glyphicon-user"></span><a>WhiteWater</a></span>
+                        <span>
+                            <a href="#" title="初级教师">④</a>
+                        </span>
+                    </span>
+                    <div class="article-main">
+                        <span class="problem-status label-default">已撤销</span>
+                        <a href="" style="color:black">
+                            手动导入jar包，运行报错的问题
+                        </a>
+                    </div>
+                    <div>
+                        <span>
+                            运行就报这个错误，这个jar包我导入项目了的，不然编译都无法通过。
+                        </span>
+                        <span>
+                            <a href="" title="全文">......</a>
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            <a href="" title="已使用1次" class="badge">Windows</a>
+                        </span>
+                        <span>
+                            <a href="" title="已使用1次" class="badge">Linux</a>
+                        </span>
+                        <span>
+                            <a href="" title="已使用1次" class="badge">IDEA</a>
+                        </span>
+                        <span>
+                            <a href="" title="已使用1次" class="badge">JAVA</a>
+                        </span>
+                        <span>
+                            <a href="" title="已使用1次" class="badge">C++</a>
+                        </span>
+                        <span>
+                            <a href="" title="已使用1次" class=badge>工具软件</a>
+                        </span>
+                        <span>
+                            <a href="" title="已使用1次" class="badge">操作系统</a>
+                        </span>
+                        <span>
+                            <a href="" title="已使用1次" class="badge">编程开发语言</a>
+                        </span>
+                    </div>
+                    <div class="status">
+                        <span>
+                            <a class="glyphicon glyphicon-bitcoin"></a>
+                            <span>
+                                悬赏：
+                            </span>
+                            <span title="定额">
+                                15
+                            </span>
+                        </span>
+                        <span>
+                            <span class="glyphicon glyphicon-heart"></span>
+                            <span>
+                                <a href="">应答：</a>
+                            </span>
+                            <span>
+                                1
+                            </span>
+                        </span>
+                        <span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span>
+                                <a href="">总结：</a>
+                            </span>
+                            <span>
+                                0
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <aside class="col-lg-4 visible-md visible-lg">
+                <!--关键字-->
+                <partial name="_Keywords" />
+                @*部分页不能使用"@page"*@
+                <!--表菜单-->
+                <div class="widget clearfix">
+                    <ul class="nav nav-tabs nav-justified nav-tabs-justified" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#planscan" aria-controls="profile" role="tab" data-toggle="tab">
+                                <span class="fa fa-eye"></span> 每日督促
                             </a>
-                        </div>
-                        <div>
-                            <span>
-                                运行就报这个错误，这个jar包我导入项目了的，不然编译都无法通过。
-                            </span>
-                            <span>
-                                <a href="" title="全文">......</a>
-                            </span>
-                        </div>
-                        <div>
-                            <span>
-                                <a href="" title="已使用1次" class="badge">Windows</a>
-                            </span>
-                            <span>
-                                <a href="" title="已使用1次" class="badge">Linux</a>
-                            </span>
-                            <span>
-                                <a href="" title="已使用1次" class="badge">IDEA</a>
-                            </span>
-                            <span>
-                                <a href="" title="已使用1次" class="badge">JAVA</a>
-                            </span>
-                            <span>
-                                <a href="" title="已使用1次" class="badge">C++</a>
-                            </span>
-                            <span>
-                                <a href="" title="已使用1次" class=badge>工具软件</a>
-                            </span>
-                            <span>
-                                <a href="" title="已使用1次" class="badge">操作系统</a>
-                            </span>
-                            <span>
-                                <a href="" title="已使用1次" class="badge">编程开发语言</a>
-                            </span>
-                        </div>
-                        <div class="status">
-                            <span>
-                                <a class="glyphicon glyphicon-bitcoin"></a>
-                                <span>
-                                    悬赏：
-                                </span>
-                                <span title="定额">
-                                    15
-                                </span>
-                            </span>
-                            <span>
-                                <span class="glyphicon glyphicon-heart"></span>
-                                <span>
-                                    <a href="">应答：</a>
-                                </span>
-                                <span>
-                                    1
-                                </span>
-                            </span>
-                            <span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span>
-                                    <a href="">总结：</a>
-                                </span>
-                                <span>
-                                    0
-                                </span>
-                            </span>
+
+                        </li>
+                        <li role="presentation" class="active">
+                            <a href="#planscan" aria-controls="profile" role="tab" data-toggle="tab">
+                                <span class="fa fa-eye"></span> 排行榜
+                            </a>
+                        </li>
+                        <li role="presentation" class="active">
+                            <a href="#planscan" aria-controls="profile" role="tab" data-toggle="tab">
+                                <span class="fa fa-eye"></span> 新注册
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="planscan">
+                            <table class="table-none-border">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2" style="font-size:18px">
+                                            <span class="glyphicon glyphicon-calendar">
+                                            </span> 2019年08月28日
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>共扫描目标：</th>
+                                        <td>
+                                            <span class="glyphicon glyphicon-flag">
+                                            </span> 1 个
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>当天休息：</th>
+                                        <td>
+                                            <span class="glyphicon glyphicon-ban-circle">
+                                            </span> 0 人
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>已交作业：</th>
+                                        <td>
+                                            <span class="glyphicon glyphicon-ok">
+                                            </span> 0 份
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>请假：</th>
+                                        <td>
+                                            <span class="glyphicon glyphicon-bed">
+                                            </span>  0 人
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>未交作业：</th>
+                                        <td>
+                                            <a>
+                                                <span class="glyphicon glyphicon-remove">
+                                                </span> 1 人
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-                <aside class="col-lg-4 visible-md visible-lg">
-                    <!--关键字-->
-                    <partial name="_Keywords" />
-                    @*部分页不能使用"@page"*@
-                    <!--表菜单-->
-                    <div class="widget clearfix">
-                        <ul class="nav nav-tabs nav-justified nav-tabs-justified" role="tablist">
-                            <li role="presentation" class="active">
-                                <a href="#planscan" aria-controls="profile" role="tab" data-toggle="tab">
-                                    <span class="fa fa-eye"></span> 每日督促
-                                </a>
-
-                            </li>
-                            <li role="presentation" class="active">
-                                <a href="#planscan" aria-controls="profile" role="tab" data-toggle="tab">
-                                    <span class="fa fa-eye"></span> 排行榜
-                                </a>
-                            </li>
-                            <li role="presentation" class="active">
-                                <a href="#planscan" aria-controls="profile" role="tab" data-toggle="tab">
-                                    <span class="fa fa-eye"></span> 新注册
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="planscan">
-                                <table class="table-none-border">
-                                    <tbody>
-                                        <tr>
-                                            <td colspan="2" style="font-size:18px">
-                                                <span class="glyphicon glyphicon-calendar">
-                                                </span> 2019年08月28日
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>共扫描目标：</th>
-                                            <td>
-                                                <span class="glyphicon glyphicon-flag">
-                                                </span> 1 个
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>当天休息：</th>
-                                            <td>
-                                                <span class="glyphicon glyphicon-ban-circle">
-                                                </span> 0 人
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>已交作业：</th>
-                                            <td>
-                                                <span class="glyphicon glyphicon-ok">
-                                                </span> 0 份
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>请假：</th>
-                                            <td>
-                                                <span class="glyphicon glyphicon-bed">
-                                                </span>  0 人
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>未交作业：</th>
-                                            <td>
-                                                <a>
-                                                    <span class="glyphicon glyphicon-remove">
-                                                    </span> 1 人
-                                                </a>
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!--精品文章-->
-                    <div class="widget clearfix">
-                        <h3>
+                <!--精品文章-->
+                <div class="widget clearfix">
+                    <h3>
+                        <span class="glyphicon glyphicon-paperclip"></span>
+                        精品文章
+                    </h3>
+                    <hr />
+                    <div>
+                        <a href="http://17bang.ren/Article/576">
                             <span class="glyphicon glyphicon-paperclip"></span>
-                            精品文章
-                        </h3>
-                        <hr />
-                        <div>
-                            <a href="http://17bang.ren/Article/576">
-                                <span class="glyphicon glyphicon-paperclip"></span>
-                                决定你IT路能走多远的那些因素：学历、英语和能力，还有运气……
-                            </a>
-                        </div>
-                        <div>
-                            <a href="http://17bang.ren/Article/575">
-                                <span class="glyphicon glyphicon-paperclip"></span>
-                                学好编程要有“三勤”
-                            </a>
-                        </div>
-                        <div>
-                            <a href="http://17bang.ren/Article/574">
-                                <span class="glyphicon glyphicon-paperclip"></span>
-                                源栈培训：其他ASP.NET项目
-                            </a>
-                        </div>
-                        <a class="pull-right">
-                            <span class="glyphicon glyphicon-hand-right"></span>
-                            更多
+                            决定你IT路能走多远的那些因素：学历、英语和能力，还有运气……
                         </a>
                     </div>
-                    <!--广告-->
-                    <div class="widget clearfix">
-                        <div class="ad-in-widget">
-                            <span class="item-1 order-tag">1</span>
-                            <a href="http://17bang.ren/Article/261">学编程，来 “源栈”！飞哥精品小班等着你……</a>
-                        </div>
-                        <div class="ad-in-widget">
-                            <span class="item-2 order-tag">2</span>
-                            <a href="">
-                                广告位
-                            </a>
-                        </div>
-                        <div class="ad-in-widget">
-                            <span class="item-3 order-tag">3</span>
-                            <a href="">
-                                广告位
-                            </a>
-                        </div>
-                        <div class="ad-in-widget">
-                            <span class="item-4 order-tag">4</span>
-                            <a href="">
-                                广告位
-                            </a>
-                        </div>
-                        <div class="ad-in-widget">
-                            <span class="item-4 order-tag">5</span>
-                            <a href="">
-                                广告位
-                            </a>
-                        </div>
-                        <div class="ad-in-widget">
-                            <span class="item-4 order-tag">6</span>
-                            本站由
-                            <a href="http://www.west.cn/index.asp?ReferenceID=563969">
-                                西部数码
-                            </a>
-                            提供
-                        </div>
-                        <a class="ad-in-widget pull-right">
-                            <span>A</span>
-                            广告
+                    <div>
+                        <a href="http://17bang.ren/Article/575">
+                            <span class="glyphicon glyphicon-paperclip"></span>
+                            学好编程要有“三勤”
                         </a>
                     </div>
-                </aside>
-            </div>
+                    <div>
+                        <a href="http://17bang.ren/Article/574">
+                            <span class="glyphicon glyphicon-paperclip"></span>
+                            源栈培训：其他ASP.NET项目
+                        </a>
+                    </div>
+                    <a class="pull-right">
+                        <span class="glyphicon glyphicon-hand-right"></span>
+                        更多
+                    </a>
+                </div>
+                <!--广告-->
+                <div class="widget clearfix">
+                    <div class="ad-in-widget">
+                        <span class="item-1 order-tag">1</span>
+                        <a href="http://17bang.ren/Article/261">学编程，来 “源栈”！飞哥精品小班等着你……</a>
+                    </div>
+                    <div class="ad-in-widget">
+                        <span class="item-2 order-tag">2</span>
+                        <a href="">
+                            广告位
+                        </a>
+                    </div>
+                    <div class="ad-in-widget">
+                        <span class="item-3 order-tag">3</span>
+                        <a href="">
+                            广告位
+                        </a>
+                    </div>
+                    <div class="ad-in-widget">
+                        <span class="item-4 order-tag">4</span>
+                        <a href="">
+                            广告位
+                        </a>
+                    </div>
+                    <div class="ad-in-widget">
+                        <span class="item-4 order-tag">5</span>
+                        <a href="">
+                            广告位
+                        </a>
+                    </div>
+                    <div class="ad-in-widget">
+                        <span class="item-4 order-tag">6</span>
+                        本站由
+                        <a href="http://www.west.cn/index.asp?ReferenceID=563969">
+                            西部数码
+                        </a>
+                        提供
+                    </div>
+                    <a class="ad-in-widget pull-right">
+                        <span>A</span>
+                        广告
+                    </a>
+                </div>
+            </aside>
         </div>
-    </main>
+    </div>
+</main>
 
-</body>
-</html>
+

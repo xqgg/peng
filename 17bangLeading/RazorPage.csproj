@@ -37,9 +37,6 @@
     <Content Update="Pages\Plan\New.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Pages\ProblemBeta.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
     <Content Update="Pages\RegisterBeta.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
