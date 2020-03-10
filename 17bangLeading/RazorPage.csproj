@@ -58,4 +58,8 @@
     <Folder Include="wwwroot\images\MoleGame\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\17bangCSharpNET.CORE\CSharp.csproj" />
+  </ItemGroup>
+
 </Project>
