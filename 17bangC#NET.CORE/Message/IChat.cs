@@ -6,6 +6,6 @@ namespace CSharp
 {
     interface IChat
     {
-        public void Send();
+        void Send();
     }
 }

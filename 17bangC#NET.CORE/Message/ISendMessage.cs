@@ -6,6 +6,6 @@ namespace CSharp
 {
     interface ISendMessage
     {
-        public void Send();
+        void Send();
     }
 }

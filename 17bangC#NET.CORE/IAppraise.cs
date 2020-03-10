@@ -6,8 +6,8 @@ namespace CSharp
 {
     interface IAppraise
     {
-        public void Agree(User voter);
-        public void Disagree(User voter);
+        void Agree(User voter);
+        void Disagree(User voter);
         int Agrees { get; set; }
         int Disagrees { get; set; }
     }
