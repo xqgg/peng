@@ -45,6 +45,75 @@
                     </label>
                 </form>
                 <!--帖子-->
+                @foreach (var problem in Model.problems)
+                {
+                    <div>
+                        <hr />
+                        <time>
+                            <span class="glyphicon glyphicon-calendar"></span>
+                            @problem.PublishTime
+                        </time>
+                        <span class="pull-right">
+                            <span><span class="glyphicon glyphicon-user"></span><a>@problem.Author.GetName()</a></span>
+                            <span>
+                                <a href="#" title="初级教师">④</a>
+                            </span>
+                        </span>
+                        <div class="article-main">
+                            <span class="problem-status label-default">已撤销</span>
+                            <a href="" style="color:black">
+                                @problem.Title
+                            </a>
+                        </div>
+
+                        <div>
+                            <span>
+                                @problem.Body
+                            </span>
+                            <span>
+                                <a href="" title="全文">......</a>
+                            </span>
+                        </div>
+                        <div>
+                            @foreach (var keyword in problem.KeyWords)
+                            {
+                                <span>
+                                    <a href="" title="已使用1次" class="badge">@keyword.Name</a>
+                                </span>
+                            }
+                        </div>
+                        <div class="status">
+                            <span>
+                                <a class="glyphicon glyphicon-bitcoin"></a>
+                                <span>
+                                    悬赏：
+                                </span>
+                                <span title="定额">
+                                    15 @problem.Reward
+                                </span>
+                            </span>
+                            <span>
+                                <span class="glyphicon glyphicon-heart"></span>
+                                <span>
+                                    <a href="">应答：</a>
+                                </span>
+                                <span>
+                                    1
+                                </span>
+                            </span>
+                            <span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span>
+                                    <a href="">总结：</a>
+                                </span>
+                                <span>
+                                    0
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                }
+                <!--
                 <div>
                     <hr />
                     <time>
@@ -60,7 +129,7 @@
                     <div class="article-main">
                         <span class="problem-status label-default">已撤销</span>
                         <a href="" style="color:black">
-                            有一个自定义UI控件，此控件使用在不同的系统中会有不同的呈现，
+                            有一个自定义ui控件，此控件使用在不同的系统中会有不同的呈现，
                             之前的做法是各种switch case，阅读代码时让人很难受，另外新创建一
                             个用到此控件的系统，要修改代码的地方也多，只要有swich case 的地
                             方都要再加一个case。请教一个好一些的方式来处理这个问题，目的是
@@ -70,7 +139,7 @@
 
                     <div>
                         <span>
-                            RT，也不知道描述的清楚不清楚。求一个思路
+                            rt，也不知道描述的清楚不清楚。求一个思路
                         </span>
                         <span>
                             <a href="" title="全文">......</a>
@@ -124,7 +193,7 @@
                         </span>2019年08月05日 10点07分
                     </time>
                     <span class="pull-right">
-                        <span><span class="glyphicon glyphicon-user"></span><a>WhiteWater</a></span>
+                        <span><span class="glyphicon glyphicon-user"></span><a>whitewater</a></span>
                         <span>
                             <a href="#" title="初级教师">④</a>
                         </span>
@@ -145,19 +214,19 @@
                     </div>
                     <div>
                         <span>
-                            <a href="" title="已使用1次" class="badge">Windows</a>
+                            <a href="" title="已使用1次" class="badge">windows</a>
                         </span>
                         <span>
-                            <a href="" title="已使用1次" class="badge">Linux</a>
+                            <a href="" title="已使用1次" class="badge">linux</a>
                         </span>
                         <span>
-                            <a href="" title="已使用1次" class="badge">IDEA</a>
+                            <a href="" title="已使用1次" class="badge">idea</a>
                         </span>
                         <span>
-                            <a href="" title="已使用1次" class="badge">JAVA</a>
+                            <a href="" title="已使用1次" class="badge">java</a>
                         </span>
                         <span>
-                            <a href="" title="已使用1次" class="badge">C++</a>
+                            <a href="" title="已使用1次" class="badge">c++</a>
                         </span>
                         <span>
                             <a href="" title="已使用1次" class=badge>工具软件</a>
@@ -199,6 +268,12 @@
                         </span>
                     </div>
                 </div>
+                    -->
+
+                @for (int i = 1; i < Model.pageAmount+1; i++)
+                {
+                    <a href="Problem?page=@(i)">第@(i)页</a>
+                }
             </div>
             <aside class="col-lg-4 visible-md visible-lg">
                 <!--关键字-->
