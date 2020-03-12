@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\17bangC#NET.CORE\CSharp.csproj" />
+    <ProjectReference Include="..\17bangCSharpNET.CORE\CSharp.csproj" />
   </ItemGroup>
 
 </Project>
