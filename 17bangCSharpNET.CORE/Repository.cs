@@ -173,4 +173,14 @@ namespace CSharp
             return problems.Count;
         }
     }
+
+    public class UserRepository
+    {
+        public void Save(User user)
+        {
+
+        }
+    }
+
+
 }
