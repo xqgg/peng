@@ -50,9 +50,9 @@ namespace CSharp
 
             //找出“飞哥”发布的文章
             var articleOfFg = from a in articles
-                              where a.Author.GetName() == "飞哥"
+                              where a.Author.Name == "飞哥"
                               select a;
-            var articleOfFgLam = articles.Where(a => a.Author.GetName() == "飞哥");
+            var articleOfFgLam = articles.Where(a => a.Author.Name == "飞哥");
             Console.WriteLine("飞哥发布的文章有如下：");
             foreach (var item in articleOfFg)
             {
@@ -63,9 +63,9 @@ namespace CSharp
 
             //找出2019年1月1日以后“小鱼”发布的文章
             var articleTo190101OfXy = from a in articles
-                                      where a.PublishTime > new DateTime(2019 - 1 - 1) && a.Author.GetName() == "小余"
+                                      where a.PublishTime > new DateTime(2019 - 1 - 1) && a.Author.Name == "小余"
                                       select a;
-            var articleTo190101OfXyLam = articles.Where(a => a.PublishTime > new DateTime(2019 - 1 - 1) && a.Author.GetName() == "小余");
+            var articleTo190101OfXyLam = articles.Where(a => a.PublishTime > new DateTime(2019 - 1 - 1) && a.Author.Name == "小余");
 
 
             Console.WriteLine("小余于2019-01-01之后发布的文章有如下：");
@@ -105,13 +105,13 @@ namespace CSharp
                                group a by a.Author into ac
                                select new
                                {
-                                   name = ac.Key.GetName(),
+                                   name = ac.Key.Name,
                                    count = ac.Count()
                                };
             var articleCountLam = articles.GroupBy(a => a.Author)
                                           .Select(ac => new
                                           {
-                                              name = ac.Key.GetName(),
+                                              name = ac.Key.Name,
                                               count = ac.Count()
                                           });
             Console.WriteLine("统计用户发布的文章：");
@@ -150,7 +150,7 @@ namespace CSharp
                                       group a by a.Author into cm
                                       select new
                                       {
-                                          name = cm.Key.GetName(),
+                                          name = cm.Key.Name,
                                           title = cm.OrderBy(c => c.Comments.Count()).First().Title
                                       };
             Console.WriteLine("找出每个作者评论数最多的文章：");
@@ -166,7 +166,7 @@ namespace CSharp
                                  group a by a.Author into ga
                                  select new
                                  {
-                                     author = ga.Key.GetName(),
+                                     author = ga.Key.Name,
                                      title = ga.OrderByDescending(a => a.PublishTime).First().Title
                                  };
             Console.WriteLine("找出每个作者最近发布的一篇文章：");
@@ -187,7 +187,7 @@ namespace CSharp
             //找出每一篇求助的悬赏都大于5个帮帮币的文章作者
             var highPrice = problems.GroupBy(gp => gp.Author)
                                     .Where(p => p.Min(r => r.Reward) > 5)
-                                    .Select(a => a.Key.GetName());
+                                    .Select(a => a.Key.Name);
             foreach (var item in highPrice)
             {
                 Console.WriteLine(item);

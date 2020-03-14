@@ -8,12 +8,12 @@ namespace CSharp
     public sealed class User : Entity, IChat, ISendMessage
     {
         internal TokenManager _tokens;
-        string _Name;
+        public string Name { get; private set; }
         public string Password { private get; set; }
         public User InvitedBy { get; set; }
         public int HelpMoney { set; get; }
         public int HelpCradit { get; set; }
-
+        public string InvitationCode { get; private set; }
 
         public User(string name, string password)
         {
@@ -27,22 +27,23 @@ namespace CSharp
             {
                 throw new ArgumentOutOfRangeException("用户名或密码不规范");
             }
+            GenerateInvitationCode();
         }
         public void SetName(string name)
         {
             if (name == "admin")
             {
-                _Name = "系统管理员";
+                Name = "系统管理员";
             }
             else
             {
-                _Name = name;
+                Name = name;
             }
         }
-        public string GetName()
-        {
-            return _Name;
-        }
+        //public string GetName()
+        //{
+        //    return _Name;
+        //}
 
         public void Register()
         {
@@ -59,6 +60,14 @@ namespace CSharp
         void ISendMessage.Send()
         {
             Console.WriteLine("Message");
+        }
+        /// <summary>
+        /// 生成0到9999之间的邀请码，查重功能暂未完成。
+        /// </summary>
+        public void GenerateInvitationCode()
+        {
+            Random random = new Random();
+            InvitationCode = random.Next(0, 10000).ToString().PadLeft(4, '0');
         }
 
         public static void UserDo()

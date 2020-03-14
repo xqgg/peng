@@ -4,16 +4,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using CSharp;
 
 namespace RazorPage
 {
     public class RegisterModel : PageModel
     {
+        [BindProperty]
+        public User inviter { get; set; }
+        [BindProperty]
         public string Password { get; set; }
+        [BindProperty]
         public string VerifyPassword { get; set; }
-        public string UserName { get; set; }
-        public int InvitationCode { get; set; }
-        public string inviter { get; set; }
+        [BindProperty]
         public string SecurityCode { get; set; }
         public void OnGet()
         {
@@ -21,6 +24,7 @@ namespace RazorPage
         }
         public ActionResult OnPost()
         {
+            inviter = new User("yqr", "mima!1") { InvitationCode="1234"};
             return RedirectToPage("LogOn");
         }
 
