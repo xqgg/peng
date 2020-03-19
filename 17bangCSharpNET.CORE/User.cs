@@ -44,10 +44,12 @@ namespace CSharp
         //{
         //    return _Name;
         //}
-
-        public void Register()
+        /// <summary>
+        /// 将用户数据保存到数据库（注册）
+        /// </summary>
+        public bool Register()
         {
-
+            return true;
         }
         public void Login() { }
         private void _changePasword() { }
@@ -66,8 +68,9 @@ namespace CSharp
         /// </summary>
         public void GenerateInvitationCode()
         {
-            Random random = new Random();
-            InvitationCode = random.Next(0, 10000).ToString().PadLeft(4, '0');
+            //Random random = new Random();
+            //InvitationCode = random.Next(0, 10000).ToString().PadLeft(4, '0');
+            InvitationCode = "1234";//方便测试，暂改为固定值。
         }
 
         public static void UserDo()
@@ -75,5 +78,7 @@ namespace CSharp
             User user = new User("ssssss", "ss&&8");
 
         }
+
+
     }
 }
