@@ -5,22 +5,28 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using CSharp;
+using System.ComponentModel.DataAnnotations;
 
 namespace RazorPage
 {
     public class RegisterModel : PageModel
     {
-        [BindProperty]
+        [BindProperty, DataType(DataType.Text)]
         public string InviterName { get; set; }
-        [BindProperty]
+
+        [BindProperty, DataType(DataType.Text)]
         public string InvitationCode { get; set; }
-        [BindProperty]
+
+        [BindProperty/*, DataType(DataType.Text)*/]
         public string UserName { get; set; }
-        [BindProperty]
+
+        [BindProperty, DataType(DataType.Password)]
         public string Password { get; set; }
-        [BindProperty]
+
+        [BindProperty, DataType(DataType.Password)]
         public string VerifyPassword { get; set; }
-        [BindProperty]
+
+        [BindProperty, DataType(DataType.Text)]
         public string SecurityCode { get; set; }
 
         public void OnGet()
