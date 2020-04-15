@@ -13,7 +13,7 @@ namespace CSharp
         public User InvitedBy { get; set; }
         public int HelpMoney { set; get; }
         public int HelpCradit { get; set; }
-        public string InvitationCode { get; private set; }
+        public int InvitationCode { get; private set; }
 
         public User(string name, string password)
         {
@@ -70,7 +70,7 @@ namespace CSharp
         {
             //Random random = new Random();
             //InvitationCode = random.Next(0, 10000).ToString().PadLeft(4, '0');
-            InvitationCode = "1234";//方便测试，暂改为固定值。
+            InvitationCode = 1234;//方便测试，暂改为固定值。
         }
 
         public static void UserDo()

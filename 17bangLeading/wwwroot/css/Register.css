@@ -13,3 +13,11 @@
     border: 2px dashed #eee;
     border-radius: 4px 5px;
 }
+
+.field-validation-error {
+    color: red;
+}
+
+.input-validation-error {
+    border-color: red;
+}
