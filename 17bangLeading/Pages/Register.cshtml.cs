@@ -11,24 +11,36 @@ namespace RazorPage
 {
     public class RegisterModel : PageModel
     {
-        [BindProperty, DataType(DataType.Text), Required(ErrorMessage = "*邀请人不能为空")]
+        [BindProperty]
+        [DataType(DataType.Text)]
+        [Required(ErrorMessage = "*邀请人不能为空")]
         public string InviterName { get; set; }
 
-        [BindProperty, DataType(DataType.Text),
-            Required(ErrorMessage = "*邀请码不能为空"),
-            StringLength(maximumLength: 4, MinimumLength = 4, ErrorMessage = "邀请码为4位数字")]
+        [BindProperty]
+        [DataType(DataType.Text)]
+        [Required(ErrorMessage = "*邀请码不能为空")]
+        [StringLength(maximumLength: 4, MinimumLength = 4, ErrorMessage = "邀请码为4位数字")]
         public string InvitationCode { get; set; }
 
-        [BindProperty, DataType(DataType.Text), Required(ErrorMessage = "*要用户名不能为空")]
+        [BindProperty]
+        [DataType(DataType.Text)]
+        [Required(ErrorMessage = "*要用户名不能为空")]
         public string UserName { get; set; }
 
-        [BindProperty, DataType(DataType.Password), Required(ErrorMessage = "*密码不能为空")]
+        [BindProperty]
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "*密码不能为空")]
         public string Password { get; set; }
 
-        [BindProperty, DataType(DataType.Password), Required(ErrorMessage = "*确认密码不能为空")]
+        [BindProperty]
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "*确认密码不能为空")]
+        [Compare("Password", ErrorMessage = "确认密码与密码不一致")]
         public string VerifyPassword { get; set; }
 
-        [BindProperty, DataType(DataType.Text), Required(ErrorMessage = "*验证码不能为空")]
+        [BindProperty]
+        [DataType(DataType.Text)]
+        [Required(ErrorMessage = "*验证码不能为空")]
         public string SecurityCode { get; set; }
 
         public void OnGet()
@@ -41,13 +53,15 @@ namespace RazorPage
             {
                 return Page();
             }
-            
+
+
+
             User inviter = new User("inviter", "mima@1") { };
             //检查通过
             if (InviterName == inviter.Name &&
                 int.Parse(InvitationCode) == inviter.InvitationCode &&
-                DuplicateChecking() &&
-                Password == VerifyPassword)
+                DuplicateChecking()
+                )
             {
                 if (new User(UserName, Password).Register())
                 {
@@ -66,7 +80,7 @@ namespace RazorPage
         }
 
         /// <summary>
-        /// 用户名查重。
+        /// 用户名查重。/未实现，暂时固定返回true.
         /// </summary>
         /// <returns></returns>
         public bool DuplicateChecking()
