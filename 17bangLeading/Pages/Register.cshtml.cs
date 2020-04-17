@@ -2,43 +2,45 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+//using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using CSharp;
+using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
 namespace RazorPage
 {
+    [BindProperties]
     public class RegisterModel : PageModel
     {
-        [BindProperty]
+        //[BindProperty]
         [DataType(DataType.Text)]
         [Required(ErrorMessage = "*邀请人不能为空")]
         public string InviterName { get; set; }
 
-        [BindProperty]
+        //[BindProperty]
         [DataType(DataType.Text)]
         [Required(ErrorMessage = "*邀请码不能为空")]
         [StringLength(maximumLength: 4, MinimumLength = 4, ErrorMessage = "邀请码为4位数字")]
         public string InvitationCode { get; set; }
 
-        [BindProperty]
+        //[BindProperty]
         [DataType(DataType.Text)]
         [Required(ErrorMessage = "*要用户名不能为空")]
         public string UserName { get; set; }
 
-        [BindProperty]
+        //[BindProperty]
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "*密码不能为空")]
         public string Password { get; set; }
 
-        [BindProperty]
+        //[BindProperty]
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "*确认密码不能为空")]
         [Compare("Password", ErrorMessage = "确认密码与密码不一致")]
         public string VerifyPassword { get; set; }
 
-        [BindProperty]
+        //[BindProperty]
         [DataType(DataType.Text)]
         [Required(ErrorMessage = "*验证码不能为空")]
         public string SecurityCode { get; set; }
@@ -63,13 +65,22 @@ namespace RazorPage
                 DuplicateChecking()
                 )
             {
-                if (new User(UserName, Password).Register())
+                try
                 {
-                    return RedirectToPage("LogOn");//注册成功后重定向到登录页面
+                    if (new User(UserName, Password).Register())
+                    {
+                        return RedirectToPage("LogOn");//注册成功后重定向到登录页面
+                    }
+                    else
+                    {
+                        return Page();
+                    }
                 }
-                else
+                catch (Exception)
                 {
+                    ModelState.AddModelError("CheckPassword", "用户名或密码不规范");
                     return Page();
+
                 }
             }
             else
