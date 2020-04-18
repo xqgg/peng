@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-//using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using CSharp;
 using Microsoft.AspNetCore.Mvc;
@@ -13,34 +12,17 @@ namespace RazorPage
     [BindProperties]
     public class RegisterModel : PageModel
     {
-        //[BindProperty]
+        public UserModel Registrant { get; set; }
+
         [DataType(DataType.Text)]
         [Required(ErrorMessage = "*邀请人不能为空")]
         public string InviterName { get; set; }
 
-        //[BindProperty]
         [DataType(DataType.Text)]
         [Required(ErrorMessage = "*邀请码不能为空")]
         [StringLength(maximumLength: 4, MinimumLength = 4, ErrorMessage = "邀请码为4位数字")]
         public string InvitationCode { get; set; }
 
-        //[BindProperty]
-        [DataType(DataType.Text)]
-        [Required(ErrorMessage = "*要用户名不能为空")]
-        public string UserName { get; set; }
-
-        //[BindProperty]
-        [DataType(DataType.Password)]
-        [Required(ErrorMessage = "*密码不能为空")]
-        public string Password { get; set; }
-
-        //[BindProperty]
-        [DataType(DataType.Password)]
-        [Required(ErrorMessage = "*确认密码不能为空")]
-        [Compare("Password", ErrorMessage = "确认密码与密码不一致")]
-        public string VerifyPassword { get; set; }
-
-        //[BindProperty]
         [DataType(DataType.Text)]
         [Required(ErrorMessage = "*验证码不能为空")]
         public string SecurityCode { get; set; }
@@ -67,7 +49,7 @@ namespace RazorPage
             {
                 try
                 {
-                    if (new User(UserName, Password).Register())
+                    if (new User(Registrant.UserName, Registrant.Password).Register())
                     {
                         return RedirectToPage("LogOn");//注册成功后重定向到登录页面
                     }
@@ -80,14 +62,12 @@ namespace RazorPage
                 {
                     ModelState.AddModelError("CheckPassword", "用户名或密码不规范");
                     return Page();
-
                 }
             }
             else
             {
                 return Page();
             }
-
         }
 
         /// <summary>
@@ -100,4 +80,22 @@ namespace RazorPage
         }
 
     }
+
+    public class UserModel
+    {
+        [DataType(DataType.Text)]
+        [Required(ErrorMessage = "*要用户名不能为空")]
+        public string UserName { get; set; }
+
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "*密码不能为空")]
+        public string Password { get; set; }
+
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "*确认密码不能为空")]
+        [Compare("Password", ErrorMessage = "确认密码与密码不一致")]
+        public string VerifyPassword { get; set; }
+
+    }
+
 }
