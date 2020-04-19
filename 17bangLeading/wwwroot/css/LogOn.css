@@ -1,0 +1,19 @@
+﻿body {
+}
+
+#SecurityCode {
+    width: 80px;
+    display: inline;
+}
+
+.field-validation-error {
+    color: red;
+}
+
+.input-validation-error {
+    border-color: red;
+}
+
+.validation-summary-errors {
+    color: red;
+}

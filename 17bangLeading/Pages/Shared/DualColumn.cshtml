@@ -1,4 +1,26 @@
 ﻿@{
     Layout = "Shared/_All";
 }
+@section head {
+    @RenderSection("head")
+}
+<main>
+    <div class="container">
+        <div class="row">
+            <div class=" col-lg-12">
+                <h2><span class="glyphicon glyphicon-registration-mark"></span>@RenderSection("title")</h2>
+                <hr />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-5">
+                @RenderSection("left")
+            </div>
+            <aside class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 visible-lg visible-md">
+                @RenderSection("right")
+            </aside>
+        </div>
+    </div>
+</main>
 @RenderBody();
+
