@@ -13,6 +13,7 @@
 }
 @section left{
     <div>
+        <div asp-validation-summary="All"></div>
         <form method="post">
             <div class="form-group">
                 <label asp-for="UserName">用户名：（* 必填）</label>
@@ -35,7 +36,10 @@
             </div>
             <div>
                 <input class="btn btn-primary" type="submit" asp-page="LogOn" />
-                <input class="btn btn-default" type="reset" />
+                <label asp-for=Remember>
+                    <input asp-for="Remember" />
+                    记住我
+                </label>
             </div>
         </form>
     </div>

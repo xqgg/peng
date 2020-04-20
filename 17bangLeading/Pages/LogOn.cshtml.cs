@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
 using CSharp;
+using Microsoft.AspNetCore.Http;
 
 namespace RazorPage
 {
@@ -26,6 +27,9 @@ namespace RazorPage
         [Required(ErrorMessage = "*验证码不能为空")]
         [StringLength(4, MinimumLength = 4, ErrorMessage = "*验证码长度不正确")]
         public string SecurityCode { get; set; }
+
+        public bool Remember { get; set; }
+
         public void OnGet()
         {
 
@@ -39,11 +43,15 @@ namespace RazorPage
 
             if (correct(UserName, Password))
             {
-                Response.Cookies.Append("UserId", "1");
-                return;
+                Response.Cookies.Append("UserName", $"{UserName}",
+                    new CookieOptions
+                    {
+                        IsEssential = true
+                    });
+                //Response.Cookies.Delete("UserName");
             }
 
-            return;
+
         }
 
         /// <summary>
@@ -54,7 +62,15 @@ namespace RazorPage
         /// <returns></returns>
         private bool correct(string name, string password)
         {
-            return true;
+            if (name == "1234" && password == "123456")
+            {
+                return true;
+            }
+            else
+            {
+                ModelState.AddModelError("", "用户名或密码不正确");
+                return false;
+            }
         }
     }
 }
