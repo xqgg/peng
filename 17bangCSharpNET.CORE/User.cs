@@ -17,8 +17,7 @@ namespace CSharp
 
         public User(string name, string password)
         {
-            if (new CheckPassword().Checked(password) &&
-                new CheckUserName().Check(name))
+            if (new CheckNameOrPassword().Checked(name, password))
             {
                 SetName(name);
                 Password = password;
