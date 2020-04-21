@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.Common;
+using System.Data.SqlClient;
 
 namespace CSharp
 {
@@ -13,7 +15,7 @@ namespace CSharp
         public User InvitedBy { get; set; }
         public int HelpMoney { set; get; }
         public int HelpCradit { get; set; }
-        public int InvitationCode { get; private set; }
+        public string InvitationCode { get; private set; }
 
         public User(string name, string password)
         {
@@ -46,9 +48,28 @@ namespace CSharp
         /// <summary>
         /// 将用户数据保存到数据库（注册）
         /// </summary>
-        public bool Register()
+        public bool Save(SqlConnection connection)
         {
+            //_dBHelper.ExecuteNonQuery(
+            //    $"INSERT [User]([UserName],[Password],[InvitationCode]) VALUES({Name},{Password},{InvitationCode})",
+            //    connection);
             return true;
+        }
+
+        public static void SaveSome(params User[] users)
+        {
+
+
+            DBHelper dBHelper = new DBHelper();
+            using (dBHelper.SqlConnection)
+            {
+                dBHelper.SqlConnection.Open();
+                for (int i = 0; i < users.Length; i++)
+                {
+                    dBHelper.ExecuteNonQuery($"INSERT [User]([UserName],[Password],[InvitationCode]) VALUES('{users[i].Name}','{users[i].Password}','{users[i].InvitationCode}')",
+                                             dBHelper.SqlConnection);
+                }
+            }
         }
         public void Login() { }
         private void _changePasword() { }
@@ -67,14 +88,18 @@ namespace CSharp
         /// </summary>
         public void GenerateInvitationCode()
         {
-            //Random random = new Random();
-            //InvitationCode = random.Next(0, 10000).ToString().PadLeft(4, '0');
-            InvitationCode = 1234;//方便测试，暂改为固定值。
+            Random random = new Random();
+            InvitationCode = random.Next(0, 10000).ToString().PadLeft(4, '0');
         }
 
         public static void UserDo()
         {
-            User user = new User("ssssss", "ss&&8");
+            User user = new User("ssssss", "ss&&85");
+            User user1 = new User("adohs", "ss&&85");
+            User user2 = new User("ssas1afa23ssss", "ss&&85");
+
+
+            User.SaveSome(user1, user2);
 
         }
 
