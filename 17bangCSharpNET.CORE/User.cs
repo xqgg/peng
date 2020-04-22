@@ -10,7 +10,6 @@ namespace CSharp
 {
     public sealed class User : Entity, IChat, ISendMessage
     {
-
         internal TokenManager _tokens;
         public string Name { get; private set; }
         public string Password { private get; set; }
@@ -19,17 +18,6 @@ namespace CSharp
         public int HelpCradit { get; set; }
         public string InvitationCode { get; private set; }
 
-
-        private DBHelper _dBHelper;
-
-        internal DBHelper dBHelper
-        {
-            get
-            {
-                _dBHelper = _dBHelper ?? new DBHelper();
-                return _dBHelper;
-            }
-        }
         public User(string name, string password)
         {
             if (new CheckNameOrPassword().Checked(name, password))
@@ -54,27 +42,11 @@ namespace CSharp
                 Name = name;
             }
         }
-        //public string GetName()
-        //{
-        //    return _Name;
-        //}
         /// <summary>
         /// 将用户数据保存到数据库（注册）
         /// </summary>
-        public void Save()
+        public int Save()
         {
-            using (dBHelper.HelperConnection)
-            {
-                dBHelper.HelperConnection.Open();
-                dBHelper.ExecuteNonQuery($"INSERT [User]([UserName],[Password],[InvitationCode]) VALUES('{Name}','{Password}','{InvitationCode}')");
-            }
-
-        }
-
-        public static void SaveSome(params User[] users)
-        {
-
-
             DBHelper dBHelper = new DBHelper();
             using (dBHelper.HelperConnection)
             {
@@ -82,11 +54,42 @@ namespace CSharp
                 {
                     dBHelper.HelperConnection.Open();
                 }
+                return dBHelper.ExecuteNonQuery($"INSERT [User]([UserName],[Password],[InvitationCode]) VALUES('{Name}','{Password}','{InvitationCode}')");
+            }
+        }
+        public void Save(DBHelper dBHelper)
+        {
+            dBHelper.ExecuteNonQuery($"INSERT [User]([UserName],[Password],[InvitationCode]) VALUES('{Name}','{Password}','{InvitationCode}')");
+        }
+
+        /// <summary>
+        /// 批量保存用户
+        /// </summary>
+        /// <param name="users">用户对象</param>
+        /// <returns>成功保存的数量</returns>
+        public static int SaveSome(params User[] users)
+        {
+            int rowNumberAffected = 0;
+            DBHelper dBHelper = new DBHelper();
+            using (dBHelper.HelperConnection)
+            {
+                //if (dBHelper.HelperConnection.State == ConnectionState.Closed)
+                //{
+                //    dBHelper.HelperConnection.Open();
+                //}
+                //for (int i = 0; i < users.Length; i++)
+                //{
+                //    dBHelper.ExecuteNonQuery($"INSERT [User]([UserName],[Password],[InvitationCode]) VALUES('{users[i].Name}','{users[i].Password}','{users[i].InvitationCode}')");
+                //    rowNumberAffected++;
+                //}
+                dBHelper.HelperConnection.Open();
                 for (int i = 0; i < users.Length; i++)
                 {
-                    dBHelper.ExecuteNonQuery($"INSERT [User]([UserName],[Password],[InvitationCode]) VALUES('{users[i].Name}','{users[i].Password}','{users[i].InvitationCode}')");
+                    users[i].Save(dBHelper);
+                    rowNumberAffected++;
                 }
             }
+            return rowNumberAffected;
         }
         public void Login() { }
         private void _changePasword() { }
@@ -111,13 +114,15 @@ namespace CSharp
 
         public static void UserDo()
         {
-            User user = new User("789asasd", "ss&^81235");
-            //User user1 = new User("8466ohs", "ss&&85");
-            //User user2 = new User("sshhhsss", "ss&&85");
+            User user = new User("shaohb", "ss&^81235");
+            User user1 = new User("sisisohs", "ss&&85");
+            User user2 = new User("adhgaj", "ss&&85");
 
 
-            //User.SaveSome(user, user1, user2);
-            user.Save();
+            User.SaveSome(user, user1, user2);
+            //user.Save();
+
+
         }
 
 
