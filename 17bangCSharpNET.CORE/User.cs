@@ -29,7 +29,7 @@ namespace CSharp
             {
                 throw new ArgumentOutOfRangeException("用户名或密码不规范");
             }
-            GenerateInvitationCode();
+            //GenerateInvitationCode();
         }
         public void SetName(string name)
         {
@@ -48,6 +48,7 @@ namespace CSharp
         public int Save()
         {
             DBHelper dBHelper = new DBHelper();
+            GenerateInvitationCode();
             using (dBHelper.HelperConnection)
             {
                 if (dBHelper.HelperConnection.State == ConnectionState.Closed)
@@ -59,6 +60,7 @@ namespace CSharp
         }
         public void Save(DBHelper dBHelper)
         {
+            GenerateInvitationCode();
             dBHelper.ExecuteNonQuery($"INSERT [User]([UserName],[Password],[InvitationCode]) VALUES('{Name}','{Password}','{InvitationCode}')");
         }
 
@@ -69,22 +71,15 @@ namespace CSharp
         /// <returns>成功保存的数量</returns>
         public static int SaveSome(params User[] users)
         {
+
             int rowNumberAffected = 0;
             DBHelper dBHelper = new DBHelper();
             using (dBHelper.HelperConnection)
             {
-                //if (dBHelper.HelperConnection.State == ConnectionState.Closed)
-                //{
-                //    dBHelper.HelperConnection.Open();
-                //}
-                //for (int i = 0; i < users.Length; i++)
-                //{
-                //    dBHelper.ExecuteNonQuery($"INSERT [User]([UserName],[Password],[InvitationCode]) VALUES('{users[i].Name}','{users[i].Password}','{users[i].InvitationCode}')");
-                //    rowNumberAffected++;
-                //}
                 dBHelper.HelperConnection.Open();
                 for (int i = 0; i < users.Length; i++)
                 {
+                    //users[i].GenerateInvitationCode();因为使用Save方法中会调用一次所以这里不需要了。
                     users[i].Save(dBHelper);
                     rowNumberAffected++;
                 }
@@ -135,6 +130,30 @@ namespace CSharp
                 return (int)result;
             }
         }
+
+        static public IList<User> GetUsers()
+        {
+            IList<User> users = new List<User>();
+            DBHelper helper = new DBHelper();
+
+            helper.HelperConnection.Open();
+            SqlDataReader reader = helper.ExecuteReader("SELECT *FROM [User]");
+            //bool hasAnotherRow = reader.Read();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    users.Add(new User((string)reader["UserName"], (string)reader["Password"])
+                    {
+                        Id = (int)reader["UserId"],
+                        InvitationCode = (string)reader["InvitationCode"]
+                    });
+                }
+            }
+            helper.HelperConnection.Close();
+            return users;
+        }
+
         public void Login() { }
         private void _changePasword() { }
 
@@ -148,7 +167,7 @@ namespace CSharp
             Console.WriteLine("Message");
         }
         /// <summary>
-        /// 生成0到9999之间的邀请码，查重功能暂未完成。
+        /// 生成0到9999之间的邀请码。
         /// </summary>
         public void GenerateInvitationCode()
         {
@@ -158,14 +177,15 @@ namespace CSharp
 
         public static void UserDo()
         {
-            User user = new User("shaohb", "ss&^81235");
-            User user1 = new User("sisisohs", "ss&&85");
-            User user2 = new User("adhgaj", "ss&&85");
+            //IList<User> users = User.GetUsers();
 
 
-            User.SaveSome(user, user1, user2);
-            //user.Save();
-
+            //foreach (var item in users)
+            //{
+            //    Console.WriteLine(item.Id);
+            //}
+            User user = new User("sdfah", "asdfa@222");
+            Console.WriteLine(user.InvitationCode);
 
         }
 

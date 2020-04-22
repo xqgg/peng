@@ -21,15 +21,13 @@ namespace CSharp
         }
 
         /// <summary>
-        /// 非查询行为
+        /// 非查询行为,需要在外部打开关闭数据库连接
         /// </summary>
         /// <param name="cmdText">SQL代码</param>
         /// <returns>返回受影响的行数</returns>
         public int ExecuteNonQuery(string cmdText)
         {
-            SqlCommand command = new SqlCommand();
-            command.Connection = HelperConnection;
-            command.CommandText = cmdText;
+            SqlCommand command = GetCommand(HelperConnection, cmdText);
             int rowNumberAffected = command.ExecuteNonQuery();
             return rowNumberAffected;
         }
@@ -43,13 +41,36 @@ namespace CSharp
         {
             using (HelperConnection)
             {
-                SqlCommand command = new SqlCommand();
-                command.Connection = HelperConnection;
-                command.CommandText = cmdText;
+                SqlCommand command = GetCommand(HelperConnection, cmdText);
                 return command.ExecuteScalar();
             }
         }
 
+        public SqlDataReader ExecuteReader(string cmdText)
+        {
+            if (HelperConnection.State == System.Data.ConnectionState.Closed)
+            {
+                HelperConnection.Open();
+            }
+            SqlCommand command = GetCommand(HelperConnection, cmdText);
+            return command.ExecuteReader();
+
+        }
+
+        private SqlCommand GetCommand(SqlConnection connection, string cmdText)
+        {
+            SqlCommand command = new SqlCommand();
+            command.Connection = connection;
+            command.CommandText = cmdText;
+            return command;
+        }
+        private SqlCommand GetCommand(string cmdText)
+        {
+            SqlCommand command = new SqlCommand();
+            command.Connection = new SqlConnection(connectionString);
+            command.CommandText = cmdText;
+            return command;
+        }
 
 
     }
