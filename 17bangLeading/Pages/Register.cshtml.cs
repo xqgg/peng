@@ -29,6 +29,10 @@ namespace RazorPage
         [Required(ErrorMessage = "*验证码不能为空")]
         public string SecurityCode { get; set; }
 
+
+
+
+
         public void OnGet()
         {
 
@@ -40,29 +44,17 @@ namespace RazorPage
                 return Page();
             }
 
-            if (new CheckNameOrPassword().Checked(Registrantinputted.UserName, Registrantinputted.Password))
+            if (!(new CheckNameOrPassword().Checked(Registrantinputted.UserName, Registrantinputted.Password)))
             {
                 ModelState.AddModelError("CheckPassword", "用户名或密码不规范");
                 return Page();
             }
 
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=17bang;Integrated Security=True;";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            DBHelper dBHelper = new DBHelper();
+            using (dBHelper.HelperConnection)
             {
-                connection.Open();
-                User inviter = new User("inviter", "mima@1") { };
-                if (!CheckTheInvitationCode(connection, InvitationCode, InviterName))
-                {
-                    ModelState.AddModelError("", "邀请人或邀请码不正确");
-                    return Page();
-                }
-                //if (DuplicateChecking(string name)
-                //{
-                //    ModelState.AddModelError("", "用户名已被占用");
-                //    return Page();
-                //}
-
-                if (!DuplicateChecking(Registrantinputted.UserName))
+                dBHelper.HelperConnection.Open();
+                if (!DuplicateChecking(Registrantinputted.UserName, dBHelper))
                 {
                     ModelState.AddModelError("", "用户名已被占用");
                     return Page();
@@ -71,10 +63,36 @@ namespace RazorPage
 
 
 
-
-
-                return RedirectToPage("LogOn");
             }
+
+            //using (SqlConnection connection = new SqlConnection(connectionString))
+            //{
+            //    //connection.Open();
+            //    //User inviter = new User("inviter", "mima@1") { };
+            //    //if (!CheckTheInvitationCode(connection, InvitationCode, InviterName))
+            //    //{
+            //    //    ModelState.AddModelError("", "邀请人或邀请码不正确");
+            //    //    return Page();
+            //    //}
+            //    //if (DuplicateChecking(string name)
+            //    //{
+            //    //    ModelState.AddModelError("", "用户名已被占用");
+            //    //    return Page();
+            //    //}
+
+            //    //if (!DuplicateChecking(Registrantinputted.UserName))
+            //    //{
+            //    //    ModelState.AddModelError("", "用户名已被占用");
+            //    //    return Page();
+            //    //}
+
+
+
+
+
+
+            //    return RedirectToPage("LogOn");
+            //}
 
 
 
@@ -89,40 +107,19 @@ namespace RazorPage
 
 
 
-
-        }
-        /// <summary>
-        /// 根据用户名查找用户，返回用户ID
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public int SeekUser(string name)
-        {
-            object result;
-            DBHelper dBHelper = new DBHelper();
-            using (dBHelper.HelperConnection)
-            {
-                dBHelper.HelperConnection.Open();
-                result = dBHelper.ExecuteScalar($"SELECT [UserId] FROM [User] WHERE [UserName]='{name}'");
-            }
-
-            if (result == null)
-            {
-                return -1;
-            }
-            else
-            {
-                return (int)result;
-            }
+            return Page();
         }
 
         /// <summary>
         /// 用户名查重。
         /// </summary>
         /// <returns></returns>
-        public bool DuplicateChecking(string name)
+        /// 
+        //[AcceptVerbs("GET", "POST")]
+        public bool DuplicateChecking(string name, DBHelper dBHelper)
         {
-            return SeekUser(name) == -1;
+            return (CSharp.User.SeekUser(name, dBHelper) == -1);
+
         }
         public bool CheckTheInvitationCode(SqlConnection connection, string invitationCode, string inviter)
         {
@@ -130,6 +127,19 @@ namespace RazorPage
 
             return true;
         }
+
+        //[AcceptVerbs("GET", "POST")]
+        //public bool VerifyEmail(string name)
+        //{
+        //    //if (!_userService.VerifyEmail(name))
+        //    //{
+        //    //    return Json($"Email {name} is already in use.");
+        //    //}
+
+        //    //return Json(true);
+        //}
+
+
     }
 
 
@@ -142,7 +152,8 @@ namespace RazorPage
 public class UserModel
 {
     [DataType(DataType.Text)]
-    [Required(ErrorMessage = "*要用户名不能为空")]
+    [Required(ErrorMessage = "*用户名不能为空")]
+    //[Remote("DuplicateChecking", "Register", ErrorMessage = "用户名重复", HttpMethod = "GET")]
     public string UserName { get; set; }
 
     [DataType(DataType.Password)]
@@ -155,4 +166,5 @@ public class UserModel
     public string VerifyPassword { get; set; }
 
 }
+
 

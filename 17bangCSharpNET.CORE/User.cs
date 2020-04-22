@@ -91,6 +91,50 @@ namespace CSharp
             }
             return rowNumberAffected;
         }
+
+        /// <summary>
+        /// 根据用户名查找用户，返回用户ID(适用于单次数据库操作)
+        /// </summary>
+        /// <param name="name">用户名</param>
+        /// <returns></returns>
+        static public int SeekUser(string name)
+        {
+            DBHelper dBHelper = new DBHelper();
+            object result;
+            using (dBHelper.HelperConnection)
+            {
+                dBHelper.HelperConnection.Open();
+                result = dBHelper.ExecuteScalar($"SELECT [UserId] FROM [User] WHERE [UserName]='{name}'");
+            }
+            if (result == null)
+            {
+                return -1;
+            }
+            else
+            {
+                return (int)result;
+            }
+        }
+
+        /// <summary>
+        /// 根据用户名查找用户，返回用户ID,DBHelper的数据库连接需要在外界打开和关闭。（适用于连续数据库操作）
+        /// </summary>
+        /// <param name="name">用户名</param>
+        /// <param name="dBHelper">需要使用外界的DBHelper对象的数据库连接</param>
+        /// <returns></returns>
+        static public int SeekUser(string name, DBHelper dBHelper)
+        {
+            object result;
+            result = dBHelper.ExecuteScalar($"SELECT [UserId] FROM [User] WHERE [UserName]='{name}'");
+            if (result == null)
+            {
+                return -1;
+            }
+            else
+            {
+                return (int)result;
+            }
+        }
         public void Login() { }
         private void _changePasword() { }
 
