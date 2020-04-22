@@ -56,13 +56,19 @@ namespace RazorPage
                     ModelState.AddModelError("", "邀请人或邀请码不正确");
                     return Page();
                 }
-                if (!DuplicateChecking(connection))
+                //if (DuplicateChecking(string name)
+                //{
+                //    ModelState.AddModelError("", "用户名已被占用");
+                //    return Page();
+                //}
+
+                if (!DuplicateChecking(Registrantinputted.UserName))
                 {
                     ModelState.AddModelError("", "用户名已被占用");
                     return Page();
                 }
 
-                
+
 
 
 
@@ -85,16 +91,38 @@ namespace RazorPage
 
 
         }
+        /// <summary>
+        /// 根据用户名查找用户，返回用户ID
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public int SeekUser(string name)
+        {
+            object result;
+            DBHelper dBHelper = new DBHelper();
+            using (dBHelper.HelperConnection)
+            {
+                dBHelper.HelperConnection.Open();
+                result = dBHelper.ExecuteScalar($"SELECT [UserId] FROM [User] WHERE [UserName]='{name}'");
+            }
 
+            if (result == null)
+            {
+                return -1;
+            }
+            else
+            {
+                return (int)result;
+            }
+        }
 
         /// <summary>
-        /// 用户名查重。/未实现，暂时固定返回true.
+        /// 用户名查重。
         /// </summary>
         /// <returns></returns>
-        public bool DuplicateChecking(SqlConnection connection)
+        public bool DuplicateChecking(string name)
         {
-            SqlCommand command = new SqlCommand { CommandText = "", Connection = connection };
-            return true;
+            return SeekUser(name) == -1;
         }
         public bool CheckTheInvitationCode(SqlConnection connection, string invitationCode, string inviter)
         {

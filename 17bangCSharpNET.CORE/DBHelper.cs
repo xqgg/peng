@@ -34,6 +34,22 @@ namespace CSharp
             return rowNumberAffected;
         }
 
+        /// <summary>
+        /// 查询标量，返回第一行第一列的数据
+        /// </summary>
+        /// <param name="cmdText">SQL代码</param>
+        /// <returns>返回第一行第一列的数据</returns>
+        public object ExecuteScalar(string cmdText)
+        {
+            using (HelperConnection)
+            {
+                SqlCommand command = new SqlCommand();
+                command.Connection = HelperConnection;
+                command.CommandText = cmdText;
+                return command.ExecuteScalar();
+            }
+        }
+
 
 
     }
