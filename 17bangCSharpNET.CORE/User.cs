@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace CSharp
 {
     public sealed class User : Entity, IChat, ISendMessage
     {
+
         internal TokenManager _tokens;
         public string Name { get; private set; }
         public string Password { private get; set; }
@@ -17,6 +19,17 @@ namespace CSharp
         public int HelpCradit { get; set; }
         public string InvitationCode { get; private set; }
 
+
+        private DBHelper _dBHelper;
+
+        internal DBHelper dBHelper
+        {
+            get
+            {
+                _dBHelper = _dBHelper ?? new DBHelper();
+                return _dBHelper;
+            }
+        }
         public User(string name, string password)
         {
             if (new CheckNameOrPassword().Checked(name, password))
@@ -48,12 +61,14 @@ namespace CSharp
         /// <summary>
         /// 将用户数据保存到数据库（注册）
         /// </summary>
-        public bool Save(SqlConnection connection)
+        public void Save()
         {
-            //_dBHelper.ExecuteNonQuery(
-            //    $"INSERT [User]([UserName],[Password],[InvitationCode]) VALUES({Name},{Password},{InvitationCode})",
-            //    connection);
-            return true;
+            using (dBHelper.HelperConnection)
+            {
+                dBHelper.HelperConnection.Open();
+                dBHelper.ExecuteNonQuery($"INSERT [User]([UserName],[Password],[InvitationCode]) VALUES('{Name}','{Password}','{InvitationCode}')");
+            }
+
         }
 
         public static void SaveSome(params User[] users)
@@ -61,13 +76,15 @@ namespace CSharp
 
 
             DBHelper dBHelper = new DBHelper();
-            using (dBHelper.SqlConnection)
+            using (dBHelper.HelperConnection)
             {
-                dBHelper.SqlConnection.Open();
+                if (dBHelper.HelperConnection.State == ConnectionState.Closed)
+                {
+                    dBHelper.HelperConnection.Open();
+                }
                 for (int i = 0; i < users.Length; i++)
                 {
-                    dBHelper.ExecuteNonQuery($"INSERT [User]([UserName],[Password],[InvitationCode]) VALUES('{users[i].Name}','{users[i].Password}','{users[i].InvitationCode}')",
-                                             dBHelper.SqlConnection);
+                    dBHelper.ExecuteNonQuery($"INSERT [User]([UserName],[Password],[InvitationCode]) VALUES('{users[i].Name}','{users[i].Password}','{users[i].InvitationCode}')");
                 }
             }
         }
@@ -94,13 +111,13 @@ namespace CSharp
 
         public static void UserDo()
         {
-            User user = new User("ssssss", "ss&&85");
-            User user1 = new User("adohs", "ss&&85");
-            User user2 = new User("ssas1afa23ssss", "ss&&85");
+            User user = new User("789asasd", "ss&^81235");
+            //User user1 = new User("8466ohs", "ss&&85");
+            //User user2 = new User("sshhhsss", "ss&&85");
 
 
-            User.SaveSome(user1, user2);
-
+            //User.SaveSome(user, user1, user2);
+            user.Save();
         }
 
 

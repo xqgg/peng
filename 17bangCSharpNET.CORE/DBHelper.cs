@@ -11,7 +11,7 @@ namespace CSharp
     {
         private static string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=17bang;Integrated Security=True;";
         private SqlConnection _sqlConnection;
-        public SqlConnection SqlConnection
+        public SqlConnection HelperConnection
         {
             get
             {
@@ -24,12 +24,11 @@ namespace CSharp
         /// 非查询行为
         /// </summary>
         /// <param name="cmdText">SQL代码</param>
-        /// <param name="connection"></param>
         /// <returns>返回受影响的行数</returns>
-        public int ExecuteNonQuery(string cmdText, SqlConnection connection)
+        public int ExecuteNonQuery(string cmdText)
         {
             SqlCommand command = new SqlCommand();
-            command.Connection = connection;
+            command.Connection = HelperConnection;
             command.CommandText = cmdText;
             int rowNumberAffected = command.ExecuteNonQuery();
             return rowNumberAffected;
