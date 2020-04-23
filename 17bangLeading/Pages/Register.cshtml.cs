@@ -44,26 +44,27 @@ namespace RazorPage
                 return Page();
             }
 
-            if (!(new CheckNameOrPassword().Checked(Registrantinputted.UserName, Registrantinputted.Password)))
+            CheckNameOrPassword checker = new CheckNameOrPassword();
+            if (!(checker.CheckName(Registrantinputted.UserName) && checker.CheckPassword(Registrantinputted.Password)))
             {
                 ModelState.AddModelError("CheckPassword", "用户名或密码不规范");
                 return Page();
             }
 
-            DBHelper dBHelper = new DBHelper();
-            using (dBHelper.HelperConnection)
-            {
-                dBHelper.HelperConnection.Open();
-                if (!DuplicateChecking(Registrantinputted.UserName, dBHelper))
-                {
-                    ModelState.AddModelError("", "用户名已被占用");
-                    return Page();
-                }
+            //DBHelper dBHelper = new DBHelper();
+            //using (dBHelper.HelperConnection)
+            //{
+            //    dBHelper.HelperConnection.Open();
+            //    if (!DuplicateChecking(Registrantinputted.UserName, dBHelper))
+            //    {
+            //        ModelState.AddModelError("", "用户名已被占用");
+            //        return Page();
+            //    }
 
 
 
 
-            }
+            //}
 
             //using (SqlConnection connection = new SqlConnection(connectionString))
             //{
@@ -118,7 +119,7 @@ namespace RazorPage
         //[AcceptVerbs("GET", "POST")]
         public bool DuplicateChecking(string name, DBHelper dBHelper)
         {
-            return (CSharp.User.SeekUser(name, dBHelper) == -1);
+            return (CSharp.User.GetUserByName(name).Id == -1);
 
         }
         public bool CheckTheInvitationCode(SqlConnection connection, string invitationCode, string inviter)

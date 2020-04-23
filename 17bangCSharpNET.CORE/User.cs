@@ -92,29 +92,29 @@ namespace CSharp
             return rowNumberAffected;
         }
 
-        /// <summary>
-        /// 根据用户名查找用户，返回用户ID(适用于单次数据库操作)
-        /// </summary>
-        /// <param name="name">用户名</param>
-        /// <returns></returns>
-        static public int SeekUser(string name)
-        {
-            DBHelper dBHelper = new DBHelper();
-            object result;
-            using (dBHelper.HelperConnection)
-            {
-                dBHelper.HelperConnection.Open();
-                result = dBHelper.ExecuteScalar($"SELECT [UserId] FROM [User] WHERE [UserName]='{name}'");
-            }
-            if (result == null)
-            {
-                return -1;
-            }
-            else
-            {
-                return (int)result;
-            }
-        }
+        ///// <summary>
+        ///// 根据用户名查找用户，返回用户ID(适用于单次数据库操作)
+        ///// </summary>
+        ///// <param name="name">用户名</param>
+        ///// <returns></returns>
+        //static public int SeekUser(string name)
+        //{
+        //    DBHelper dBHelper = new DBHelper();
+        //    object result;
+        //    using (dBHelper.HelperConnection)
+        //    {
+        //        dBHelper.HelperConnection.Open();
+        //        result = dBHelper.ExecuteScalar($"SELECT [UserId] FROM [User] WHERE [UserName]='{name}'");
+        //    }
+        //    if (result == null)
+        //    {
+        //        return -1;
+        //    }
+        //    else
+        //    {
+        //        return (int)result;
+        //    }
+        //}
 
         /// <summary>
         /// 根据用户名查找用户，返回用户ID,DBHelper的数据库连接需要在外界打开和关闭。（适用于连续数据库操作）
@@ -122,19 +122,19 @@ namespace CSharp
         /// <param name="name">用户名</param>
         /// <param name="dBHelper">需要使用外界的DBHelper对象的数据库连接</param>
         /// <returns></returns>
-        static public int SeekUser(string name, DBHelper dBHelper)
-        {
-            object result;
-            result = dBHelper.ExecuteScalar($"SELECT [Id] FROM [User] WHERE [Name]=N'{name}'");
-            if (result == null)
-            {
-                return -1;
-            }
-            else
-            {
-                return (int)result;
-            }
-        }
+        //static public int SeekUser(string name, DBHelper dBHelper)
+        //{
+        //    object result;
+        //    result = dBHelper.ExecuteScalar($"SELECT [Id] FROM [User] WHERE [Name]=N'{name}'");
+        //    if (result == null)
+        //    {
+        //        return -1;
+        //    }
+        //    else
+        //    {
+        //        return (int)result;
+        //    }
+        //}
 
         static public IList<User> GetUsers()
         {
@@ -155,6 +155,11 @@ namespace CSharp
             return users;
         }
 
+        /// <summary>
+        /// 无需手动显示的开关数据库连接，适用于单次数据库操作
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         static public User GetUserByName(string name)
         {
             DBHelper helper = new DBHelper();
@@ -172,7 +177,33 @@ namespace CSharp
             User result = User.map(reader);
             helper.HelperConnection.Close();
             return result;
+        }
 
+        /// <summary>
+        /// 需要从外部关闭数据库连接（适用于多次连续数据库操作）
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="helper">外部传入的DBHelper用以提供长数据库连接</param>
+        /// <returns></returns>
+        static public User GetUserByName(string name, DBHelper helper)
+        {
+
+            SqlParameter pName = new SqlParameter("@Name", name);
+            if (helper.HelperConnection.State == ConnectionState.Closed)
+            {
+                helper.HelperConnection.Open();
+            }
+            SqlDataReader reader = helper.ExecuteReader(@"SELECT * FROM [User] WHERE [Name]=N'@Name'", pName);
+            if (reader.HasRows)
+            {
+                reader.Read();
+            }
+            else
+            {
+                return new User() { Id = -1 };//ID=-1表示没有该用户
+            }
+            User result = User.map(reader);
+            return result;
         }
 
         static private User map(SqlDataReader reader)
