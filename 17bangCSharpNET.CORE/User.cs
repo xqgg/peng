@@ -20,7 +20,7 @@ namespace CSharp
 
         public User(string name, string password)
         {
-            if (new CheckNameOrPassword().Checked(name, password))
+            if (CheckNameOrPassword.CheckPassword(name) && CheckNameOrPassword.CheckName(name))
             {
                 SetName(name);
                 Password = password;
@@ -29,7 +29,11 @@ namespace CSharp
             {
                 throw new ArgumentOutOfRangeException("用户名或密码不规范");
             }
-            //GenerateInvitationCode();
+        }
+
+        public User()
+        {
+
         }
         public void SetName(string name)
         {

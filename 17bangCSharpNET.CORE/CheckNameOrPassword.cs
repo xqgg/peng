@@ -38,8 +38,12 @@ namespace CSharp
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        private bool CheckName(string name)
+        static public bool CheckName(string name)
         {
+            if (!(name.Length >= 4 && name.Length <= 20))
+            {
+                return false;
+            }
             Boolean result = true;
             for (int i = 0; i < BlackList.Length; i++)
             {
@@ -50,8 +54,6 @@ namespace CSharp
                 }
             }
             return result;
-
-
         }
 
         /// <summary>
@@ -60,17 +62,17 @@ namespace CSharp
         /// 密码必须包含英文字母/数字/特殊符号。
         /// </summary>
         /// <returns></returns>
-        public bool Checked(string name, string password)
+        static public bool CheckPassword(string password)
         {
 
             _password = password;
             return
-            CheckName(name) &&
             CheckPLength() &&
             CheckWhiteList(WhiteListOfLetter) &&
             CheckWhiteList(WhiteListOfNumber) &&
             CheckWhiteList(WhiteListOfSymbol);
         }
+
 
 
 
