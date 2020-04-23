@@ -12,8 +12,8 @@
     登录
 }
 @section left{
+    <h1>@ViewData["userName"]</h1>
     <div>
-        <div asp-validation-summary="All"></div>
         <form method="post">
             <div class="form-group">
                 <label asp-for="UserName">用户名：（* 必填）</label>
@@ -36,7 +36,7 @@
             </div>
             <div>
                 <input class="btn btn-primary" type="submit" asp-page="LogOn" />
-                <label asp-for=Remember  data-toggle="tooltip" data-placement="top" title="勾选之后14天之内不用再次登录">
+                <label asp-for=Remember data-toggle="tooltip" data-placement="top" title="勾选之后14天之内不用再次登录">
                     <input asp-for="Remember" />
                     记住我
                 </label>

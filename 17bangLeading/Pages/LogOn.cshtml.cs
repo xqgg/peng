@@ -7,12 +7,20 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
 using CSharp;
 using Microsoft.AspNetCore.Http;
+using RazorPage.Repositories;
 
 namespace RazorPage
 {
     [BindProperties]
     public class LogOnModel : PageModel
     {
+        private UserRepository _userRepository;
+        public LogOnModel()
+        {
+            _userRepository = new UserRepository();
+        }
+
+
         [DataType(DataType.Text)]
         [Required(ErrorMessage = "*用户名不能为空")]
         [MaxLength(20, ErrorMessage = "*用户名长度不能大于20")]
@@ -32,7 +40,11 @@ namespace RazorPage
 
         public void OnGet()
         {
-
+            bool hasUserName = Request.Cookies.TryGetValue("UserName", out string userName);
+            if (hasUserName)
+            {
+                ViewData["userName"] = userName;
+            }
         }
         public void OnPost()
         {
@@ -40,16 +52,67 @@ namespace RazorPage
             {
                 return;
             }
+            User user = _userRepository.GetUser(UserName);
 
-            if (correct(UserName, Password))
+            if (user == null)
             {
-                Response.Cookies.Append("UserName", $"{UserName}",
+                ModelState.AddModelError("UserName", "*用户名不存在");
+                return;
+            }
+            else if (user.Password == Password)
+            {
+                if (Remember)
+                {
+                    Response.Cookies.Append("UserName", $"{UserName}",
+                    new CookieOptions
+                    {
+                        Expires = DateTime.Now.AddDays(15),
+                        IsEssential = true
+
+                    });
+                }
+                else
+                {
+                    Response.Cookies.Append("UserName", $"{UserName}",
                     new CookieOptions
                     {
                         IsEssential = true
                     });
-                //Response.Cookies.Delete("UserName");
+                }
+                return;
             }
+            else
+            {
+                ModelState.AddModelError("Password", "*用户名或密码错误");
+                return;
+            }
+
+
+            //if (correct(UserName, Password))
+            //{
+            //    if (Remember)
+            //    {
+            //        Response.Cookies.Append("UserName", $"{UserName}",
+            //        new CookieOptions
+            //        {
+            //            Expires = DateTime.Now.AddDays(15),
+            //            IsEssential = true
+
+            //        });
+            //    }
+            //    else
+            //    {
+            //        Response.Cookies.Append("UserName", $"{UserName}",
+            //        new CookieOptions
+            //        {
+
+            //            IsEssential = true
+
+            //        });
+            //    }
+
+
+            //}
 
 
         }

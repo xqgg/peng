@@ -174,13 +174,13 @@ namespace CSharp
         }
     }
 
-    public class UserRepository
-    {
-        public void Save(User user)
-        {
+    //public class UserRepository
+    //{
+    //    public void Save(User user)
+    //    {
 
-        }
-    }
+    //    }
+    //}
 
 
 }

@@ -12,7 +12,7 @@ namespace CSharp
     {
         internal TokenManager _tokens;
         public string Name { get; private set; }
-        public string Password { private get; set; }
+        public string Password { get; set; }
         public User InvitedBy { get; set; }
         public int HelpMoney { set; get; }
         public int HelpCradit { get; set; }
@@ -60,7 +60,7 @@ namespace CSharp
                 SqlParameter pPassword = new SqlParameter("@Password", Password);
                 SqlParameter pInvitationCode = new SqlParameter("@InvitationCode", InvitationCode);
                 dBHelper.OpenConnection();
-                return dBHelper.ExecuteNonQuery(@"INSERT [User]([Name],[Password],[InvitationCode]) VALUES(N'@Name','@Password','@InvitationCode')",pName,pPassword,pInvitationCode);
+                return dBHelper.ExecuteNonQuery(@"INSERT [User]([Name],[Password],[InvitationCode]) VALUES(N'@Name','@Password','@InvitationCode')", pName, pPassword, pInvitationCode);
             }
         }
         /// <summary>
@@ -169,14 +169,15 @@ namespace CSharp
             DBHelper helper = new DBHelper();
             SqlParameter pName = new SqlParameter("@Name", name);
             helper.HelperConnection.Open();
-            SqlDataReader reader = helper.ExecuteReader(@"SELECT * FROM [User] WHERE [Name]=N'@Name'", pName);
+            SqlDataReader reader = helper.ExecuteReader(@"SELECT * FROM [User] WHERE [Name]=@Name", pName);
             if (reader.HasRows)
             {
                 reader.Read();
             }
             else
             {
-                return new User() { Id = -1 };//ID=-1表示没有该用户
+                // return new User() { Id = -1 };//ID=-1表示没有该用户
+                return null;
             }
             User result = User.map(reader);
             helper.HelperConnection.Close();
@@ -197,7 +198,7 @@ namespace CSharp
             {
                 helper.HelperConnection.Open();
             }
-            SqlDataReader reader = helper.ExecuteReader(@"SELECT * FROM [User] WHERE [Name]=N'@Name'", pName);
+            SqlDataReader reader = helper.ExecuteReader(@"SELECT * FROM [User] WHERE [Name]=@Name", pName);
             if (reader.HasRows)
             {
                 reader.Read();
@@ -255,8 +256,9 @@ namespace CSharp
             //User user = new User();
             //user = User.GetUserByName("8");
             //Console.WriteLine(user.Id);
-            User user = new User("赵日天123", "123a#%");
-            user.Save();
+            //User user = new User("赵日天123", "123a#%");
+            //user.Save();
+            User.GetUserByName("赵日天嘻嘻嘻");
         }
 
 
