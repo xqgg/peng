@@ -20,7 +20,8 @@ namespace CSharp
 
         public User(string name, string password)
         {
-            if (CheckNameOrPassword.CheckPassword(name) && CheckNameOrPassword.CheckName(name))
+            CheckNameOrPassword checker = new CheckNameOrPassword();
+            if (checker.CheckPassword(name) && checker.CheckName(name))
             {
                 SetName(name);
                 Password = password;
@@ -124,7 +125,7 @@ namespace CSharp
         static public int SeekUser(string name, DBHelper dBHelper)
         {
             object result;
-            result = dBHelper.ExecuteScalar($"SELECT [UserId] FROM [User] WHERE [UserName]='{name}'");
+            result = dBHelper.ExecuteScalar($"SELECT [Id] FROM [User] WHERE [Name]=N'{name}'");
             if (result == null)
             {
                 return -1;
@@ -147,17 +148,43 @@ namespace CSharp
             {
                 while (reader.Read())
                 {
-                    users.Add(new User((string)reader["UserName"], (string)reader["Password"])
-                    {
-                        Id = (int)reader["UserId"],
-                        InvitationCode = (string)reader["InvitationCode"]
-                    });
+                    users.Add(User.map(reader));
                 }
             }
             helper.HelperConnection.Close();
             return users;
         }
 
+        static public User GetUserByName(string name)
+        {
+            DBHelper helper = new DBHelper();
+            SqlParameter pName = new SqlParameter("@Name", name);
+            helper.HelperConnection.Open();
+            SqlDataReader reader = helper.ExecuteReader(@"SELECT * FROM [User] WHERE [Name]=N'@Name'", pName);
+            if (reader.HasRows)
+            {
+                reader.Read();
+            }
+            else
+            {
+                return new User() { Id = -1 };//ID=-1表示没有该用户
+            }
+            User result = User.map(reader);
+            helper.HelperConnection.Close();
+            return result;
+
+        }
+
+        static private User map(SqlDataReader reader)
+        {
+            return new User()
+            {
+                Id = (int)reader["Id"],
+                Name = (string)reader["Name"],
+                Password = (string)reader["Password"],
+                InvitationCode = (string)reader["InvitationCode"]
+            };
+        }
         public void Login() { }
         private void _changePasword() { }
 
@@ -188,9 +215,11 @@ namespace CSharp
             //{
             //    Console.WriteLine(item.Id);
             //}
-            User user = new User("sdfah", "asdfa@222");
-            Console.WriteLine(user.InvitationCode);
-
+            //User user = new User("sdfah", "asdfa@222");
+            //Console.WriteLine(user.InvitationCode);
+            User user = new User();
+            user = User.GetUserByName("8");
+            Console.WriteLine(user.Id);
         }
 
 

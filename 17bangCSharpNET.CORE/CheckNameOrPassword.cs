@@ -38,7 +38,7 @@ namespace CSharp
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        static public bool CheckName(string name)
+        public bool CheckName(string name)
         {
             if (!(name.Length >= 4 && name.Length <= 20))
             {
@@ -62,7 +62,7 @@ namespace CSharp
         /// 密码必须包含英文字母/数字/特殊符号。
         /// </summary>
         /// <returns></returns>
-        static public bool CheckPassword(string password)
+        public bool CheckPassword(string password)
         {
 
             _password = password;

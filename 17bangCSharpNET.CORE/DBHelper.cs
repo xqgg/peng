@@ -46,13 +46,14 @@ namespace CSharp
             }
         }
 
-        public SqlDataReader ExecuteReader(string cmdText)
+        public SqlDataReader ExecuteReader(string cmdText, params SqlParameter[] parameters)
         {
             if (HelperConnection.State == System.Data.ConnectionState.Closed)
             {
                 HelperConnection.Open();
             }
             SqlCommand command = GetCommand(HelperConnection, cmdText);
+            command.Parameters.AddRange(parameters);
             return command.ExecuteReader();
 
         }
