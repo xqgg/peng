@@ -21,7 +21,7 @@ namespace CSharp
         public User(string name, string password)
         {
             CheckNameOrPassword checker = new CheckNameOrPassword();
-            if (checker.CheckPassword(name) && checker.CheckName(name))
+            if (!(checker.CheckPassword(name) && checker.CheckName(name)))
             {
                 SetName(name);
                 Password = password;
@@ -56,13 +56,17 @@ namespace CSharp
             GenerateInvitationCode();
             using (dBHelper.HelperConnection)
             {
-                if (dBHelper.HelperConnection.State == ConnectionState.Closed)
-                {
-                    dBHelper.HelperConnection.Open();
-                }
-                return dBHelper.ExecuteNonQuery($"INSERT [User]([UserName],[Password],[InvitationCode]) VALUES('{Name}','{Password}','{InvitationCode}')");
+                SqlParameter pName = new SqlParameter("@Name", Name);
+                SqlParameter pPassword = new SqlParameter("@Password", Password);
+                SqlParameter pInvitationCode = new SqlParameter("@InvitationCode", InvitationCode);
+                dBHelper.OpenConnection();
+                return dBHelper.ExecuteNonQuery(@"INSERT [User]([Name],[Password],[InvitationCode]) VALUES(N'@Name','@Password','@InvitationCode')",pName,pPassword,pInvitationCode);
             }
         }
+        /// <summary>
+        /// 用于连续数据库操作，其内部不操作数据库连接,DBHelper用于提供一个外部的长连接
+        /// </summary>
+        /// <param name="dBHelper"></param>
         public void Save(DBHelper dBHelper)
         {
             GenerateInvitationCode();
@@ -248,9 +252,11 @@ namespace CSharp
             //}
             //User user = new User("sdfah", "asdfa@222");
             //Console.WriteLine(user.InvitationCode);
-            User user = new User();
-            user = User.GetUserByName("8");
-            Console.WriteLine(user.Id);
+            //User user = new User();
+            //user = User.GetUserByName("8");
+            //Console.WriteLine(user.Id);
+            User user = new User("赵日天123", "123a#%");
+            user.Save();
         }
 
 

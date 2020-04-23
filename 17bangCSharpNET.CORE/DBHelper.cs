@@ -25,9 +25,10 @@ namespace CSharp
         /// </summary>
         /// <param name="cmdText">SQL代码</param>
         /// <returns>返回受影响的行数</returns>
-        public int ExecuteNonQuery(string cmdText)
+        public int ExecuteNonQuery(string cmdText, params SqlParameter[] parameters)
         {
             SqlCommand command = GetCommand(HelperConnection, cmdText);
+            command.Parameters.AddRange(parameters);
             int rowNumberAffected = command.ExecuteNonQuery();
             return rowNumberAffected;
         }
@@ -37,21 +38,19 @@ namespace CSharp
         /// </summary>
         /// <param name="cmdText">SQL代码</param>
         /// <returns>返回第一行第一列的数据</returns>
-        public object ExecuteScalar(string cmdText)
+        public object ExecuteScalar(string cmdText, params SqlParameter[] parameters)
         {
             using (HelperConnection)
             {
                 SqlCommand command = GetCommand(HelperConnection, cmdText);
+                command.Parameters.AddRange(parameters);
                 return command.ExecuteScalar();
             }
         }
 
         public SqlDataReader ExecuteReader(string cmdText, params SqlParameter[] parameters)
         {
-            if (HelperConnection.State == System.Data.ConnectionState.Closed)
-            {
-                HelperConnection.Open();
-            }
+            OpenConnection();
             SqlCommand command = GetCommand(HelperConnection, cmdText);
             command.Parameters.AddRange(parameters);
             return command.ExecuteReader();
@@ -73,7 +72,13 @@ namespace CSharp
             return command;
         }
 
-
+        public void OpenConnection()
+        {
+            if (HelperConnection.State == System.Data.ConnectionState.Closed)
+            {
+                HelperConnection.Open();
+            }
+        }
     }
 
 
