@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using RazorPage.Helper;
 
 namespace RazorPage.Pages.Shared
 {
@@ -14,7 +15,7 @@ namespace RazorPage.Pages.Shared
 
         public virtual void OnGet()
         {
-            bool hasUserId = Request.Cookies.TryGetValue("UserId", out string userId);
+            bool hasUserId = Request.Cookies.TryGetValue(StringConst.USER_ID, out string userId);
             if (hasUserId)
             {
                 User user = _userRepository.load(Convert.ToInt32(userId));

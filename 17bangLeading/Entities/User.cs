@@ -5,6 +5,7 @@ using System.Text;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Data;
+using RazorPage.Helper;
 
 namespace RazorPage.Entities
 {
@@ -240,10 +241,10 @@ namespace RazorPage.Entities
         {
             return new User()
             {
-                Id = (int)reader["Id"],
-                Name = (string)reader["Name"],
-                Password = (string)reader["Password"],
-                InvitationCode = (string)reader["InvitationCode"]
+                Id = (int)reader[StringConst.ID],
+                Name = (string)reader[StringConst.NAME],
+                Password = (string)reader[StringConst.USER_PASSWORD],
+                InvitationCode = (string)reader[StringConst.USER_INVITATIONCODE]
             };
         }
         public void Login() { }

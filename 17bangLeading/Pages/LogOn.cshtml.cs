@@ -9,6 +9,7 @@ using RazorPage.Entities;
 using Microsoft.AspNetCore.Http;
 using RazorPage.Repositories;
 using RazorPage.Pages.Shared;
+using RazorPage.Helper;
 
 namespace RazorPage
 {
@@ -65,7 +66,7 @@ namespace RazorPage
                         IsEssential = true,
                         Expires = DateTime.Now.AddDays(15),
                     };
-                    Response.Cookies.Append("UserId", $"{user.Id.ToString()}", options);
+                    Response.Cookies.Append(StringConst.USER_ID, $"{user.Id.ToString()}", options);
                     Response.Cookies.Append("Password", $"{user.Password.ToString()}", options);
 
                 }
@@ -75,7 +76,7 @@ namespace RazorPage
                     {
                         IsEssential = true
                     };
-                    Response.Cookies.Append("UserId", $"{user.Id.ToString()}", options);
+                    Response.Cookies.Append(StringConst.USER_ID, $"{user.Id.ToString()}", options);
                     Response.Cookies.Append("Password", $"{user.Password.ToString()}", options);
                 }
                 return RedirectToPage("Index");
