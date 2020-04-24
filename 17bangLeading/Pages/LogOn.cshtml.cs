@@ -43,18 +43,18 @@ namespace RazorPage
         {
             base.OnGet();
         }
-        public void OnPost()
+        public ActionResult OnPost()
         {
             if (!ModelState.IsValid)
             {
-                return;
+                return Page();
             }
             User user = _userRepository.GetUser(UserName);
 
             if (user == null)
             {
                 ModelState.AddModelError("UserName", "*用户名不存在");
-                return;
+                return Page(); ;
             }
             else if (user.Password == Password)
             {
@@ -78,12 +78,12 @@ namespace RazorPage
                     Response.Cookies.Append("UserId", $"{user.Id.ToString()}", options);
                     Response.Cookies.Append("Password", $"{user.Password.ToString()}", options);
                 }
-                return;
+                return RedirectToPage("Index");
             }
             else
             {
                 ModelState.AddModelError("Password", "*用户名或密码错误");
-                return;
+                return Page();
             }
 
 
