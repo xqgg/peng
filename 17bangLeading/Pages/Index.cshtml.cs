@@ -10,9 +10,9 @@ namespace RazorPage.Pages
 {
     public class IndexModel : _AllModel
     {
-        public override void OnGet()
+        public void OnGet()
         {
-            base.OnGet();
+            base.SetLogOnStatus();
         }
     }
 }

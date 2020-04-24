@@ -13,13 +13,17 @@ namespace RazorPage.Pages.Shared
         private Repositories.UserRepository _userRepository = new Repositories.UserRepository();
 
 
-        public virtual void OnGet()
+        public virtual void SetLogOnStatus()
         {
             bool hasUserId = Request.Cookies.TryGetValue(StringConst.USER_ID, out string userId);
             if (hasUserId)
             {
                 User user = _userRepository.load(Convert.ToInt32(userId));
-                ViewData["UserName"] = user.Name;
+                ViewData[StringConst.USER_NAME] = user.Name;
+            }
+            else
+            {
+                //nothing
             }
         }
     }

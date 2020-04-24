@@ -40,9 +40,9 @@ namespace RazorPage
 
         public bool Remember { get; set; }
 
-        public override void OnGet()
+        public void OnGet()
         {
-            base.OnGet();
+            base.SetLogOnStatus();
         }
         public ActionResult OnPost()
         {
@@ -54,7 +54,7 @@ namespace RazorPage
 
             if (user == null)
             {
-                ModelState.AddModelError("UserName", "*用户名不存在");
+                ModelState.AddModelError(StringConst.USER_NAME, "*用户名不存在");
                 return Page(); ;
             }
             else if (user.Password == Password)

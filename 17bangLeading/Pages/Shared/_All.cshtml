@@ -100,7 +100,7 @@
                                     <li><a href="#">iOS</a></li>
                                 </ul>
                             </li>
-                            @if (ViewData["UserName"] == null)
+                            @if (ViewData[RazorPage.Helper.StringConst.USER_NAME] == null)
                             {
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle"
@@ -124,7 +124,7 @@
                                        aria-haspopup="true" aria-expanded="false"
                                        style="color:cornflowerblue">
                                         <span class="glyphicon glyphicon-user"></span>
-                                        @ViewData["UserName"]
+                                        @ViewData[RazorPage.Helper.StringConst.USER_NAME]
                                         <span class="caret"></span>
                                     </a>
                                     <ul class="dropdown-menu">
