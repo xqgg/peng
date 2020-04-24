@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using CSharp;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
 using System.Data.Common;
+using RazorPage.Entities;
 
 namespace RazorPage
 {
@@ -119,7 +119,7 @@ namespace RazorPage
         //[AcceptVerbs("GET", "POST")]
         public bool DuplicateChecking(string name, DBHelper dBHelper)
         {
-            return (CSharp.User.GetUserByName(name).Id == -1);
+            return (Entities.User.GetUserByName(name).Id == -1);
 
         }
         public bool CheckTheInvitationCode(SqlConnection connection, string invitationCode, string inviter)

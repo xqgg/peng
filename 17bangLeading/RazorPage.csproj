@@ -13,8 +13,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
   </ItemGroup>
 
@@ -57,10 +57,6 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\images\MoleGame\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\17bangCSharpNET.CORE\CSharp.csproj" />
   </ItemGroup>
 
 </Project>

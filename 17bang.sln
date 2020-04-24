@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "git", "git", "{56E2139E-800
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp", "17bangCSharpNET.CORE\CSharp.csproj", "{5F787F89-8819-46CA-B15D-D6CCF3F7885A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "555", "555\555.csproj", "{8EFBE31C-C4D4-4AFF-A6AF-9CBD3FA81347}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,10 @@ Global
 		{5F787F89-8819-46CA-B15D-D6CCF3F7885A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F787F89-8819-46CA-B15D-D6CCF3F7885A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F787F89-8819-46CA-B15D-D6CCF3F7885A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EFBE31C-C4D4-4AFF-A6AF-9CBD3FA81347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EFBE31C-C4D4-4AFF-A6AF-9CBD3FA81347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EFBE31C-C4D4-4AFF-A6AF-9CBD3FA81347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EFBE31C-C4D4-4AFF-A6AF-9CBD3FA81347}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
