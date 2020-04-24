@@ -11,9 +11,12 @@ namespace RazorPage.Repositories
 
         public User GetUser(string name)
         {
-            DBHelper helper = new DBHelper();
             return User.GetUserByName(name);
+        }
 
+        internal User load(int userId)
+        {
+            return User.GetUserById(userId);
         }
     }
 }

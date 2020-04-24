@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model _AllModel
+<!DOCTYPE html>
 <html>
 <head>
     <script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
@@ -99,19 +100,44 @@
                                     <li><a href="#">iOS</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle"
-                                   data-toggle="dropdown" role="button"
-                                   aria-haspopup="true" aria-expanded="false">
-                                    登录状态
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="/LogOn">登录</a></li>
-                                    <li><a href="/Register">注册</a></li>
-                                    <li><a href="/Password/forget">忘记密码</a></li>
-                                </ul>
-                            </li>
+                            @if (ViewData["UserName"] == null)
+                            {
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle"
+                                       data-toggle="dropdown" role="button"
+                                       aria-haspopup="true" aria-expanded="false">
+                                        登录状态
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/LogOn">登录</a></li>
+                                        <li><a href="/Register">注册</a></li>
+                                        <li><a href="/Password/forget">忘记密码</a></li>
+                                    </ul>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle "
+                                       data-toggle="dropdown" role="button"
+                                       aria-haspopup="true" aria-expanded="false"
+                                       style="color:cornflowerblue">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                        @ViewData["UserName"]
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/LogOn">新手任务</a></li>
+                                        <li><a href="/Register">我的主页</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="/">帮帮豆</a></li>
+                                        <li><a href="/">帮帮点</a></li>
+                                        <li><a href="/">帮帮币</a></li>
+                                    </ul>
+                                </li>
+                            }
+
                         </ul>
                     </nav>
                     <div style="clear:both"></div>
@@ -146,7 +172,7 @@
 </body>
 </html>
 <script>
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
 </script>

@@ -160,7 +160,7 @@ namespace CSharp
         }
 
         /// <summary>
-        /// 无需手动显示的开关数据库连接，适用于单次数据库操作
+        /// 单次查询，由内部提供数据库连接对象
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
@@ -211,6 +211,31 @@ namespace CSharp
             return result;
         }
 
+        /// <summary>
+        /// 单次查询，由内部提供数据库连接对象
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        static public User GetUserById(int Id)
+        {
+            DBHelper helper = new DBHelper();
+            SqlParameter pId = new SqlParameter("@pId", Id);
+            helper.HelperConnection.Open();
+            SqlDataReader reader = helper.ExecuteReader(@"SELECT * FROM [User] WHERE [Id]=@pId", pId);
+            if (reader.HasRows)
+            {
+                reader.Read();
+            }
+            else
+            {
+                // return new User() { Id = -1 };//ID=-1表示没有该用户
+                return null;
+            }
+            User result = User.map(reader);
+            helper.HelperConnection.Close();
+            return result;
+        }
+
         static private User map(SqlDataReader reader)
         {
             return new User()
@@ -258,7 +283,9 @@ namespace CSharp
             //Console.WriteLine(user.Id);
             //User user = new User("赵日天123", "123a#%");
             //user.Save();
-            User.GetUserByName("赵日天嘻嘻嘻");
+            //User.GetUserByName("赵日天嘻嘻嘻");
+            Console.WriteLine(GetUserById(15).Name);
+
         }
 
 

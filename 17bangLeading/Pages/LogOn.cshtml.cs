@@ -8,11 +8,12 @@ using System.ComponentModel.DataAnnotations;
 using CSharp;
 using Microsoft.AspNetCore.Http;
 using RazorPage.Repositories;
+using RazorPage.Pages.Shared;
 
 namespace RazorPage
 {
     [BindProperties]
-    public class LogOnModel : PageModel
+    public class LogOnModel : _AllModel
     {
         private UserRepository _userRepository;
         public LogOnModel()
@@ -38,13 +39,9 @@ namespace RazorPage
 
         public bool Remember { get; set; }
 
-        public void OnGet()
+        public override void OnGet()
         {
-            bool hasUserName = Request.Cookies.TryGetValue("UserName", out string userName);
-            if (hasUserName)
-            {
-                ViewData["userName"] = userName;
-            }
+            base.OnGet();
         }
         public void OnPost()
         {
@@ -63,21 +60,23 @@ namespace RazorPage
             {
                 if (Remember)
                 {
-                    Response.Cookies.Append("UserName", $"{UserName}",
-                    new CookieOptions
+                    CookieOptions options = new CookieOptions
                     {
+                        IsEssential = true,
                         Expires = DateTime.Now.AddDays(15),
-                        IsEssential = true
+                    };
+                    Response.Cookies.Append("UserId", $"{user.Id.ToString()}", options);
+                    Response.Cookies.Append("Password", $"{user.Password.ToString()}", options);
 
-                    });
                 }
                 else
                 {
-                    Response.Cookies.Append("UserName", $"{UserName}",
-                    new CookieOptions
+                    CookieOptions options = new CookieOptions
                     {
                         IsEssential = true
-                    });
+                    };
+                    Response.Cookies.Append("UserId", $"{user.Id.ToString()}", options);
+                    Response.Cookies.Append("Password", $"{user.Password.ToString()}", options);
                 }
                 return;
             }
