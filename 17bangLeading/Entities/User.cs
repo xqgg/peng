@@ -18,6 +18,7 @@ namespace RazorPage.Entities
         public int HelpMoney { set; get; }
         public int HelpCradit { get; set; }
         public string InvitationCode { get; private set; }
+        private string _truePassword;
 
         public User(string name, string password)
         {
@@ -58,11 +59,14 @@ namespace RazorPage.Entities
             Password = StringExtension.GetMd5Hash(Password);
             using (dBHelper.HelperConnection)
             {
+                _truePassword = Password;
+                Password = StringExtension.GetMd5Hash(Password);
                 SqlParameter pName = new SqlParameter("@Name", Name);
                 SqlParameter pPassword = new SqlParameter("@Password", Password);
+                SqlParameter pTruePassword = new SqlParameter("@TruePassword", _truePassword);
                 SqlParameter pInvitationCode = new SqlParameter("@InvitationCode", InvitationCode);
                 dBHelper.OpenConnection();
-                return dBHelper.ExecuteNonQuery(@"INSERT [User]([Name],[Password],[InvitationCode]) VALUES(N'@Name','@Password','@InvitationCode')", pName, pPassword, pInvitationCode);
+                return dBHelper.ExecuteNonQuery("INSERT [User]([Name],[Password],[InvitationCode],[TruePassword]) VALUES(@Name,@Password,@InvitationCode,@TruePassword)", pName, pPassword, pInvitationCode, pTruePassword);
             }
         }
         /// <summary>
@@ -72,11 +76,13 @@ namespace RazorPage.Entities
         public void Save(DBHelper dBHelper)
         {
             GenerateInvitationCode();
+            _truePassword = Password;
             Password = StringExtension.GetMd5Hash(Password);
             SqlParameter pName = new SqlParameter("@Name", Name);
             SqlParameter pPassword = new SqlParameter("@Password", Password);
+            SqlParameter pTruePassword = new SqlParameter("@TruePassword", _truePassword);
             SqlParameter pInvitationCode = new SqlParameter("@InvitationCode", InvitationCode);
-            dBHelper.ExecuteNonQuery("INSERT [User]([Name],[Password],[InvitationCode]) VALUES(@Name,@Password,@InvitationCode)", pName, pPassword, pInvitationCode);
+            dBHelper.ExecuteNonQuery("INSERT [User]([Name],[Password],[InvitationCode],[TruePassword]) VALUES(@Name,@Password,@InvitationCode,@TruePassword)", pName, pPassword, pInvitationCode, pTruePassword);
         }
 
         /// <summary>
