@@ -55,6 +55,7 @@ namespace RazorPage.Entities
         {
             DBHelper dBHelper = new DBHelper();
             GenerateInvitationCode();
+            Password = StringExtension.GetMd5Hash(Password);
             using (dBHelper.HelperConnection)
             {
                 SqlParameter pName = new SqlParameter("@Name", Name);
@@ -71,7 +72,11 @@ namespace RazorPage.Entities
         public void Save(DBHelper dBHelper)
         {
             GenerateInvitationCode();
-            dBHelper.ExecuteNonQuery($"INSERT [User]([UserName],[Password],[InvitationCode]) VALUES('{Name}','{Password}','{InvitationCode}')");
+            Password = StringExtension.GetMd5Hash(Password);
+            SqlParameter pName = new SqlParameter("@Name", Name);
+            SqlParameter pPassword = new SqlParameter("@Password", Password);
+            SqlParameter pInvitationCode = new SqlParameter("@InvitationCode", InvitationCode);
+            dBHelper.ExecuteNonQuery("INSERT [User]([Name],[Password],[InvitationCode]) VALUES(@Name,@Password,@InvitationCode)", pName, pPassword, pInvitationCode);
         }
 
         /// <summary>

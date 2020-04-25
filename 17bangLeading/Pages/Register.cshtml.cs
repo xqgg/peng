@@ -40,18 +40,18 @@ namespace RazorPage
             base.SetLogOnStatus();
 
         }
-        public void OnPost()
+        public ActionResult OnPost()
         {
             if (!ModelState.IsValid)
             {
-                return;
+                return Page();
             }
 
             CheckNameOrPassword checker = new CheckNameOrPassword();
             if (!(checker.CheckName(Registrantinputted.UserName) && checker.CheckPassword(Registrantinputted.Password)))
             {
-                ModelState.AddModelError(StringConst.Registrantinputted + "." + StringConst.PASSWORD, "*密码不规范");
-                return;
+                ModelState.AddModelError(StringConst.Registrantinputted + "." + StringConst.PASSWORD, "*用户名密码不规范");
+                return Page();
             }
             DBHelper dBHelper = new DBHelper();
             using (dBHelper.HelperConnection)
@@ -61,70 +61,17 @@ namespace RazorPage
                 if (Entities.User.GetUserByName(Registrantinputted.UserName, dBHelper) != null)
                 {
                     ModelState.AddModelError(StringConst.Registrantinputted + "." + StringConst.USER_NAME, "*用户名已被占用");
-                    return;
+                    return Page();
                 }
                 User user = Entities.User.GetUserByName(InviterName, dBHelper);
                 if (user == null || user.InvitationCode != InvitationCode)
                 {
                     ModelState.AddModelError("InviterName", "*邀请人或邀请码不正确");
                 }
-                return;
 
-
-                //if (!DuplicateChecking(Registrantinputted.UserName, dBHelper))
-                //{
-                //    ModelState.AddModelError("", "用户名已被占用");
-                //    return Page();
-                //}
-
-
-
-
-                //}
-
-                //using (SqlConnection connection = new SqlConnection(connectionString))
-                //{
-                //    //connection.Open();
-                //    //User inviter = new User("inviter", "mima@1") { };
-                //    //if (!CheckTheInvitationCode(connection, InvitationCode, InviterName))
-                //    //{
-                //    //    ModelState.AddModelError("", "邀请人或邀请码不正确");
-                //    //    return Page();
-                //    //}
-                //    //if (DuplicateChecking(string name)
-                //    //{
-                //    //    ModelState.AddModelError("", "用户名已被占用");
-                //    //    return Page();
-                //    //}
-
-                //    //if (!DuplicateChecking(Registrantinputted.UserName))
-                //    //{
-                //    //    ModelState.AddModelError("", "用户名已被占用");
-                //    //    return Page();
-                //    //}
-
-
-
-
-
-
-                //    return RedirectToPage("LogOn");
-                //}
-
-
-
-                //检查通过
-                //if (InviterName == inviter.Name &&
-                //    int.Parse(InvitationCode) == inviter.InvitationCode) { }
-
-
-
-
-
-
-
-
-
+                Entities.User Registrant = new User(Registrantinputted.UserName, Registrantinputted.Password);
+                Registrant.Save(dBHelper);
+                return RedirectToPage(StringConst.LogOn);
             }
         }
     }
