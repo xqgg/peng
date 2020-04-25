@@ -15,6 +15,7 @@ namespace RazorPage.Helper
         public const string NAME = "Name";
         public const string Registrantinputted = "Registrantinputted";
         public const string LogOn = "LogOn";
+        public const string Index = "Index";
 
     }
 }

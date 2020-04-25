@@ -50,73 +50,40 @@ namespace RazorPage
             {
                 return Page();
             }
-            User user = _userRepository.GetUser(UserName);
 
-            if (user == null)
+            User user = _userRepository.GetUser(UserName);
+                        if (user == null)
             {
                 ModelState.AddModelError(StringConst.USER_NAME, "*用户名不存在");
                 return Page(); ;
             }
-            else if (user.Password == Password)
+            else if (user.Password == StringExtension.GetMd5Hash(Password))
             {
-                if (Remember)
-                {
-                    CookieOptions options = new CookieOptions
-                    {
-                        IsEssential = true,
-                        Expires = DateTime.Now.AddDays(15),
-                    };
-                    Response.Cookies.Append(StringConst.USER_ID, $"{user.Id.ToString()}", options);
-                    Response.Cookies.Append("Password", $"{user.Password.ToString()}", options);
-
-                }
-                else
-                {
-                    CookieOptions options = new CookieOptions
-                    {
-                        IsEssential = true
-                    };
-                    Response.Cookies.Append(StringConst.USER_ID, $"{user.Id.ToString()}", options);
-                    Response.Cookies.Append("Password", $"{user.Password.ToString()}", options);
-                }
-                return RedirectToPage("Index");
+                sendsCookies(user, Remember);
+                return RedirectToPage(StringConst.Index);
             }
             else
             {
-                ModelState.AddModelError("Password", "*用户名或密码错误");
+                ModelState.AddModelError(StringConst.PASSWORD, "*用户名或密码错误");
                 return Page();
             }
 
 
-            //if (correct(UserName, Password))
-            //{
-            //    if (Remember)
-            //    {
-            //        Response.Cookies.Append("UserName", $"{UserName}",
-            //        new CookieOptions
-            //        {
-            //            Expires = DateTime.Now.AddDays(15),
-            //            IsEssential = true
-
-            //        });
-            //    }
-            //    else
-            //    {
-            //        Response.Cookies.Append("UserName", $"{UserName}",
-            //        new CookieOptions
-            //        {
-
-            //            IsEssential = true
-
-            //        });
-            //    }
-
-
-            //}
-
-
         }
 
+        private void sendsCookies(User user, bool remember)
+        {
+            CookieOptions options = new CookieOptions
+            {
+                IsEssential = true,
+            };
+            if (remember)
+            {
+                options.Expires = DateTime.Now.AddDays(15);
+            }//else nothing
+            Response.Cookies.Append(StringConst.USER_ID, $"{user.Id.ToString()}", options);
+            Response.Cookies.Append(StringConst.PASSWORD, $"{user.Password.ToString()}", options);
+        }
         /// <summary>
         /// 检查用户输入的账号密码是否与数据库吻合。
         /// </summary>
