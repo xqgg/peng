@@ -8,11 +8,13 @@ using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
 using System.Data.Common;
 using RazorPage.Entities;
+using RazorPage.Pages.Shared;
+using RazorPage.Helper;
 
 namespace RazorPage
 {
     [BindProperties]
-    public class RegisterModel : PageModel
+    public class RegisterModel : _AllModel
     {
         public UserModel Registrantinputted { get; set; }
 
@@ -35,137 +37,115 @@ namespace RazorPage
 
         public void OnGet()
         {
+            base.SetLogOnStatus();
 
         }
-        public ActionResult OnPost()
+        public void OnPost()
         {
             if (!ModelState.IsValid)
             {
-                return Page();
+                return;
             }
 
             CheckNameOrPassword checker = new CheckNameOrPassword();
             if (!(checker.CheckName(Registrantinputted.UserName) && checker.CheckPassword(Registrantinputted.Password)))
             {
-                ModelState.AddModelError("CheckPassword", "用户名或密码不规范");
-                return Page();
+                ModelState.AddModelError(StringConst.Registrantinputted + "." + StringConst.PASSWORD, "*密码不规范");
+                return;
             }
+            DBHelper dBHelper = new DBHelper();
+            using (dBHelper.HelperConnection)
+            {
+                dBHelper.HelperConnection.Open();
 
-            //DBHelper dBHelper = new DBHelper();
-            //using (dBHelper.HelperConnection)
-            //{
-            //    dBHelper.HelperConnection.Open();
-            //    if (!DuplicateChecking(Registrantinputted.UserName, dBHelper))
-            //    {
-            //        ModelState.AddModelError("", "用户名已被占用");
-            //        return Page();
-            //    }
+                if (Entities.User.GetUserByName(Registrantinputted.UserName, dBHelper) != null)
+                {
+                    ModelState.AddModelError(StringConst.Registrantinputted + "." + StringConst.USER_NAME, "*用户名已被占用");
+                    return;
+                }
+                User user = Entities.User.GetUserByName(InviterName, dBHelper);
+                if (user == null || user.InvitationCode != InvitationCode)
+                {
+                    ModelState.AddModelError("InviterName", "*邀请人或邀请码不正确");
+                }
+                return;
 
 
-
-
-            //}
-
-            //using (SqlConnection connection = new SqlConnection(connectionString))
-            //{
-            //    //connection.Open();
-            //    //User inviter = new User("inviter", "mima@1") { };
-            //    //if (!CheckTheInvitationCode(connection, InvitationCode, InviterName))
-            //    //{
-            //    //    ModelState.AddModelError("", "邀请人或邀请码不正确");
-            //    //    return Page();
-            //    //}
-            //    //if (DuplicateChecking(string name)
-            //    //{
-            //    //    ModelState.AddModelError("", "用户名已被占用");
-            //    //    return Page();
-            //    //}
-
-            //    //if (!DuplicateChecking(Registrantinputted.UserName))
-            //    //{
-            //    //    ModelState.AddModelError("", "用户名已被占用");
-            //    //    return Page();
-            //    //}
+                //if (!DuplicateChecking(Registrantinputted.UserName, dBHelper))
+                //{
+                //    ModelState.AddModelError("", "用户名已被占用");
+                //    return Page();
+                //}
 
 
 
 
+                //}
 
+                //using (SqlConnection connection = new SqlConnection(connectionString))
+                //{
+                //    //connection.Open();
+                //    //User inviter = new User("inviter", "mima@1") { };
+                //    //if (!CheckTheInvitationCode(connection, InvitationCode, InviterName))
+                //    //{
+                //    //    ModelState.AddModelError("", "邀请人或邀请码不正确");
+                //    //    return Page();
+                //    //}
+                //    //if (DuplicateChecking(string name)
+                //    //{
+                //    //    ModelState.AddModelError("", "用户名已被占用");
+                //    //    return Page();
+                //    //}
 
-            //    return RedirectToPage("LogOn");
-            //}
-
-
-
-            //检查通过
-            //if (InviterName == inviter.Name &&
-            //    int.Parse(InvitationCode) == inviter.InvitationCode) { }
-
+                //    //if (!DuplicateChecking(Registrantinputted.UserName))
+                //    //{
+                //    //    ModelState.AddModelError("", "用户名已被占用");
+                //    //    return Page();
+                //    //}
 
 
 
 
 
 
+                //    return RedirectToPage("LogOn");
+                //}
 
-            return Page();
+
+
+                //检查通过
+                //if (InviterName == inviter.Name &&
+                //    int.Parse(InvitationCode) == inviter.InvitationCode) { }
+
+
+
+
+
+
+
+
+
+            }
         }
-
-        /// <summary>
-        /// 用户名查重。
-        /// </summary>
-        /// <returns></returns>
-        /// 
-        //[AcceptVerbs("GET", "POST")]
-        public bool DuplicateChecking(string name, DBHelper dBHelper)
-        {
-            return (Entities.User.GetUserByName(name).Id == -1);
-
-        }
-        public bool CheckTheInvitationCode(SqlConnection connection, string invitationCode, string inviter)
-        {
-            SqlCommand command = new SqlCommand { CommandText = "", Connection = connection };
-
-            return true;
-        }
-
-        //[AcceptVerbs("GET", "POST")]
-        //public bool VerifyEmail(string name)
-        //{
-        //    //if (!_userService.VerifyEmail(name))
-        //    //{
-        //    //    return Json($"Email {name} is already in use.");
-        //    //}
-
-        //    //return Json(true);
-        //}
-
-
     }
 
+    public class UserModel
+    {
+        [DataType(DataType.Text)]
+        [Required(ErrorMessage = "*用户名不能为空")]
+        //[Remote("DuplicateChecking", "Register", ErrorMessage = "用户名重复", HttpMethod = "GET")]
+        public string UserName { get; set; }
 
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "*密码不能为空")]
+        public string Password { get; set; }
 
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "*确认密码不能为空")]
+        [Compare("Password", ErrorMessage = "确认密码与密码不一致")]
+        public string VerifyPassword { get; set; }
 
-
-
-}
-
-public class UserModel
-{
-    [DataType(DataType.Text)]
-    [Required(ErrorMessage = "*用户名不能为空")]
-    //[Remote("DuplicateChecking", "Register", ErrorMessage = "用户名重复", HttpMethod = "GET")]
-    public string UserName { get; set; }
-
-    [DataType(DataType.Password)]
-    [Required(ErrorMessage = "*密码不能为空")]
-    public string Password { get; set; }
-
-    [DataType(DataType.Password)]
-    [Required(ErrorMessage = "*确认密码不能为空")]
-    [Compare("Password", ErrorMessage = "确认密码与密码不一致")]
-    public string VerifyPassword { get; set; }
-
+    }
 }
 
 

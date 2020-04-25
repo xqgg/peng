@@ -195,21 +195,22 @@ namespace RazorPage.Entities
         {
 
             SqlParameter pName = new SqlParameter("@Name", name);
-            if (helper.HelperConnection.State == ConnectionState.Closed)
+            using (SqlDataReader reader = helper.ExecuteReader(@"SELECT * FROM [User] WHERE [Name]=@Name", pName))
             {
-                helper.HelperConnection.Open();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                }
+                else
+                {
+                    return null;
+                    //return new User() { Id = -1 };//ID=-1表示没有该用户
+                }
+                User result = User.map(reader);
+                return result;
             }
-            SqlDataReader reader = helper.ExecuteReader(@"SELECT * FROM [User] WHERE [Name]=@Name", pName);
-            if (reader.HasRows)
-            {
-                reader.Read();
-            }
-            else
-            {
-                return new User() { Id = -1 };//ID=-1表示没有该用户
-            }
-            User result = User.map(reader);
-            return result;
+            //SqlDataReader reader = helper.ExecuteReader(@"SELECT * FROM [User] WHERE [Name]=@Name", pName);
+
         }
 
         /// <summary>
@@ -243,7 +244,7 @@ namespace RazorPage.Entities
             {
                 Id = (int)reader[StringConst.ID],
                 Name = (string)reader[StringConst.NAME],
-                Password = (string)reader[StringConst.USER_PASSWORD],
+                Password = (string)reader[StringConst.PASSWORD],
                 InvitationCode = (string)reader[StringConst.USER_INVITATIONCODE]
             };
         }

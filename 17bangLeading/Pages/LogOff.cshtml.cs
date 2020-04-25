@@ -10,9 +10,9 @@ namespace RazorPage
 {
     public class LogOffModel : _AllModel
     {
-        public override void OnGet()
+        public void OnGet()
         {
-            base.OnGet();
+            base.SetLogOnStatus();
         }
     }
 }
